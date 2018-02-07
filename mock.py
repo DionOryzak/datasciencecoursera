@@ -12,39 +12,337 @@ import columns as cl
 COLUMNS= cl.returnCOLUMNS()
 dtype=cl.returndtype()
 BANDFEATURES=cl.returnBandFeatures()
-COLORS=cl.returnCOLORS()
+# COLORS=cl.returnCOLORS()
+
+SCATTERCOLORS = {
+  "Month": {
+    '2015_09':'#BE0032',
+    '2015_10':'#222222',
+    '2015_11':'#F3C300',
+    '2015_12':'#875692',
+    '2016_01':'#F38400',
+    '2016_02':'#A1CAF1',
+    '2016_03':'#F2F3F4',
+    '2016_04':'#C2B280',
+    '2016_05':'#848482',
+    '2016_06':'#008856',
+    '2016_07':'#E68FAC',
+    '2016_08':'#0067A5',
+    '2016_09':'#F99379',
+    '2016_10':'#604E97',
+    '2016_11':'#F6A600',
+    '2016_12':'#B3446C'
+  },
+  "City": {
+    '01':'#BE0032',
+    '02':'#222222',
+    '03':'#F3C300',
+    '04':'#875692',
+    '05':'#F38400',
+    '06':'#A1CAF1',
+    '07':'#F2F3F4',
+    '08':'#C2B280',
+    '09':'#848482',
+    '10':'#008856',
+    '11':'#E68FAC',
+    '12':'#0067A5',
+    '13':'#F99379',
+    '14':'#604E97',
+    '15':'#F6A600',
+    '16':'#B3446C',
+    '17':'#DCD300',
+    '18':'#882D17',
+    '19':'#8DB600',
+    '20':'#654522',
+    '21':'#E25822',
+    '22':'#2B3D26',
+    '23':'#F2F3F4',
+    '24':'#222222',
+    '25':'#F3C300',
+    '26':'#875692',
+    '27':'#F38400',
+    '28':'#A1CAF1',
+    '29':'#BE0032',
+    '30':'#C2B280',
+    '31':'#848482',
+    '32':'#008856',
+    '33':'#E68FAC',
+    '34':'#0067A5',
+    '35':'#F99379',
+    '36':'#604E97',
+    '37':'#F6A600',
+    '38':'#B3446C',
+    '39':'#DCD300',
+    '40':'#882D17',
+    '41':'#8DB600',
+    '42':'#654522',
+    '43':'#E25822',
+    '44':'#2B3D26',
+    '45':'#F2F3F4',
+    '46':'#222222',
+    '47':'#F3C300',
+    '48':'#875692',
+    '49':'#F38400',
+    '50':'#A1CAF1',
+    '51':'#BE0032',
+    '52':'#C2B280',
+    '53':'#848482',
+    '54':'#008856',
+    '55':'#E68FAC',
+    '56':'#0067A5',
+    '57':'#F99379',
+    '58':'#604E97',
+    '59':'#F6A600',
+    '60':'#B3446C',
+    '61':'#DCD300',
+    '62':'#882D17',
+    '63':'#8DB600',
+    '64':'#654522',
+    '65':'#E25822',
+    '66':'#2B3D26',
+    '67':'#F2F3F4',
+    '68':'#222222',
+    '69':'#F3C300',
+    '70':'#875692',
+    '71':'#F38400',
+    '72':'#A1CAF1',
+    '73':'#BE0032',
+    '74':'#C2B280',
+    '75':'#848482',
+    '76':'#008856',
+    '77':'#E68FAC',
+    '78':'#0067A5',
+    'NA':'#F99379'
+  },
+  "Product": {
+    '01':'#BE0032',
+    '02':'#222222',
+    '03':'#F3C300',
+    '04':'#875692',
+    '05':'#F38400',
+    '06':'#A1CAF1',
+    '07':'#F2F3F4',
+    '08':'#C2B280',
+    '09':'#848482',
+    '10':'#008856',
+    '11':'#E68FAC',
+    '12':'#0067A5',
+    '13':'#F99379',
+    '14':'#604E97',
+    '15':'#F6A600',
+    '16':'#B3446C',
+    '17':'#DCD300',
+    '18':'#882D17',
+    '19':'#8DB600',
+    '20':'#654522',
+    '21':'#E25822',
+    '22':'#2B3D26'
+  },
+  "Segment": {
+    "A": "#BE0032", 
+    "B": "#222222", 
+    "C": "#F3C300", 
+    "D": "#875692", 
+    "E": "#F38400", 
+    "F": "#A1CAF1", 
+    "G": "#F2F3F4", 
+    "H": "#C2B280", 
+    "I": "#848482", 
+    "J": "#008856"
+  }
+}
+
+AREACOLORS = {
+  "Month": (
+    '#BE0032',
+    '#222222',
+    '#F3C300',
+    '#875692',
+    '#F38400',
+    '#A1CAF1',
+    '#F2F3F4',
+    '#C2B280',
+    '#848482',
+    '#008856',
+    '#E68FAC',
+    '#0067A5',
+    '#F99379',
+    '#604E97',
+    '#F6A600',
+    '#B3446C'
+  ),
+  "City": (
+    '#BE0032',
+    '#222222',
+    '#F3C300',
+    '#875692',
+    '#F38400',
+    '#A1CAF1',
+    '#F2F3F4',
+    '#C2B280',
+    '#848482',
+    '#008856',
+    '#E68FAC',
+    '#0067A5',
+    '#F99379',
+    '#604E97',
+    '#F6A600',
+    '#B3446C',
+    '#DCD300',
+    '#882D17',
+    '#8DB600',
+    '#654522',
+    '#E25822',
+    '#2B3D26',
+    '#F2F3F4',
+    '#222222',
+    '#F3C300',
+    '#875692',
+    '#F38400',
+    '#A1CAF1',
+    '#BE0032',
+    '#C2B280',
+    '#848482',
+    '#008856',
+    '#E68FAC',
+    '#0067A5',
+    '#F99379',
+    '#604E97',
+    '#F6A600',
+    '#B3446C',
+    '#DCD300',
+    '#882D17',
+    '#8DB600',
+    '#654522',
+    '#E25822',
+    '#2B3D26',
+    '#F2F3F4',
+    '#222222',
+    '#F3C300',
+    '#875692',
+    '#F38400',
+    '#A1CAF1',
+    '#BE0032',
+    '#C2B280',
+    '#848482',
+    '#008856',
+    '#E68FAC',
+    '#0067A5',
+    '#F99379',
+    '#604E97',
+    '#F6A600',
+    '#B3446C',
+    '#DCD300',
+    '#882D17',
+    '#8DB600',
+    '#654522',
+    '#E25822',
+    '#2B3D26',
+    '#F2F3F4',
+    '#222222',
+    '#F3C300',
+    '#875692',
+    '#F38400',
+    '#A1CAF1',
+    '#BE0032',
+    '#C2B280',
+    '#848482',
+    '#008856',
+    '#E68FAC',
+    '#0067A5',
+    '#F99379'
+),
+"Product": (
+  '#BE0032',
+  '#222222',
+  '#F3C300',
+  '#875692',
+  '#F38400',
+  '#A1CAF1',
+  '#F2F3F4',
+  '#C2B280',
+  '#848482',
+  '#008856',
+  '#E68FAC',
+  '#0067A5',
+  '#F99379',
+  '#604E97',
+  '#F6A600',
+  '#B3446C',
+  '#DCD300',
+  '#882D17',
+  '#8DB600',
+  '#654522',
+  '#E25822',
+  '#2B3D26'
+  ),
+  "Segment": (
+    "#BE0032", 
+    "#222222", 
+    "#F3C300", 
+    "#875692", 
+    "#F38400", 
+    "#A1CAF1", 
+    "#F2F3F4", 
+    "#C2B280", 
+    "#848482", 
+    "#008856"
+  )
+}
 
 def scatterchart(varname):
-	fig, ax = plt.subplots()
-	plt.title("Rideshare - Accidents by "+varname)
-	plt.ylabel("Reported Accidents")
-	plt.xlabel('Miles Driven')
-	ax.grid(True)
-	ax.scatter(data_train.Miles,data_train.Reported_Accidents,c=[COLORS[varname][x] for x in data_train[varname]],s=10,alpha=0.5)
+  fig, ax = plt.subplots()
+  plt.title("Rideshare - Accidents by "+varname)
+  plt.ylabel("Reported Accidents")
+  plt.xlabel('Miles Driven (Millions)')
+  ax.grid(True)
+  ax.scatter(data_train['Million_Miles'],data_train['Reported_Accidents'],c=[SCATTERCOLORS[varname][x] for x in data_train[varname]],s=10,alpha=0.9)
 
-def onewaychart(varname):	
-	combochart_accs=data_train.groupby([varname], as_index=False)['Reported_Accidents'].sum()
-	combochart_miles=data_train.groupby([varname], as_index=False)['Miles'].sum()
-	combochart_miles['Miles']=combochart_miles['Miles']/1000000
-	combochart_freq=combochart_accs['Reported_Accidents']/combochart_miles['Miles']
-	categories=combochart_miles[varname]
-	numcategories=range(len(categories))
-	fig, ax = plt.subplots()
-	ax2 = ax.twinx()
-	ax.bar(numcategories, combochart_miles['Miles'], label="Miles Driven (Millions)",color='0.7',alpha = 0.5)
-	ax2.plot(numcategories,combochart_freq,'r-', marker='o',label='Accidents Per 1 Million Miles', linewidth=1.5)
-	ax2.set_ylabel('Accidents Per 1 Million Miles')
-	ax.set_ylabel('Miles Driven (Millions)')
-	ax.set_xlabel(varname)
-	ax.set_xticks(numcategories)
-	rotation=np.minimum(np.maximum((len(categories)-4)*10,0),90)	
-	ax.set_xticklabels(categories, rotation=rotation)
-	ax2.grid()
-	lines, labels = ax2.get_legend_handles_labels()
-	lines2, labels2 = ax.get_legend_handles_labels()
-	ax.legend(lines + lines2, labels + labels2, loc=2)
-	plt.suptitle(varname, y=1, fontsize=17)
-	plt.title('Accident Rate')
+def onewaychart(varname): 
+  combochart_data=data_train.groupby([varname], as_index=False).sum()
+  combochart_data['Freq']=combochart_data['Reported_Accidents']/combochart_data['Million_Miles']
+  categories=combochart_data[varname]
+  numcategories=range(len(categories))
+  fig, ax = plt.subplots()
+  ax2 = ax.twinx()
+  ax.bar(numcategories, combochart_data['Million_Miles'], label="Miles Driven (Millions)",color='0.7',alpha = 0.5)
+  ax2.plot(numcategories,combochart_data['Freq'],'r-', marker='o',label='Accidents Per 1 Million Miles', linewidth=1.5)
+  ax2.set_ylabel('Accident Rate Per 1 Million Miles')
+  ax.set_ylabel('Miles Driven (Millions)')
+  ax.set_xlabel(varname)
+  ax.set_xticks(numcategories)
+  rotation=np.minimum(np.maximum((len(categories)-4)*10,0),90)  
+  ax.set_xticklabels(categories, rotation=rotation)
+  ax2.grid()
+  lines, labels = ax2.get_legend_handles_labels()
+  lines2, labels2 = ax.get_legend_handles_labels()
+  ax.legend(lines + lines2, labels + labels2, loc=2)
+  plt.suptitle(varname, y=1, fontsize=17)
+  plt.title('Accident Rate')
+
+def areachart(varname):
+  fig, ax = plt.subplots()
+  areachart_data=data_train.groupby([varname,'Accs_Per_Million_Miles'], as_index=False)['Million_Miles'].sum()
+  categories=areachart_data.groupby([varname])[varname].unique()
+  labels=[]
+  histo_count_outer=[]
+  for catlevel in categories:
+    labels.append(catlevel[0])
+    histo_count_inner=[]
+    for i in range(60):
+      rowmatch = areachart_data[(areachart_data[varname]==catlevel[0]) & (areachart_data["Accs_Per_Million_Miles"]==i)]  
+      if len(rowmatch)>0:
+        histo_count_inner.append(rowmatch.iloc[0]["Million_Miles"])
+      else:  
+        histo_count_inner.append(0)
+    histo_count_outer.append(histo_count_inner)
+  x=range(60)
+  # ('blue', 'green', 'red', 'cyan', 'magenta', 'yellow', 'black', 'purple', 'pink', 'brown', 'orange', 'teal', 'coral', 'lightblue', 'lime', 'lavender', 'turquoise', 'darkgreen', 'tan', 'salmon', 'gold',  'darkred', 'darkblue')
+  plt.stackplot(x,histo_count_outer, labels=labels,colors=AREACOLORS[varname])
+  plt.legend(loc='upper right')
+  plt.xlabel('Accident Rate Per 1 Million Miles')
+  plt.ylabel('Miles Driven (Millions)')
+  plt.title('Miles Driven at Various Accident Rates By '+varname)
 
 filenametrain="mock_accident_data.csv"
 # filenametest="acertaremediation.csv"
@@ -54,7 +352,7 @@ print(datetime.datetime.now())
 
 data_train = pd.read_csv(filenametrain, skipinitialspace=True, skiprows=1, names=COLUMNS, dtype=dtype, thousands=',')
 # data_test = pd.read_csv(filenametest, skipinitialspace=True, skiprows=1, names=COLUMNS, dtype=dtype)
-print('train records: '+str(len(data_train)))
+# print('train records: '+str(len(data_train)))
 # print('test records: '+str(len(data_test)))
 
 # avgweight = data_train[WEIGHT].mean()
@@ -65,14 +363,15 @@ print('train records: '+str(len(data_train)))
 CONTFEATURES = cl.returnCONTFEATURES()
 CATFEATURES = cl.returnCATFEATURES()
 
+data_train['Million_Miles']=data_train['Miles']/1000000
+data_train['Accs_Per_Million_Miles']=np.floor(data_train['Reported_Accidents']/data_train['Million_Miles'])
+
 # Keep only records where Miles > 0 AND Reported_Accidents >= 0
 data_train=data_train[(data_train.Miles >0) & (data_train.Reported_Accidents >=0 )]
 
-data_train['acc_per_1000mile']=data_train['Reported_Accidents']/data_train['Miles']*1000
-
 # Remove outliers
-data_train=data_train[data_train.acc_per_1000mile <20]
-data_train=data_train[data_train.Reported_Accidents <100]
+data_train=data_train[data_train['Accs_Per_Million_Miles']<20000]
+data_train=data_train[data_train['Reported_Accidents'] <100]
 
 # # Rename #N/A values to "NA"
 data_train.Segment= np.where(data_train.Segment.isnull(),"Segment NA",data_train.Segment)
@@ -90,53 +389,20 @@ data_train.Product = data_train.Product.str[8:]
 data_train.City= np.where(data_train.City.isin(['0','1','2','3','4','5','6','7','8','9']),'0'+data_train.City,data_train.City)
 data_train.Product= np.where(data_train.Product.isin(['0','1','2','3','4','5','6','7','8','9']),'0'+data_train.Product,data_train.Product)
 
-print(data_train)
-print('train records: '+str(len(data_train)))
-
 # print(data_train)
-DUMMYFEATURES=[]
-for feature in CATFEATURES:
-  dummiesTrain=pd.get_dummies(data_train[feature],prefix=feature)
-  temp=dummiesTrain.sum() 
-  dummiesTrain=dummiesTrain[temp[temp<temp.max()].index.values]
-  if(len(dummiesTrain.columns)>0):
-    dummiesTrain.columns = dummiesTrain.columns.str.replace('\s+', '_')
-    data_train=pd.concat([data_train,dummiesTrain],axis=1)
-    DUMMYFEATURES += list(dummiesTrain)
-print(DUMMYFEATURES)
-
-import numpy as np
-import matplotlib.pyplot as plt
+# print('train records: '+str(len(data_train)))
 
 # # Scatterplots Miles vs Reported Accidents
 
-# varname="Month"
-# scatterchart(varname)
-# onewaychart(varname)
-# varname='Segment'
-# scatterchart(varname)
-# onewaychart(varname)
-# varname='City'
-# scatterchart(varname)
-# onewaychart(varname)
-# varname='Product'
-# scatterchart(varname)
-# onewaychart(varname)
-# plt.show()
+catVariables=["Month","Segment",'City','Product']
+for varname in catVariables:
+  scatterchart(varname)
+  onewaychart(varname)
+  areachart(varname)
+plt.show()
 
-# x=data_train['Reported_Accidents']/data_train['Miles']*1000000
-# import numpy as np
-# import matplotlib.pyplot as plt
-# np.random.seed(0)
-# n_bins = 10
-# x = np.random.randn(1000, 3)
-# print(x)
-# fig, ax = plt.subplots()
-# ax.hist(x, n_bins, histtype='bar', stacked=True)
-# plt.show()
+# Add time series per variable and Mosaic
 
-# Do kernel histogram for rate of accs, num miles and num accs 
-# https://jakevdp.github.io/blog/2013/12/01/kernel-density-estimation/
 
 
 # # Two way Mosaic
@@ -154,17 +420,25 @@ import matplotlib.pyplot as plt
 # plt.show()
 
 
-# Data
-x=range(1,6)
-y=[ [1,4,6,8,9], [2,2,7,10,12], [2,8,5,10,6] ]
- 
-# Plot
-plt.stackplot(x,y, labels=['A','B','C'])
-plt.legend(loc='upper left')
-plt.show()
+
 
 
 # GLM and Regressions tree on rate of accs
+
+
+# # print(data_train)
+# DUMMYFEATURES=[]
+# for feature in CATFEATURES:
+#   dummiesTrain=pd.get_dummies(data_train[feature],prefix=feature)
+#   temp=dummiesTrain.sum() 
+#   dummiesTrain=dummiesTrain[temp[temp<temp.max()].index.values]
+#   if(len(dummiesTrain.columns)>0):
+#     dummiesTrain.columns = dummiesTrain.columns.str.replace('\s+', '_')
+#     data_train=pd.concat([data_train,dummiesTrain],axis=1)
+#     DUMMYFEATURES += list(dummiesTrain)
+# print(DUMMYFEATURES)
+
+
 
 
 # data_train_segment['ASSETVALUE_BAND_02_0_5m_1m'] = data_train_segment['ASSETVALUE_BAND_02:_0.5m_-_1.0m']
