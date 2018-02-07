@@ -12,10 +12,39 @@ import columns as cl
 COLUMNS= cl.returnCOLUMNS()
 dtype=cl.returndtype()
 BANDFEATURES=cl.returnBandFeatures()
-SEGMENTCOLORS=cl.returnSEGMENTCOLORS()
-CITYCOLORS=cl.returnCITYCOLORS()
-PRODUCTCOLORS=cl.returnPRODUCTCOLORS()
+COLORS=cl.returnCOLORS()
 
+def scatterchart(varname):
+	fig, ax = plt.subplots()
+	plt.title("Rideshare - Accidents by "+varname)
+	plt.ylabel("Reported Accidents")
+	plt.xlabel('Miles Driven')
+	ax.grid(True)
+	ax.scatter(data_train.Miles,data_train.Reported_Accidents,c=[COLORS[varname][x] for x in data_train[varname]],s=10,alpha=0.5)
+
+def onewaychart(varname):	
+	combochart_accs=data_train.groupby([varname], as_index=False)['Reported_Accidents'].sum()
+	combochart_miles=data_train.groupby([varname], as_index=False)['Miles'].sum()
+	combochart_miles['Miles']=combochart_miles['Miles']/1000000
+	combochart_freq=combochart_accs['Reported_Accidents']/combochart_miles['Miles']
+	categories=combochart_miles[varname]
+	numcategories=range(len(categories))
+	fig, ax = plt.subplots()
+	ax2 = ax.twinx()
+	ax.bar(numcategories, combochart_miles['Miles'], label="Miles Driven (Millions)",color='0.7',alpha = 0.5)
+	ax2.plot(numcategories,combochart_freq,'r-', marker='o',label='Accidents Per 1 Million Miles', linewidth=1.5)
+	ax2.set_ylabel('Accidents Per 1 Million Miles')
+	ax.set_ylabel('Miles Driven (Millions)')
+	ax.set_xlabel(varname)
+	ax.set_xticks(numcategories)
+	rotation=np.minimum(np.maximum((len(categories)-4)*10,0),90)	
+	ax.set_xticklabels(categories, rotation=rotation)
+	ax2.grid()
+	lines, labels = ax2.get_legend_handles_labels()
+	lines2, labels2 = ax.get_legend_handles_labels()
+	ax.legend(lines + lines2, labels + labels2, loc=2)
+	plt.suptitle(varname, y=1, fontsize=17)
+	plt.title('Accident Rate')
 
 filenametrain="mock_accident_data.csv"
 # filenametest="acertaremediation.csv"
@@ -53,12 +82,11 @@ data_train.Product= np.where(data_train.Product.isnull(),"Product NA",data_train
 # data_test=data_train[(data_train.Miles ==1) & (data_train.Segment =='Segment C') ]
 # print(data_test)
 
-# Slice Segment, city and Product
+# Slice and clean Month, Segment, City and Product
+data_train['Month']= np.where(data_train['Month_Ending'].str.len()==9,data_train.Month_Ending.str[5:]+"_0"+data_train.Month_Ending.str[0:1],data_train.Month_Ending.str[6:]+"_"+data_train.Month_Ending.str[0:2])
 data_train.Segment = data_train.Segment.str[8:]
 data_train.City = data_train.City.str[5:]
 data_train.Product = data_train.Product.str[8:]
-
-#Add leading 0 to single digit strings
 data_train.City= np.where(data_train.City.isin(['0','1','2','3','4','5','6','7','8','9']),'0'+data_train.City,data_train.City)
 data_train.Product= np.where(data_train.Product.isin(['0','1','2','3','4','5','6','7','8','9']),'0'+data_train.Product,data_train.Product)
 
@@ -80,54 +108,60 @@ print(DUMMYFEATURES)
 import numpy as np
 import matplotlib.pyplot as plt
 
+# # Scatterplots Miles vs Reported Accidents
 
-# Scatterplots
+# varname="Month"
+# scatterchart(varname)
+# onewaychart(varname)
+# varname='Segment'
+# scatterchart(varname)
+# onewaychart(varname)
+# varname='City'
+# scatterchart(varname)
+# onewaychart(varname)
+# varname='Product'
+# scatterchart(varname)
+# onewaychart(varname)
+# plt.show()
 
-fig, ax = plt.subplots()
-plt.title("Rideshare - Accident Rate by Segment")
-plt.ylabel("Accidents per 1000 miles")
-plt.xlabel('Miles Driven')
-ax.grid(True)
-ax.scatter(data_train.Miles,data_train.acc_per_1000mile,c=[SEGMENTCOLORS[x] for x in data_train.Segment],s=10,alpha=0.5)
-fig, ax = plt.subplots()
-plt.title("Rideshare - Accident Rate by Product")
-plt.ylabel("Accidents per 1000 miles")
-plt.xlabel('Miles Driven')
-ax.grid(True)
-ax.scatter(data_train.Miles,data_train.acc_per_1000mile,c=[PRODUCTCOLORS[x] for x in data_train.Product],s=10,alpha=0.5)
-fig, ax = plt.subplots()
-plt.title("Rideshare - Accident Rate by City")
-plt.ylabel("Accidents per 1000 miles")
-plt.xlabel('Miles Driven')
-ax.grid(True)
-ax.scatter(data_train.Miles,data_train.acc_per_1000mile,c=[CITYCOLORS[x] for x in data_train.City],s=10,alpha=0.5)
-
-fig, ax = plt.subplots()
-plt.title("Rideshare - Accidents by Segment")
-plt.ylabel("Reported Accidents")
-plt.xlabel('Miles Driven')
-ax.grid(True)
-ax.scatter(data_train.Miles,data_train.Reported_Accidents,c=[SEGMENTCOLORS[x] for x in data_train.Segment],s=10,alpha=0.5)
-fig, ax = plt.subplots()
-plt.title("Rideshare - Accidents by Product")
-plt.ylabel("Reported Accidents")
-plt.xlabel('Miles Driven')
-ax.grid(True)
-ax.scatter(data_train.Miles,data_train.Reported_Accidents,c=[PRODUCTCOLORS[x] for x in data_train.Product],s=10,alpha=0.5)
-fig, ax = plt.subplots()
-plt.title("Rideshare - Accidents by City")
-plt.ylabel("Reported Accidents")
-plt.xlabel('Miles Driven')
-ax.grid(True)
-ax.scatter(data_train.Miles,data_train.Reported_Accidents,c=[CITYCOLORS[x] for x in data_train.City],s=10,alpha=0.5)
-
-plt.show()
-
-
+# x=data_train['Reported_Accidents']/data_train['Miles']*1000000
+# import numpy as np
+# import matplotlib.pyplot as plt
+# np.random.seed(0)
+# n_bins = 10
+# x = np.random.randn(1000, 3)
+# print(x)
+# fig, ax = plt.subplots()
+# ax.hist(x, n_bins, histtype='bar', stacked=True)
+# plt.show()
 
 # Do kernel histogram for rate of accs, num miles and num accs 
 # https://jakevdp.github.io/blog/2013/12/01/kernel-density-estimation/
 
+
+# # Two way Mosaic
+# varname1='Product'
+# varname2='Segment'
+# # accid_sum=data_train.groupby([varname1,varname2],as_index=[varname1,varname2])['Reported_Accidents'].sum()
+
+# # miles_sum=data_train.groupby([varname1,varname2], as_index=False)['Miles'].sum()
+# from statsmodels.graphics.mosaicplot import mosaic
+# miles_sum=data_train.groupby([varname1,varname2],as_index=[varname1,varname2])['Miles'].sum()
+# mosaic(miles_sum)
+# miles_sum=data_train.groupby([varname2,varname1],as_index=[varname2,varname1])['Miles'].sum()
+# mosaic(miles_sum)
+
+# plt.show()
+
+
+# Data
+x=range(1,6)
+y=[ [1,4,6,8,9], [2,2,7,10,12], [2,8,5,10,6] ]
+ 
+# Plot
+plt.stackplot(x,y, labels=['A','B','C'])
+plt.legend(loc='upper left')
+plt.show()
 
 
 # GLM and Regressions tree on rate of accs
@@ -160,6 +194,25 @@ plt.show()
 # # ml.avecharts(data_train_segment,WEIGHT,prediction_glm_train,LABEL,CONTFEATURES,BANDFEATURES,CATFEATURES,segment,modeltype)
 # prediction_glm_train.to_csv('glm_'+modeltype+'_'+segment+'/'+modeltype+'_'+segment+'.csv')
 
+
+# fig, ax = plt.subplots()
+# plt.title("Rideshare - Accident Rate by Segment")
+# plt.ylabel("Accidents per 1000 miles")
+# plt.xlabel('Miles Driven')
+# ax.grid(True)
+# ax.scatter(data_train.Miles,data_train.acc_per_1000mile,c=[SEGMENTCOLORS[x] for x in data_train.Segment],s=10,alpha=0.5)
+# fig, ax = plt.subplots()
+# plt.title("Rideshare - Accident Rate by Product")
+# plt.ylabel("Accidents per 1000 miles")
+# plt.xlabel('Miles Driven')
+# ax.grid(True)
+# ax.scatter(data_train.Miles,data_train.acc_per_1000mile,c=[PRODUCTCOLORS[x] for x in data_train.Product],s=10,alpha=0.5)
+# fig, ax = plt.subplots()
+# plt.title("Rideshare - Accident Rate by City")
+# plt.ylabel("Accidents per 1000 miles")
+# plt.xlabel('Miles Driven')
+# ax.grid(True)
+# ax.scatter(data_train.Miles,data_train.acc_per_1000mile,c=[CITYCOLORS[x] for x in data_train.City],s=10,alpha=0.5)
 
 
 print(datetime.datetime.now())
