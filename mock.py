@@ -339,13 +339,39 @@ def areachart(varname):
   x=range(60)
   # ('blue', 'green', 'red', 'cyan', 'magenta', 'yellow', 'black', 'purple', 'pink', 'brown', 'orange', 'teal', 'coral', 'lightblue', 'lime', 'lavender', 'turquoise', 'darkgreen', 'tan', 'salmon', 'gold',  'darkred', 'darkblue')
   plt.stackplot(x,histo_count_outer, labels=labels,colors=AREACOLORS[varname])
-  plt.legend(loc='upper right')
+  plt.legend(loc='center right',prop={'size': 6},labelspacing=-2.5)
   plt.xlabel('Accident Rate Per 1 Million Miles')
   plt.ylabel('Miles Driven (Millions)')
   plt.title('Miles Driven at Various Accident Rates By '+varname)
 
+
+def trendmixchart(varname):
+  fig, ax = plt.subplots()
+  areachart_data=data_train.groupby([varname,'Month'], as_index=False)['Million_Miles'].sum()
+  categories=areachart_data.groupby([varname])[varname].unique()
+  months=areachart_data.groupby(['Month'], as_index=False)['Million_Miles'].sum()
+  labels=[]
+  histo_count_outer=[]
+  for catlevel in categories:
+    labels.append(catlevel[0])
+    histo_count_inner=[]
+    for i in range(len(months)):
+      rowmatch = areachart_data[(areachart_data[varname]==catlevel[0]) & (areachart_data["Month"]==months['Month'][i])]  
+      if len(rowmatch)>0:
+        histo_count_inner.append(rowmatch.iloc[0]["Million_Miles"]/months['Million_Miles'][i])
+      else:  
+        histo_count_inner.append(0)  
+    histo_count_outer.append(histo_count_inner)
+  x=range(len(months))
+  dfList = months['Month'].apply(pd.Series).stack().tolist()
+  plt.xticks(x,dfList,size='small')
+  ax.set_xticklabels(ax.xaxis.get_majorticklabels(), rotation=90)
+  ax.stackplot(x,histo_count_outer, labels=labels,colors=AREACOLORS[varname])
+  plt.xlabel('Month')
+  plt.ylabel('Mix of Miles Driven ')
+  plt.title('Trend of Miles Driven By '+varname)  
+
 filenametrain="mock_accident_data.csv"
-# filenametest="acertaremediation.csv"
 
 print("Starting Program")
 print(datetime.datetime.now())
@@ -378,65 +404,75 @@ data_train.Segment= np.where(data_train.Segment.isnull(),"Segment NA",data_train
 data_train.City= np.where(data_train.City.isnull(),"City NA",data_train.City)
 data_train.Product= np.where(data_train.Product.isnull(),"Product NA",data_train.Product)
 
-# data_test=data_train[(data_train.Miles ==1) & (data_train.Segment =='Segment C') ]
-# print(data_test)
-
 # Slice and clean Month, Segment, City and Product
 data_train['Month']= np.where(data_train['Month_Ending'].str.len()==9,data_train.Month_Ending.str[5:]+"_0"+data_train.Month_Ending.str[0:1],data_train.Month_Ending.str[6:]+"_"+data_train.Month_Ending.str[0:2])
+data_train['monthCONT']=data_train.Month.str[0:4].astype('float', copy=False)+(data_train.Month.str[5:7].astype('float', copy=False)-1)/12
 data_train.Segment = data_train.Segment.str[8:]
 data_train.City = data_train.City.str[5:]
 data_train.Product = data_train.Product.str[8:]
 data_train.City= np.where(data_train.City.isin(['0','1','2','3','4','5','6','7','8','9']),'0'+data_train.City,data_train.City)
 data_train.Product= np.where(data_train.Product.isin(['0','1','2','3','4','5','6','7','8','9']),'0'+data_train.Product,data_train.Product)
 
-# print(data_train)
-# print('train records: '+str(len(data_train)))
-
-# # Scatterplots Miles vs Reported Accidents
-
 catVariables=["Month","Segment",'City','Product']
-for varname in catVariables:
-  scatterchart(varname)
-  onewaychart(varname)
-  areachart(varname)
-plt.show()
 
-# Add time series per variable and Mosaic
-
+# # One way charts
+# for varname in catVariables:
+#   scatterchart(varname)
+#   onewaychart(varname)
+#   areachart(varname)
+# trendmixchart("Segment")
+# trendmixchart('City')
+# trendmixchart('Product')  
 
 
 # # Two way Mosaic
-# varname1='Product'
-# varname2='Segment'
-# # accid_sum=data_train.groupby([varname1,varname2],as_index=[varname1,varname2])['Reported_Accidents'].sum()
-
-# # miles_sum=data_train.groupby([varname1,varname2], as_index=False)['Miles'].sum()
 # from statsmodels.graphics.mosaicplot import mosaic
-# miles_sum=data_train.groupby([varname1,varname2],as_index=[varname1,varname2])['Miles'].sum()
-# mosaic(miles_sum)
-# miles_sum=data_train.groupby([varname2,varname1],as_index=[varname2,varname1])['Miles'].sum()
-# mosaic(miles_sum)
+# for i in range(len(catVariables)):
+#   for j in range(len(catVariables)):
+#     if i != j:
+#       miles_sum=data_train.groupby([catVariables[i],catVariables[j]],as_index=[catVariables[i],catVariables[j]])['Miles'].sum()
+#       accid_sum=data_train.groupby([catVariables[i],catVariables[j]],as_index=[catVariables[i],catVariables[j]])['Accs_Per_Million_Miles'].sum()
+#       miles_sum=miles_sum[miles_sum>0]
+#       accid_sum=accid_sum[accid_sum>0]
+#       mosaic(miles_sum)
+#       mosaic(accid_sum)
+      # Plot axis labels, shrink text and if possible adjust color to frequency
 
-# plt.show()
-
-
-
+plt.show()
 
 
 # GLM and Regressions tree on rate of accs
 
 
 # # print(data_train)
-# DUMMYFEATURES=[]
-# for feature in CATFEATURES:
-#   dummiesTrain=pd.get_dummies(data_train[feature],prefix=feature)
-#   temp=dummiesTrain.sum() 
-#   dummiesTrain=dummiesTrain[temp[temp<temp.max()].index.values]
-#   if(len(dummiesTrain.columns)>0):
-#     dummiesTrain.columns = dummiesTrain.columns.str.replace('\s+', '_')
-#     data_train=pd.concat([data_train,dummiesTrain],axis=1)
-#     DUMMYFEATURES += list(dummiesTrain)
-# print(DUMMYFEATURES)
+DUMMYFEATURES=[]
+for feature in CATFEATURES:
+  dummiesTrain=pd.get_dummies(data_train[feature],prefix=feature)
+  temp=dummiesTrain.sum() 
+  dummiesTrain=dummiesTrain[temp[temp<temp.max()].index.values]
+  if(len(dummiesTrain.columns)>0):
+    dummiesTrain.columns = dummiesTrain.columns.str.replace('\s+', '_')
+    data_train=pd.concat([data_train,dummiesTrain],axis=1)
+    DUMMYFEATURES += list(dummiesTrain)
+print(DUMMYFEATURES)
+
+
+LABEL = 'Accs_Per_Million_Miles'
+WEIGHT = 'Million_Miles'
+if not os.path.exists('glm/'):
+  os.makedirs('glm/')
+# formula = 'Accs_Per_Million_Miles ~ monthCONT + Segment_B + Segment_C + Segment_D + Segment_E + Segment_F + Segment_G + Segment_H + Segment_I + Segment_J + City_01 + City_03 + City_04 + City_05 + City_06 + City_07 + City_08 + City_09 + City_10 + City_11 + City_12 + City_13 + City_14 + City_15 + City_16 + City_17 + City_18 + City_19 + City_20 + City_21 + City_22 + City_23 + City_24 + City_25 + City_26 + City_27 + City_28 + City_29 + City_30 + City_31 + City_32 + City_33 + City_34 + City_35 + City_36 + City_37 + City_38 + City_39 + City_40 + City_41 + City_42 + City_43 + City_44 + City_45 + City_46 + City_47 + City_48 + City_49 + City_50 + City_51 + City_52 + City_53 + City_54 + City_55 + City_56 + City_57 + City_58 + City_59 + City_60 + City_61 + City_62 + City_63 + City_64 + City_65 + City_66 + City_67 + City_68 + City_69 + City_70 + City_71 + City_72 + City_73 + City_74 + City_76 + City_NA + Product_01 + Product_02 + Product_03 + Product_05 + Product_06 + Product_07 + Product_08 + Product_09 + Product_10 + Product_11 + Product_12 + Product_13 + Product_14 + Product_15 + Product_17 + Product_18 + Product_19 + Product_20 + Product_21 + Product_22 '
+formula = 'Accs_Per_Million_Miles ~ monthCONT + Segment_B + Segment_C + Segment_D + Segment_E + Segment_F + Segment_G + Segment_H + Segment_I + Segment_J  '
+prediction_glm_train, prediction_glm_test = ml.GLM(data_train, data_train, CONTFEATURES,CATFEATURES,LABEL,WEIGHT,formula,'glm/',0,'poisson')
+# ml.avecharts(data_train_segment,WEIGHT,prediction_glm_train,LABEL,CONTFEATURES,BANDFEATURES,CATFEATURES,segment,modeltype)
+
+data_train['weight'] = data_train[WEIGHT]
+data_train['predictedValue'] = prediction_glm_train*data_train['weight']
+data_train['actualValue'] = data_train[LABEL]*data_train['weight']
+
+for feature in catVariables:
+  ml.actualvsfittedbyfactor(data_train,data_train,feature,'glm/')  
+
 
 
 
@@ -468,25 +504,6 @@ plt.show()
 # # ml.avecharts(data_train_segment,WEIGHT,prediction_glm_train,LABEL,CONTFEATURES,BANDFEATURES,CATFEATURES,segment,modeltype)
 # prediction_glm_train.to_csv('glm_'+modeltype+'_'+segment+'/'+modeltype+'_'+segment+'.csv')
 
-
-# fig, ax = plt.subplots()
-# plt.title("Rideshare - Accident Rate by Segment")
-# plt.ylabel("Accidents per 1000 miles")
-# plt.xlabel('Miles Driven')
-# ax.grid(True)
-# ax.scatter(data_train.Miles,data_train.acc_per_1000mile,c=[SEGMENTCOLORS[x] for x in data_train.Segment],s=10,alpha=0.5)
-# fig, ax = plt.subplots()
-# plt.title("Rideshare - Accident Rate by Product")
-# plt.ylabel("Accidents per 1000 miles")
-# plt.xlabel('Miles Driven')
-# ax.grid(True)
-# ax.scatter(data_train.Miles,data_train.acc_per_1000mile,c=[PRODUCTCOLORS[x] for x in data_train.Product],s=10,alpha=0.5)
-# fig, ax = plt.subplots()
-# plt.title("Rideshare - Accident Rate by City")
-# plt.ylabel("Accidents per 1000 miles")
-# plt.xlabel('Miles Driven')
-# ax.grid(True)
-# ax.scatter(data_train.Miles,data_train.acc_per_1000mile,c=[CITYCOLORS[x] for x in data_train.City],s=10,alpha=0.5)
 
 
 print(datetime.datetime.now())
