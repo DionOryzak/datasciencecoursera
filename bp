@@ -13,62 +13,106 @@ bppLOI=100000
 liabExposure=50000
 liabLimits='300k/600k/600k'
 propertyDeductible=500
-windDeductible=NA
+windDeductible=0
 amountOfAnnualIncrease=0.08
+liabMedExpensesLimit=300000
+aggLimitProductsOperations=600000
+aggLimitLiabMedical=600000
+payroll_sales=300000
+numberPools=0
+limitContractorYards=0
 
-SELECT factor
-FROM mu_ru_policyterm
-WHERE termOfPolicy="12 Months"
 
-SELECT a.classCode,	a.sicCode,	a.naicsCode, ,	a.propertyRateNumber, a.liabClassGroup,	a.liabExpBase,	a.eq, a.eqsl, b.bldgFactor, b.bppFactor, c.bldgFactor, c.bppFactor, d.factor, e.factor, f.factor
-FROM mu_ru_classCode AS a
-INNER JOIN mu_ru_ratenumberrelativities AS b
-ON a.propertyRateNumber=b.propertyRateNumber
-INNER JOIN mu_ru_sprinklered AS c
-ON a.propertyRateNumber=c.propertyRateNumber
-LEFT JOIN mu_ru_occupantliabilityclassgrouprelativitiesloi AS d
-ON a.liabClassGroup=c.classGroup
-LEFT JOIN mu_ru_occupantliabilityclassgrouprelativitiesags AS e
-ON a.liabClassGroup=e.classGroup
-LEFT JOIN mu_ru_occupantliabilityclassgrouprelativitiesap AS f
-ON a.liabClassGroup=f.classGroup
-WHERE a.classDesc1='Contractor' AND a.classDesc2='Lawn Sprinkler Installation' AND a.classDesc3='Shop'
-AND (f.premise='' OR (a.classDesc3='Office' AND f.premise='office') OR (a.classDesc3='Shop' AND f.premise='shop_storage')
 
-SELECT bldgFactor, bppFactor
-FROM mu_ru_constructionrelativities
-WHERE constructionType='Frame Construction'
+SELECT a.classCode,	a.sicCode,	a.naicsCode, a.propertyRateNumber, a.liabilityClassGroup, a.liabilityExposureBase, a.eq, a.eqsl, 
+	a.buildingRate, a.bppRate, a.liabilityRate, a.liabilityExposure, 
+	ROUND(a.buildingRate*400000/100,0) AS buildingLossCost, ROUND(a.bppRate*100000/100,0) AS bppLossCost, ROUND(a.liabilityRate*a.liabilityExposure,0) AS liabilityLossCost, swimmingPoolLossCost, contractorYardsLossCost,
+	a.pharmacistFactor, a.veterinarianFactor, s.policyTermFactor
+FROM (
+	SELECT a.classCode,	a.sicCode,	a.naicsCode, a.propertyRateNumber, a.liabilityClassGroup, a.liabilityExposureBase, a.eq, a.eqsl, 
+	ROUND(b.bldgFactor*c.bldgFactor*h.bldgFactor*i.buildingLossCostPer100*j.bldgFactor*n.factor*p.factor*k.factor,3) AS buildingRate, 
+	ROUND(b.bppFactor*c.bppFactor*h.bppFactor*i.bppLossCostPer100*j.bppFactor*o.factor*p.factor*k.factor,3) AS bppRate, 
+	CASE 
+		WHEN "Lessor"= "Occupant Tenant" THEN ROUND(g.factor*i.lessorsLossCostPer100*l.perOccurenceFactor*m.factor,3) 
+		WHEN d.factor IS NOT NULL THEN ROUND(d.factor*i.occupantLossCostPer100*l.perOccurenceFactor*m.factor,3)
+		WHEN e.factor IS NOT NULL THEN ROUND(e.factor*i.occupantLossCostPer1000AGS*l.perOccurenceFactor*m.factor,3)
+		WHEN f.factor IS NOT NULL THEN ROUND(f.factor*i.occupantLossCostPer1000AP*l.perOccurenceFactor*m.factor,3)
+	END AS liabilityRate,	
+	CASE 
+		WHEN "Lessor"="Occupant Tenant" THEN 400000/100
+		WHEN d.factor IS NOT NULL THEN 100000/100
+		WHEN e.factor IS NOT NULL THEN 300000/1000
+		WHEN f.factor IS NOT NULL THEN 300000/1000
+	END AS liabilityExposure,
+	q.factor*0 AS swimmingPoolLossCost,
+	r.lossCostPer100*0/100 AS contractorYardsLossCost,
+	m.pharmacistFactor,
+	m.veterinarianFactor,
+	s.factor AS policyTermFactor
+	FROM mu_ru_classcodes AS a
+	INNER JOIN mu_ru_ratenumberrelativities AS b
+	ON a.propertyRateNumber=b.propertyRateNumber
+	INNER JOIN mu_ru_sprinklered AS c
+	ON a.propertyRateNumber=c.propertyRateNumber
+	LEFT JOIN mu_ru_occupantliabilityclassgrouprelativitiesloi AS d
+	ON a.liabilityClassGroup=d.classGroup
+	LEFT JOIN mu_ru_occupantliabilityclassgrouprelativitiesags AS e
+	ON a.liabilityClassGroup=e.classGroup
+	LEFT JOIN mu_ru_occupantliabilityclassgrouprelativitiesap AS f
+	ON a.liabilityClassGroup=f.classGroup
+	LEFT JOIN mu_ru_lessorsliabilityclassgrouprelativities AS g
+	ON a.liabilityClassGroup=g.classGroup
+	LEFT JOIN mu_ru_constructionrelativities AS h
+	ON 1=1
+	LEFT JOIN ca_lc_baselosscostspropertyandliability AS i
+	ON 1=1
+	LEFT JOIN mu_ru_ppc AS j
+	ON 1=1
+	LEFT JOIN ca_ru_buildingcodeeffectivenessgrading AS k
+	ON 1=1
+	LEFT JOIN mu_ru_propertydamageliabilitydeductible AS l 
+	ON 1=1
+	LEFT JOIN mu_ru_increasedlimits AS m
+	ON 1=1
+	LEFT JOIN (
+		SELECT b.factor+(400000-b.buildingLimitFrom)/100000*b.marginalPer100000 AS factor
+		FROM `ca_ru_buildinglimitofinsurancerelativitygroup` AS a
+		INNER JOIN mu_ru_buildinglimitofinsurancerelativity AS b
+		ON a.buildinglimitofinsurancerelativitygroup=b.group
+		WHERE a.territory=13 AND buildingLimitFrom<=400000 AND (buildingLimitTo>400000 OR buildingLimitTo=0)
+	) AS n	
+	ON 1=1
+	LEFT JOIN (
+		SELECT factor+(100000-bppLimitFrom)/100000*marginalPer100000 AS factor
+		FROM mu_ru_businesspersonalpropertylimitofinsurancerelativity
+		WHERE bppLimitFrom<=100000 AND (bppLimitTo>100000 OR bppLimitTo=0)
+	) AS o
+	ON 1=1
+	LEFT JOIN (
+		SELECT CASE WHEN 0=0 THEN fixedDollarDeductibleFactor WHEN 0=1 THEN WindstormOrHailDeductible_1percent WHEN 0=2 THEN WindstormOrHailDeductible_2percent WHEN 0=3  THEN WindstormOrHailDeductible_3percent END AS factor
+		FROM mu_ru_optionalpropertydeductible
+		WHERE fixedDollarDeductible=500 AND bldgAndBPPLOIFrom <= (400000+100000) AND bldgAndBPPLOITo > (400000+100000)
+	) AS p
+	ON 1=1
+	LEFT JOIN singleconditions AS q
+	ON 1=1
+	LEFT JOIN ca_lc_permanentyardsmaintenanceorstorage AS r
+	ON 1=1
+	LEFT JOIN mu_ru_policyterm AS s
+	ON 1=1
+	WHERE a.classDesc1='Contractor' AND a.classDesc2='Lawn Sprinkler Installation' AND a.classDesc3='Shop'
+	AND (g.premise='' OR (a.classDesc3='Office' AND g.premise='office') OR (a.classDesc3='Shop' AND g.premise='shop_storage'))
+	AND h.constructionType='Frame Construction'
+	AND i.territory=13
+	AND j.ppc=5
+	AND k.grade='Ungraded'
+	AND l.deductible=500
+	AND m.liabMedExpensesLimit=300000
+	AND m.aggLimitProductsOperations=600000
+	AND m.aggLimitLiabMedical=600000
+	AND q.condition='Per Swimming Pool Loss Cost'
+	AND r.ppc=5
+	AND s.termOfPolicy="12 Months"
+) AS a
 
-SELECT buildingLossCostPer100,	bppLossCostPer100,	occupantLossCostPer100, occupantLossCostPer1000AGS,	occupantLossCostPer1000AP, lessorsLossCostPer100
-FROM ca_lc_baselosscostspropertyandliability
-WHERE territory=13
 
-SELECT bldgFactor, bppFactor
-FROM mu_ru_ppc
-WHERE ppc=5
-
-SELECT b.factor+(400000-b.buildingLimitFrom)/100000*b.marginalPer100000 AS factor
-FROM `ca_ru_buildinglimitofinsurancerelativitygroup` AS a
-INNER JOIN mu_ru_buildinglimitofinsurancerelativity AS b
-ON a.buildinglimitofinsurancerelativitygroup=b.group
-WHERE a.territory=13 AND buildingLimitFrom<=400000 AND (buildingLimitTo>400000 OR buildingLimitTo=0)
-
-SELECT factor+(100000-bppLimitFrom)/100000*marginalPer100000 AS factor
-FROM mu_ru_businesspersonalpropertylimitofinsurancerelativity
-WHERE bppLimitFrom<=100000 AND (bppLimitTo>100000 OR bppLimitTo=0)
-
-SELECT *
-FROM mu_ru_increasedlimits
-WHERE limit1= 300000 AND limit2=600000 AND limit3=900000
-
-SELECT CASE WHEN windDeductible=NA THEN fixedDollarDeductibleFactor WHEN windDeductible=1percent THEN WindstormOrHailDeductible_1percent WHEN windDeductible=2percent THEN WindstormOrHailDeductible_2percent WHEN windDeductible=3percent  THEN WindstormOrHailDeductible_3percent END AS factor
-FROM mu_ru_optionalpropertydeductible
-WHERE fixedDollarDeductible=500 AND bldgAndBPPLOIFrom <= (400000+100000) AND bldgAndBPPLOITo>(400000+100000)
-
-SELECT perOccurenceFactor
-FROM mu_ru_propertydamageliabilitydeductible
-WHEN deductible=500
-
-SELECT factor
-FROM mu_ru_automaticincreaseininsurance
-WHERE amountofAnnualIncrease=0.08
