@@ -1,3 +1,21 @@
+policyTerm="12 Months"
+occupantLessor="Occupant Tenant"
+classDesc1="Contractor"
+classDesc2="Lawn Sprinkler Installation"
+classDesc3="Shop"
+ratingTerritory=13
+construction="Frame Construction"
+ppc=5
+sprinklered="Yes"
+buildingCode="Ungraded"
+buildingsLOI=400000
+bppLOI=100000
+liabExposure=50000
+liabLimits='300k/600k/600k'
+propertyDeductible=500
+windDeductible=NA
+amountOfAnnualIncrease=0.08
+
 SELECT factor
 FROM mu_ru_policyterm
 WHERE termOfPolicy="12 Months"
@@ -15,6 +33,7 @@ ON a.liabClassGroup=e.classGroup
 LEFT JOIN mu_ru_occupantliabilityclassgrouprelativitiesap AS f
 ON a.liabClassGroup=f.classGroup
 WHERE a.classDesc1='Contractor' AND a.classDesc2='Lawn Sprinkler Installation' AND a.classDesc3='Shop'
+AND (f.premise='' OR (a.classDesc3='Office' AND f.premise='office') OR (a.classDesc3='Shop' AND f.premise='shop_storage')
 
 SELECT bldgFactor, bppFactor
 FROM mu_ru_constructionrelativities
@@ -37,3 +56,19 @@ WHERE a.territory=13 AND buildingLimitFrom<=400000 AND (buildingLimitTo>400000 O
 SELECT factor+(100000-bppLimitFrom)/100000*marginalPer100000 AS factor
 FROM mu_ru_businesspersonalpropertylimitofinsurancerelativity
 WHERE bppLimitFrom<=100000 AND (bppLimitTo>100000 OR bppLimitTo=0)
+
+SELECT *
+FROM mu_ru_increasedlimits
+WHERE limit1= 300000 AND limit2=600000 AND limit3=900000
+
+SELECT CASE WHEN windDeductible=NA THEN fixedDollarDeductibleFactor WHEN windDeductible=1percent THEN WindstormOrHailDeductible_1percent WHEN windDeductible=2percent THEN WindstormOrHailDeductible_2percent WHEN windDeductible=3percent  THEN WindstormOrHailDeductible_3percent END AS factor
+FROM mu_ru_optionalpropertydeductible
+WHERE fixedDollarDeductible=500 AND bldgAndBPPLOIFrom <= (400000+100000) AND bldgAndBPPLOITo>(400000+100000)
+
+SELECT perOccurenceFactor
+FROM mu_ru_propertydamageliabilitydeductible
+WHEN deductible=500
+
+SELECT factor
+FROM mu_ru_automaticincreaseininsurance
+WHERE amountofAnnualIncrease=0.08
