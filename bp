@@ -1,58 +1,42 @@
-policyTerm="12 Months"
-occupantLessor="Occupant Tenant"
-classDesc1="Contractor"
-classDesc2="Lawn Sprinkler Installation"
-classDesc3="Shop"
-ratingTerritory=13
-construction="Frame Construction"
-ppc=5
-sprinklered="Yes"
-buildingCode="Ungraded"
-buildingsLOI=400000
-bppLOI=100000
-liabExposure=50000
-liabLimits='300k/600k/600k'
-propertyDeductible=500
-windDeductible=0
-amountOfAnnualIncrease=0.08
-liabMedExpensesLimit=300000
-aggLimitProductsOperations=600000
-aggLimitLiabMedical=600000
-payroll_sales=300000
-numberPools=0
-limitContractorYards=0
-
-
+?classDesc1=Contractor&classDesc2=Lawn%20Sprinkler%20Installation&classDesc3=Shop&territory=13&policyTerm=12%20Months&ppc=5&buildingsLOI=400001&bppLOI=100001&payroll_sales=300000&limitContractorYards=0&numberPools=0&windDeductible=0&propertyDeductible=500&propertyLiabDeductible=500&buildingCode=Ungraded&constructionType=Frame%20Construction&liabMedExpensesLimit=300000&aggLimitProductsOperations=600000&aggLimitLiabMedical=600000&occupantLessor=Occupant%20Tenant&sprinklered=Yes
 
 SELECT a.classCode,	a.sicCode,	a.naicsCode, a.propertyRateNumber, a.liabilityClassGroup, a.liabilityExposureBase, a.eq, a.eqsl, 
 	a.buildingRate, a.bppRate, a.liabilityRate, a.liabilityExposure, 
-	ROUND(a.buildingRate*400000/100,0) AS buildingLossCost, ROUND(a.bppRate*100000/100,0) AS bppLossCost, ROUND(a.liabilityRate*a.liabilityExposure,0) AS liabilityLossCost, swimmingPoolLossCost, contractorYardsLossCost,
-	a.pharmacistFactor, a.veterinarianFactor, s.policyTermFactor
+	a.buildingRate*:buildingsLOI/100 AS buildingLossCost, 
+	a.bppRate*:bppLOI/100 AS bppLossCost, 
+	a.liabilityRate*a.liabilityExposure AS liabilityLossCost, 
+	swimmingPoolLossCost, contractorYardsLossCost,
+	a.pharmacistFactor, a.veterinarianFactor, a.policyTermFactor
 FROM (
 	SELECT a.classCode,	a.sicCode,	a.naicsCode, a.propertyRateNumber, a.liabilityClassGroup, a.liabilityExposureBase, a.eq, a.eqsl, 
 	ROUND(b.bldgFactor*c.bldgFactor*h.bldgFactor*i.buildingLossCostPer100*j.bldgFactor*n.factor*p.factor*k.factor,3) AS buildingRate, 
 	ROUND(b.bppFactor*c.bppFactor*h.bppFactor*i.bppLossCostPer100*j.bppFactor*o.factor*p.factor*k.factor,3) AS bppRate, 
 	CASE 
-		WHEN "Lessor"= "Occupant Tenant" THEN ROUND(g.factor*i.lessorsLossCostPer100*l.perOccurenceFactor*m.factor,3) 
+		WHEN 'Lessor'= :occupantLessor THEN ROUND(g.factor*i.lessorsLossCostPer100*l.perOccurenceFactor*m.factor,3) 
 		WHEN d.factor IS NOT NULL THEN ROUND(d.factor*i.occupantLossCostPer100*l.perOccurenceFactor*m.factor,3)
 		WHEN e.factor IS NOT NULL THEN ROUND(e.factor*i.occupantLossCostPer1000AGS*l.perOccurenceFactor*m.factor,3)
 		WHEN f.factor IS NOT NULL THEN ROUND(f.factor*i.occupantLossCostPer1000AP*l.perOccurenceFactor*m.factor,3)
 	END AS liabilityRate,	
 	CASE 
-		WHEN "Lessor"="Occupant Tenant" THEN 400000/100
-		WHEN d.factor IS NOT NULL THEN 100000/100
-		WHEN e.factor IS NOT NULL THEN 300000/1000
-		WHEN f.factor IS NOT NULL THEN 300000/1000
+		WHEN 'Lessor'=:occupantLessor THEN :buildingsLOI/100
+		WHEN d.factor IS NOT NULL THEN :bppLOI/100
+		WHEN e.factor IS NOT NULL THEN :payroll_sales/1000
+		WHEN f.factor IS NOT NULL THEN :payroll_sales/1000
 	END AS liabilityExposure,
-	q.factor*0 AS swimmingPoolLossCost,
-	r.lossCostPer100*0/100 AS contractorYardsLossCost,
+	q.factor*:numberPools AS swimmingPoolLossCost,
+	r.lossCostPer100*:limitContractorYards/100 AS contractorYardsLossCost,
 	m.pharmacistFactor,
 	m.veterinarianFactor,
 	s.factor AS policyTermFactor
 	FROM mu_ru_classcodes AS a
 	INNER JOIN mu_ru_ratenumberrelativities AS b
 	ON a.propertyRateNumber=b.propertyRateNumber
-	INNER JOIN mu_ru_sprinklered AS c
+	INNER JOIN (
+		SELECT propertyRateNumber, 
+		CASE WHEN :sprinklered='Yes' THEN bldgFactor ELSE 1 END AS bldgFactor, 
+		CASE WHEN :sprinklered='Yes' THEN bppFactor ELSE 1 END AS bppFactor 
+		FROM `mu_ru_sprinklered`
+	) AS c
 	ON a.propertyRateNumber=c.propertyRateNumber
 	LEFT JOIN mu_ru_occupantliabilityclassgrouprelativitiesloi AS d
 	ON a.liabilityClassGroup=d.classGroup
@@ -75,23 +59,28 @@ FROM (
 	LEFT JOIN mu_ru_increasedlimits AS m
 	ON 1=1
 	LEFT JOIN (
-		SELECT b.factor+(400000-b.buildingLimitFrom)/100000*b.marginalPer100000 AS factor
+		SELECT b.factor+(:buildingsLOI-b.buildingLimitFrom)/100000*b.marginalPer100000 AS factor
 		FROM `ca_ru_buildinglimitofinsurancerelativitygroup` AS a
 		INNER JOIN mu_ru_buildinglimitofinsurancerelativity AS b
 		ON a.buildinglimitofinsurancerelativitygroup=b.group
-		WHERE a.territory=13 AND buildingLimitFrom<=400000 AND (buildingLimitTo>400000 OR buildingLimitTo=0)
+		WHERE a.territory=:territory AND buildingLimitFrom<=:buildingsLOI AND (buildingLimitTo>:buildingsLOI OR buildingLimitTo=0)
 	) AS n	
 	ON 1=1
 	LEFT JOIN (
-		SELECT factor+(100000-bppLimitFrom)/100000*marginalPer100000 AS factor
+		SELECT factor+(:bppLOI-bppLimitFrom)/100000*marginalPer100000 AS factor
 		FROM mu_ru_businesspersonalpropertylimitofinsurancerelativity
-		WHERE bppLimitFrom<=100000 AND (bppLimitTo>100000 OR bppLimitTo=0)
+		WHERE bppLimitFrom<=:bppLOI AND (bppLimitTo>:bppLOI OR bppLimitTo=0)
 	) AS o
 	ON 1=1
 	LEFT JOIN (
-		SELECT CASE WHEN 0=0 THEN fixedDollarDeductibleFactor WHEN 0=1 THEN WindstormOrHailDeductible_1percent WHEN 0=2 THEN WindstormOrHailDeductible_2percent WHEN 0=3  THEN WindstormOrHailDeductible_3percent END AS factor
+		SELECT CASE 
+			WHEN :windDeductible=0 THEN fixedDollarDeductibleFactor 
+			WHEN :windDeductible=1 THEN WindstormOrHailDeductible_1percent 
+			WHEN :windDeductible=2 THEN WindstormOrHailDeductible_2percent 
+			WHEN :windDeductible=3 THEN WindstormOrHailDeductible_3percent 
+		END AS factor
 		FROM mu_ru_optionalpropertydeductible
-		WHERE fixedDollarDeductible=500 AND bldgAndBPPLOIFrom <= (400000+100000) AND bldgAndBPPLOITo > (400000+100000)
+		WHERE fixedDollarDeductible=:propertyDeductible AND bldgAndBPPLOIFrom <= (:buildingsLOI+:bppLOI) AND bldgAndBPPLOITo > (:buildingsLOI+:bppLOI)
 	) AS p
 	ON 1=1
 	LEFT JOIN singleconditions AS q
@@ -100,19 +89,17 @@ FROM (
 	ON 1=1
 	LEFT JOIN mu_ru_policyterm AS s
 	ON 1=1
-	WHERE a.classDesc1='Contractor' AND a.classDesc2='Lawn Sprinkler Installation' AND a.classDesc3='Shop'
-	AND (g.premise='' OR (a.classDesc3='Office' AND g.premise='office') OR (a.classDesc3='Shop' AND g.premise='shop_storage'))
-	AND h.constructionType='Frame Construction'
-	AND i.territory=13
-	AND j.ppc=5
-	AND k.grade='Ungraded'
-	AND l.deductible=500
-	AND m.liabMedExpensesLimit=300000
-	AND m.aggLimitProductsOperations=600000
-	AND m.aggLimitLiabMedical=600000
+	WHERE a.classDesc1=:classDesc1 AND a.classDesc2=:classDesc2 AND a.classDesc3=:classDesc3
+	AND (g.premise='' OR (a.classDesc3=:classDesc3 AND g.premise='office') OR (a.classDesc3=:classDesc3 AND g.premise='shop_storage'))
+	AND h.constructionType=:constructionType
+	AND i.territory=:territory
+	AND j.ppc=:ppc
+	AND k.grade=:buildingCode
+	AND l.deductible=:propertyLiabDeductible
+	AND m.liabMedExpensesLimit=:liabMedExpensesLimit
+	AND m.aggLimitProductsOperations=:aggLimitProductsOperations
+	AND m.aggLimitLiabMedical=:aggLimitLiabMedical
 	AND q.condition='Per Swimming Pool Loss Cost'
-	AND r.ppc=5
-	AND s.termOfPolicy="12 Months"
+	AND r.ppc=:ppc
+	AND s.termOfPolicy=:policyTerm
 ) AS a
-
-
