@@ -90,7 +90,7 @@ FROM (
 	LEFT JOIN mu_ru_policyterm AS s
 	ON 1=1
 	WHERE a.classDesc1=:classDesc1 AND a.classDesc2=:classDesc2 AND a.classDesc3=:classDesc3
-	AND (g.premise='' OR (a.classDesc3=:classDesc3 AND g.premise='office') OR (a.classDesc3=:classDesc3 AND g.premise='shop_storage'))
+	AND (g.premise='' OR (a.classDesc3='Office' AND g.premise='office') OR (a.classDesc3='Shop' AND g.premise='shop_storage'))
 	AND h.constructionType=:constructionType
 	AND i.territory=:territory
 	AND j.ppc=:ppc
