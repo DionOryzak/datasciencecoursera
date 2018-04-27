@@ -103,3 +103,43 @@ FROM (
 	AND r.ppc=:ppc
 	AND s.termOfPolicy=:policyTerm
 ) AS a
+
+
+
+:contractorsInstallationLimit    ($3k-$25k)
+:contractorsToolsType            (blanket or individual)
+:blanketSublimit                 ($500 or $2k)
+:contractorsToolsLimit           (either blanket limit or individual)
+:nonownedTools
+:employeesTools
+
+SELECT lossCost AS contractorsCoverage1LossCost
+FROM mu_lc_contractorsinstallationcoverageoptionalhigherlimitsofinsurance AS a
+WHERE limitOfInsurance=:contractorsInstallationLimit
+LEFT JOIN
+SELECT CASE WHEN :contractorsToolsType='blanket' THEN a.contractorsCoverage2LossCost ELSE b.contractorsCoverage2LossCost END AS contractorsCoverage2LossCost
+FROM (
+SELECT a.lossCost+b.lossCostPer100*:contractorsToolsLimit/100 AS contractorsCoverage2LossCost
+FROM mu_lc_contractorsinstallationtoolsandequipmentcoverageendorsement AS a
+INNER JOIN mu_lc_toolsandequipmentcoverageoptionalhigherlimitsofinsurancepremiumdetermin AS b
+ON a.sublimit=b.sublimit
+WHERE sublimit=:blanketSublimit AND :contractorsToolsLimit>=b.limitFrom AND :contractorsToolsLimit<limitTo
+) AS a
+LEFT JOIN (
+SELECT lossCostPer100*:contractorsToolsLimit/100 AS contractorsCoverage2LossCost
+FROM mu_lc_scheduledtoolsandequipmentcoverage
+WHERE :contractorsToolsLimit  >=limitFrom AND :contractorsToolsLimit < limitTo
+) AS b
+ON 1=1
+) AS b
+ON 1=1
+LEFT JOIN
+SELECT lossCostPer100*:nonownedTools/100 AS contractorsCoverage3LossCost
+FROM mu_lc_nonownedtoolsandequipment
+WHERE :nonownedTools>=limitFrom AND :nonownedTools< limitTo
+ON 1=1
+LEFT JOIN 
+SELECT value*:employeesTools/100 AS contractorsCoverage4LossCost
+FROM conditions
+WHERE condition = 'Employees Tools loss cost (per $100)'
+ON 1=1
