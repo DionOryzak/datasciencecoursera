@@ -1,145 +1,33 @@
-?classDesc1=Contractor&classDesc2=Lawn%20Sprinkler%20Installation&classDesc3=Shop&territory=13&policyTerm=12%20Months&ppc=5&buildingsLOI=400001&bppLOI=100001&payroll_sales=300000&limitContractorYards=0&numberPools=0&windDeductible=0&propertyDeductible=500&propertyLiabDeductible=500&buildingCode=Ungraded&constructionType=Frame%20Construction&liabMedExpensesLimit=300000&aggLimitProductsOperations=600000&aggLimitLiabMedical=600000&occupantLessor=Occupant%20Tenant&sprinklered=Yes
-
-SELECT a.classCode,	a.sicCode,	a.naicsCode, a.propertyRateNumber, a.liabilityClassGroup, a.liabilityExposureBase, a.eq, a.eqsl, 
-	a.buildingRate, a.bppRate, a.liabilityRate, a.liabilityExposure, 
-	a.buildingRate*:buildingsLOI/100 AS buildingLossCost, 
-	a.bppRate*:bppLOI/100 AS bppLossCost, 
-	a.liabilityRate*a.liabilityExposure AS liabilityLossCost, 
-	swimmingPoolLossCost, contractorYardsLossCost,
-	a.pharmacistFactor, a.veterinarianFactor, a.policyTermFactor
-FROM (
-	SELECT a.classCode,	a.sicCode,	a.naicsCode, a.propertyRateNumber, a.liabilityClassGroup, a.liabilityExposureBase, a.eq, a.eqsl, 
-	ROUND(b.bldgFactor*c.bldgFactor*h.bldgFactor*i.buildingLossCostPer100*j.bldgFactor*n.factor*p.factor*k.factor,3) AS buildingRate, 
-	ROUND(b.bppFactor*c.bppFactor*h.bppFactor*i.bppLossCostPer100*j.bppFactor*o.factor*p.factor*k.factor,3) AS bppRate, 
-	CASE 
-		WHEN 'Lessor'= :occupantLessor THEN ROUND(g.factor*i.lessorsLossCostPer100*l.perOccurenceFactor*m.factor,3) 
-		WHEN d.factor IS NOT NULL THEN ROUND(d.factor*i.occupantLossCostPer100*l.perOccurenceFactor*m.factor,3)
-		WHEN e.factor IS NOT NULL THEN ROUND(e.factor*i.occupantLossCostPer1000AGS*l.perOccurenceFactor*m.factor,3)
-		WHEN f.factor IS NOT NULL THEN ROUND(f.factor*i.occupantLossCostPer1000AP*l.perOccurenceFactor*m.factor,3)
-	END AS liabilityRate,	
-	CASE 
-		WHEN 'Lessor'=:occupantLessor THEN :buildingsLOI/100
-		WHEN d.factor IS NOT NULL THEN :bppLOI/100
-		WHEN e.factor IS NOT NULL THEN :payroll_sales/1000
-		WHEN f.factor IS NOT NULL THEN :payroll_sales/1000
-	END AS liabilityExposure,
-	q.factor*:numberPools AS swimmingPoolLossCost,
-	r.lossCostPer100*:limitContractorYards/100 AS contractorYardsLossCost,
-	m.pharmacistFactor,
-	m.veterinarianFactor,
-	s.factor AS policyTermFactor
-	FROM mu_ru_classcodes AS a
-	INNER JOIN mu_ru_ratenumberrelativities AS b
-	ON a.propertyRateNumber=b.propertyRateNumber
-	INNER JOIN (
-		SELECT propertyRateNumber, 
-		CASE WHEN :sprinklered='Yes' THEN bldgFactor ELSE 1 END AS bldgFactor, 
-		CASE WHEN :sprinklered='Yes' THEN bppFactor ELSE 1 END AS bppFactor 
-		FROM `mu_ru_sprinklered`
-	) AS c
-	ON a.propertyRateNumber=c.propertyRateNumber
-	LEFT JOIN mu_ru_occupantliabilityclassgrouprelativitiesloi AS d
-	ON a.liabilityClassGroup=d.classGroup
-	LEFT JOIN mu_ru_occupantliabilityclassgrouprelativitiesags AS e
-	ON a.liabilityClassGroup=e.classGroup
-	LEFT JOIN mu_ru_occupantliabilityclassgrouprelativitiesap AS f
-	ON a.liabilityClassGroup=f.classGroup
-	LEFT JOIN mu_ru_lessorsliabilityclassgrouprelativities AS g
-	ON a.liabilityClassGroup=g.classGroup
-	LEFT JOIN mu_ru_constructionrelativities AS h
-	ON 1=1
-	LEFT JOIN ca_lc_baselosscostspropertyandliability AS i
-	ON 1=1
-	LEFT JOIN mu_ru_ppc AS j
-	ON 1=1
-	LEFT JOIN ca_ru_buildingcodeeffectivenessgrading AS k
-	ON 1=1
-	LEFT JOIN mu_ru_propertydamageliabilitydeductible AS l 
-	ON 1=1
-	LEFT JOIN mu_ru_increasedlimits AS m
-	ON 1=1
-	LEFT JOIN (
-		SELECT b.factor+(:buildingsLOI-b.buildingLimitFrom)/100000*b.marginalPer100000 AS factor
-		FROM `ca_ru_buildinglimitofinsurancerelativitygroup` AS a
-		INNER JOIN mu_ru_buildinglimitofinsurancerelativity AS b
-		ON a.buildinglimitofinsurancerelativitygroup=b.group
-		WHERE a.territory=:territory AND buildingLimitFrom<=:buildingsLOI AND (buildingLimitTo>:buildingsLOI OR buildingLimitTo=0)
-	) AS n	
-	ON 1=1
-	LEFT JOIN (
-		SELECT factor+(:bppLOI-bppLimitFrom)/100000*marginalPer100000 AS factor
-		FROM mu_ru_businesspersonalpropertylimitofinsurancerelativity
-		WHERE bppLimitFrom<=:bppLOI AND (bppLimitTo>:bppLOI OR bppLimitTo=0)
-	) AS o
-	ON 1=1
-	LEFT JOIN (
-		SELECT CASE 
-			WHEN :windDeductible=0 THEN fixedDollarDeductibleFactor 
-			WHEN :windDeductible=1 THEN WindstormOrHailDeductible_1percent 
-			WHEN :windDeductible=2 THEN WindstormOrHailDeductible_2percent 
-			WHEN :windDeductible=3 THEN WindstormOrHailDeductible_3percent 
-		END AS factor
-		FROM mu_ru_optionalpropertydeductible
-		WHERE fixedDollarDeductible=:propertyDeductible AND bldgAndBPPLOIFrom <= (:buildingsLOI+:bppLOI) AND bldgAndBPPLOITo > (:buildingsLOI+:bppLOI)
-	) AS p
-	ON 1=1
-	LEFT JOIN singleconditions AS q
-	ON 1=1
-	LEFT JOIN ca_lc_permanentyardsmaintenanceorstorage AS r
-	ON 1=1
-	LEFT JOIN mu_ru_policyterm AS s
-	ON 1=1
-	WHERE a.classDesc1=:classDesc1 AND a.classDesc2=:classDesc2 AND a.classDesc3=:classDesc3
-	AND (g.premise='' OR (a.classDesc3='Office' AND g.premise='office') OR (a.classDesc3='Shop' AND g.premise='shop_storage'))
-	AND h.constructionType=:constructionType
-	AND i.territory=:territory
-	AND j.ppc=:ppc
-	AND k.grade=:buildingCode
-	AND l.deductible=:propertyLiabDeductible
-	AND m.liabMedExpensesLimit=:liabMedExpensesLimit
-	AND m.aggLimitProductsOperations=:aggLimitProductsOperations
-	AND m.aggLimitLiabMedical=:aggLimitLiabMedical
-	AND q.condition='Per Swimming Pool Loss Cost'
-	AND r.ppc=:ppc
-	AND s.termOfPolicy=:policyTerm
-) AS a
-
-
-
-:contractorsInstallationLimit    ($3k-$25k)
-:contractorsToolsType            (blanket or individual)
-:blanketSublimit                 ($500 or $2k)
-:contractorsToolsLimit           (either blanket limit or individual)
-:nonownedTools
-:employeesTools
-
-SELECT lossCost AS contractorsCoverage1LossCost
-FROM mu_lc_contractorsinstallationcoverageoptionalhigherlimitsofinsurance AS a
-WHERE limitOfInsurance=:contractorsInstallationLimit
-LEFT JOIN
-SELECT CASE WHEN :contractorsToolsType='blanket' THEN a.contractorsCoverage2LossCost ELSE b.contractorsCoverage2LossCost END AS contractorsCoverage2LossCost
-FROM (
-SELECT a.lossCost+b.lossCostPer100*:contractorsToolsLimit/100 AS contractorsCoverage2LossCost
-FROM mu_lc_contractorsinstallationtoolsandequipmentcoverageendorsement AS a
-INNER JOIN mu_lc_toolsandequipmentcoverageoptionalhigherlimitsofinsurancepremiumdetermin AS b
-ON a.sublimit=b.sublimit
-WHERE sublimit=:blanketSublimit AND :contractorsToolsLimit>=b.limitFrom AND :contractorsToolsLimit<limitTo
-) AS a
-LEFT JOIN (
-SELECT lossCostPer100*:contractorsToolsLimit/100 AS contractorsCoverage2LossCost
-FROM mu_lc_scheduledtoolsandequipmentcoverage
-WHERE :contractorsToolsLimit  >=limitFrom AND :contractorsToolsLimit < limitTo
-) AS b
+SELECT a.factor*:accountsReceivableLimit/100 AS accountsReceivableLossCost,
+b.factor*liabPremium AS acvBuildingsLossCost,
+c.factor*(buildingsPremium+functionalBuildingsPremium)
+FROM `singleconditions` AS a
+LEFT JOIN `singleconditions` AS b
 ON 1=1
-) AS b
+LEFT JOIN `mu_ru_automaticincreaseininsurance` AS c
 ON 1=1
-LEFT JOIN
-SELECT lossCostPer100*:nonownedTools/100 AS contractorsCoverage3LossCost
-FROM mu_lc_nonownedtoolsandequipment
-WHERE :nonownedTools>=limitFrom AND :nonownedTools< limitTo
-ON 1=1
-LEFT JOIN 
-SELECT value*:employeesTools/100 AS contractorsCoverage4LossCost
-FROM conditions
-WHERE condition = 'Employees Tools loss cost (per $100)'
-ON 1=1
+WHERE a.`condition`='Accounts Receivable' 
+AND b.`condition`='Actual Cash Value Buildings Option'
+AND c.amountOfAnnualIncrease=:buildingsAnnualLimitIncrease
+
+$stmt -> bindParam(':accountsReceivableLimit',$_GET['accountsReceivableLimit'], PDO::PARAM_INT);
+$stmt -> bindParam(':buildingsACV',$_GET['buildingsACV'], PDO::PARAM_INT);
+$stmt -> bindParam(':buildingsAnnualLimitIncrease',$_GET['buildingsAnnualLimitIncrease'], PDO::PARAM_INT);
+$stmt -> bindParam(':businessIncomeDependentPropertiesLimit',$_GET['businessIncomeDependentPropertiesLimit'], PDO::PARAM_INT);
+$stmt -> bindParam(':businessIncomeDependentPropertiesType',$_GET['businessIncomeDependentPropertiesType'], PDO::PARAM_INT);
+$stmt -> bindParam(':businessIncomePayrollNumDays',$_GET['businessIncomePayrollNumDays'], PDO::PARAM_INT);
+$stmt -> bindParam(':businessIncomeExtendedNumDays',$_GET['businessIncomeExtendedNumDays'], PDO::PARAM_INT);
+$stmt -> bindParam(':electronicDataLimit',$_GET['electronicDataLimit'], PDO::PARAM_INT);
+$stmt -> bindParam(':fireDepartmentLimit',$_GET['fireDepartmentLimit'], PDO::PARAM_INT);
+$stmt -> bindParam(':numLocations',$_GET['numLocations'], PDO::PARAM_INT);
+$stmt -> bindParam(':forgeryAlteration',$_GET['forgeryAlteration'], PDO::PARAM_INT);
+$stmt -> bindParam(':interruptionComputerOperationsLimit',$_GET['interruptionComputerOperationsLimit'], PDO::PARAM_INT);
+$stmt -> bindParam(':equipmentBreakdown',$_GET['equipmentBreakdown'], PDO::PARAM_INT);
+$stmt -> bindParam(':equipmentBreakdownDeductible',$_GET['equipmentBreakdownDeductible'], PDO::PARAM_INT);
+$stmt -> bindParam(':equipmentBreakdownTimeDeductible',$_GET['equipmentBreakdownTimeDeductible'], PDO::PARAM_INT);
+$stmt -> bindParam(':moneySecuritiesOnPremiseLimit',$_GET['moneySecuritiesOnPremiseLimit'], PDO::PARAM_INT);
+$stmt -> bindParam(':moneySecuritiesOffPremiseLimit',$_GET['moneySecuritiesOffPremiseLimit'], PDO::PARAM_INT);
+$stmt -> bindParam(':outdoorSignsLimit',$_GET['outdoorSignsLimit'], PDO::PARAM_INT);
+$stmt -> bindParam(':valuablePapersRecordsLimit',$_GET['valuablePapersRecordsLimit'], PDO::PARAM_INT);
+$stmt -> bindParam(':outdoorPropertyLimit',$_GET['outdoorPropertyLimit'], PDO::PARAM_INT);
+$stmt -> bindParam(':bppTemporaryPortableStorage',$_GET['bppTemporaryPortableStorage'], PDO::PARAM_INT);
