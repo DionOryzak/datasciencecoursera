@@ -1,33 +1,61 @@
-SELECT a.factor*:accountsReceivableLimit/100 AS accountsReceivableLossCost,
-b.factor*liabPremium AS acvBuildingsLossCost,
-c.factor*(buildingsPremium+functionalBuildingsPremium)
-FROM `singleconditions` AS a
-LEFT JOIN `singleconditions` AS b
-ON 1=1
-LEFT JOIN `mu_ru_automaticincreaseininsurance` AS c
-ON 1=1
-WHERE a.`condition`='Accounts Receivable' 
-AND b.`condition`='Actual Cash Value Buildings Option'
-AND c.amountOfAnnualIncrease=:buildingsAnnualLimitIncrease
+SELECT 
+ROUND(bppRate*accountsreceivable.factor*:accountsReceivableLimit/100,0) AS accountsReceivableLossCost,
+ROUND(IF(:buildingsACV='Yes',acvbuildings.factor*liabPremium,0),0) AS acvBuildingsLossCost,
+ROUND(autoincrease.factor*(buildingsPremium+functionalBuildingsPremium),0) AS buildingsAnnualIncreaseLossCost,
+ROUND(bppRate*biproperties.factor*:businessIncomeDependentPropertiesLimit/100,0) AS businessIncomeDependentPropertiesLossCost,
+ROUND(autoincrease.factor*(buildingsPremium+functionalBuildingsPremium+bppPremium+functionalBppPremium),0) AS buildingsAnnualIncreaseLossCost,
+ROUND(bipayrollperiod.factor*(buildingsPremium+functionalBuildingsPremium+bppPremium+functionalBppPremium),0) AS biPayrollLossCost,
+ROUND(biextendedperiod.factor*(buildingsPremium+functionalBuildingsPremium+bppPremium+functionalBppPremium),0) AS biExtendedLossCost,
+ROUND(bppRate*electronicdata.factor*:electronicDataLimit/100,0) AS electronicDataLossCost,
+ROUND(firedepartmentservice.lossCost*:numLocations),0) AS fireDepartmentServiceLossCost,
+ROUND(IF(:forgeryAlteration="Yes",forgeryalteration.factor*employeedishonesty.employeeDishonestyLossCost,0),0) AS forgeryAlterationLossCost,
+ROUND(bppRate*interruptioncomputeroperations.factor*:interruptionComputerOperationsLimit/100,0) AS interruptionComputerOperationsLossCost,
+ROUND(IF(:equipmentBreakdown='Yes',(equipmentbreakdownbaseloss.lossCost+equipmentbreakdownhighloi.factor*GREATEST(IF(:buildingsLOI=0,bppLimit,buildingsLOI)-600000,0)/100000)*equipmentbreakdowndeductible.factor*equipmentbreakdowntimedeductible.factor,0),0) AS equipmentBreakdownLossCost,
+ROUND(onPremisesLossCostPer100*moneySecuritiesOnPremiseLimit/100,0) AS onPremisesMoneyLossCost
+ROUND(offPremisesLossCostPer100*moneySecuritiesOffPremiseLimit/100,0) AS offPremisesMoneyLossCost
+ROUND(outdoorsigns.factor*:outdoorSignsLimit,0) AS outdoorSignsLossCost
+ROUND(valuablepapers.factor*:valuablePapersRecordsLimit,0) AS valuablePapersLossCost
+ROUND(outdoorproperty.factor*:outdoorPropertyLimit,0) AS outdoorPropertyLossCost
 
-$stmt -> bindParam(':accountsReceivableLimit',$_GET['accountsReceivableLimit'], PDO::PARAM_INT);
-$stmt -> bindParam(':buildingsACV',$_GET['buildingsACV'], PDO::PARAM_INT);
-$stmt -> bindParam(':buildingsAnnualLimitIncrease',$_GET['buildingsAnnualLimitIncrease'], PDO::PARAM_INT);
-$stmt -> bindParam(':businessIncomeDependentPropertiesLimit',$_GET['businessIncomeDependentPropertiesLimit'], PDO::PARAM_INT);
-$stmt -> bindParam(':businessIncomeDependentPropertiesType',$_GET['businessIncomeDependentPropertiesType'], PDO::PARAM_INT);
-$stmt -> bindParam(':businessIncomePayrollNumDays',$_GET['businessIncomePayrollNumDays'], PDO::PARAM_INT);
-$stmt -> bindParam(':businessIncomeExtendedNumDays',$_GET['businessIncomeExtendedNumDays'], PDO::PARAM_INT);
-$stmt -> bindParam(':electronicDataLimit',$_GET['electronicDataLimit'], PDO::PARAM_INT);
-$stmt -> bindParam(':fireDepartmentLimit',$_GET['fireDepartmentLimit'], PDO::PARAM_INT);
-$stmt -> bindParam(':numLocations',$_GET['numLocations'], PDO::PARAM_INT);
-$stmt -> bindParam(':forgeryAlteration',$_GET['forgeryAlteration'], PDO::PARAM_INT);
-$stmt -> bindParam(':interruptionComputerOperationsLimit',$_GET['interruptionComputerOperationsLimit'], PDO::PARAM_INT);
-$stmt -> bindParam(':equipmentBreakdown',$_GET['equipmentBreakdown'], PDO::PARAM_INT);
-$stmt -> bindParam(':equipmentBreakdownDeductible',$_GET['equipmentBreakdownDeductible'], PDO::PARAM_INT);
-$stmt -> bindParam(':equipmentBreakdownTimeDeductible',$_GET['equipmentBreakdownTimeDeductible'], PDO::PARAM_INT);
-$stmt -> bindParam(':moneySecuritiesOnPremiseLimit',$_GET['moneySecuritiesOnPremiseLimit'], PDO::PARAM_INT);
-$stmt -> bindParam(':moneySecuritiesOffPremiseLimit',$_GET['moneySecuritiesOffPremiseLimit'], PDO::PARAM_INT);
-$stmt -> bindParam(':outdoorSignsLimit',$_GET['outdoorSignsLimit'], PDO::PARAM_INT);
-$stmt -> bindParam(':valuablePapersRecordsLimit',$_GET['valuablePapersRecordsLimit'], PDO::PARAM_INT);
-$stmt -> bindParam(':outdoorPropertyLimit',$_GET['outdoorPropertyLimit'], PDO::PARAM_INT);
-$stmt -> bindParam(':bppTemporaryPortableStorage',$_GET['bppTemporaryPortableStorage'], PDO::PARAM_INT);
+
+
+
+LEFT JOIN (SELECT factor FROM `singleconditions` WHERE `condition`='Accounts Receivable') AS accountsreceivable
+ON 1=1
+LEFT JOIN (SELECT factor FROM `singleconditions` WHERE `condition`='Actual Cash Value Buildings Option') AS acvbuildings
+ON 1=1
+LEFT JOIN (SELECT factor FROM `mu_ru_automaticincreaseininsurance` WHERE amountOfAnnualIncrease=:buildingsAnnualLimitIncrease) AS autoincrease
+ON 1=1
+LEFT JOIN (SELECT factor FROM `mu_ru_bidependentproperties` WHERE biType=:businessIncomeDependentPropertiesType) AS biproperties
+ON 1=1
+LEFT JOIN (SELECT factor FROM `mu_ru_businessincomeextendedperiodofindemnity` WHERE numberOfDays=:businessIncomePayrollNumDays) AS bipayrollperiod
+ON 1=1
+LEFT JOIN (SELECT factor FROM `mu_ru_businessincomeordinarypayroll` WHERE numberOfDays=:businessIncomeExtendedNumDays) AS biextendedperiod
+ON 1=1
+LEFT JOIN (SELECT factor FROM `singleconditions` WHERE `condition`='Electronic Data') AS electronicdata
+ON 1=1
+LEFT JOIN (SELECT lossCost FROM `mu_lc_firedepartmentservicecharge` WHERE `limit`=:fireDepartmentLimit) AS firedepartmentservice
+ON 1=1
+LEFT JOIN (SELECT factor FROM `singleconditions` WHERE `condition`='Forgery Or Alteration') AS forgeryalteration
+ON 1=1
+LEFT JOIN (SELECT factor FROM `singleconditions` WHERE `condition`='Interruption Of Computer Operations') AS interruptioncomputeroperations
+ON 1=1
+LEFT JOIN (SELECT lossCost FROM `mu_lc_equipmentbreakdownprotectioncoverage` WHERE IF(:buildingsLOI=0,bppLimit,buildingsLOI)>=limitFrom AND (IF(:buildingsLOI=0,bppLimit,buildingsLOI)<limitTo OR limitTo=0)) AS equipmentbreakdownbaseloss
+ON 1=1
+LEFT JOIN (SELECT factor FROM `singleconditions` WHERE `condition`='Equipment Breakdown') AS equipmentbreakdownhighloi
+ON 1=1
+LEFT JOIN (SELECT factor FROM `mu_ru_optionalpropertydamagedeductible` WHERE `deductible`=:equipmentBreakdownDeductible) AS equipmentbreakdowndeductible
+ON 1=1
+LEFT JOIN (SELECT factor FROM `mu_ru_optionaltimedeductible` WHERE `hours`=:equipmentBreakdownTimeDeductible) AS equipmentbreakdowntimedeductible
+ON 1=1
+LEFT JOIN (
+	SELECT onPremisesLossCostPer100, offPremisesLossCostPer100 FROM `ca_lc_moneyandsecurities` 
+	WHERE territory=:territory AND CASE WHEN GREATEST(LOCATE('Apartment',CONCAT(:classDesc1,:classDesc2,:classDesc3)),LOCATE('Residential Condominium',CONCAT(:classDesc1,:classDesc2,:classDesc3))) >0   THEN 'Apartment & Apartment Condominiums' WHEN GREATEST(LOCATE('Office',CONCAT(:classDesc1,:classDesc2,:classDesc3)),LOCATE('Commercial Condominium',CONCAT(:classDesc1,:classDesc2,:classDesc3)))>0  THEN 'Office & Office Condominiums' ELSE 'All Other' END = classType
+) AS moneysecurities
+On 1=1
+LEFT JOIN (SELECT factor FROM `singleconditions` WHERE `condition`='Outdoor Signs (per $100)') AS outdoorsigns
+ON 1=1
+LEFT JOIN (SELECT factor FROM `singleconditions` WHERE `condition`='Valuable Papers And Records') AS valuablepapers
+ON 1=1
+LEFT JOIN (SELECT factor FROM `singleconditions` WHERE `condition`='Outdoor Property') AS outdoorproperty
+ON 1=1
