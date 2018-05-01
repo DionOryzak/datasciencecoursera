@@ -1,61 +1,169 @@
-SELECT 
-ROUND(bppRate*accountsreceivable.factor*:accountsReceivableLimit/100,0) AS accountsReceivableLossCost,
-ROUND(IF(:buildingsACV='Yes',acvbuildings.factor*liabPremium,0),0) AS acvBuildingsLossCost,
-ROUND(autoincrease.factor*(buildingsPremium+functionalBuildingsPremium),0) AS buildingsAnnualIncreaseLossCost,
-ROUND(bppRate*biproperties.factor*:businessIncomeDependentPropertiesLimit/100,0) AS businessIncomeDependentPropertiesLossCost,
-ROUND(autoincrease.factor*(buildingsPremium+functionalBuildingsPremium+bppPremium+functionalBppPremium),0) AS buildingsAnnualIncreaseLossCost,
-ROUND(bipayrollperiod.factor*(buildingsPremium+functionalBuildingsPremium+bppPremium+functionalBppPremium),0) AS biPayrollLossCost,
-ROUND(biextendedperiod.factor*(buildingsPremium+functionalBuildingsPremium+bppPremium+functionalBppPremium),0) AS biExtendedLossCost,
-ROUND(bppRate*electronicdata.factor*:electronicDataLimit/100,0) AS electronicDataLossCost,
-ROUND(firedepartmentservice.lossCost*:numLocations),0) AS fireDepartmentServiceLossCost,
-ROUND(IF(:forgeryAlteration="Yes",forgeryalteration.factor*employeedishonesty.employeeDishonestyLossCost,0),0) AS forgeryAlterationLossCost,
-ROUND(bppRate*interruptioncomputeroperations.factor*:interruptionComputerOperationsLimit/100,0) AS interruptionComputerOperationsLossCost,
-ROUND(IF(:equipmentBreakdown='Yes',(equipmentbreakdownbaseloss.lossCost+equipmentbreakdownhighloi.factor*GREATEST(IF(:buildingsLOI=0,bppLimit,buildingsLOI)-600000,0)/100000)*equipmentbreakdowndeductible.factor*equipmentbreakdowntimedeductible.factor,0),0) AS equipmentBreakdownLossCost,
-ROUND(onPremisesLossCostPer100*moneySecuritiesOnPremiseLimit/100,0) AS onPremisesMoneyLossCost
-ROUND(offPremisesLossCostPer100*moneySecuritiesOffPremiseLimit/100,0) AS offPremisesMoneyLossCost
-ROUND(outdoorsigns.factor*:outdoorSignsLimit,0) AS outdoorSignsLossCost
-ROUND(valuablepapers.factor*:valuablePapersRecordsLimit,0) AS valuablePapersLossCost
-ROUND(outdoorproperty.factor*:outdoorPropertyLimit,0) AS outdoorPropertyLossCost
+
+ROUND(IF(:businessIncomeChanges="Yes",businessincomechanges.factor*(buildingsPremium+functionalBuildingsPremium+bppPremium+functionalbppPremium),0),0) AS businessIncomeChangesLossCost,
+ROUND((businessincomeextraexpense.bldgFactor-1)*(buildingsPremium+functionalBuildingsPremium)+(businessincomeextraexpense.bppFactor-1)*(bppPremium+functionalbppPremium),0) AS businessIncomeExtraExpenseLimitLossCost,
+ROUND((businessincomeextraexpensenumbermonths.factor-1)*(buildingsPremium+functionalBuildingsPremium+bppPremium+functionalbppPremium),0) AS businessIncomeExtraExpenseTimePeriodLossCost,
+ROUND(computerfraud.lossCost0To5Employees+computerfraud.lossCostAdditionalEmployee*GREATEST(0,:numEmployees-5)+computerfraud.lossCostAdditionalLocation*GREATEST(0,:numlocations-1),0) AS computerFraudLossCost,
+ROUND(condounitownersoptional.lossCost+condounitownersassoc.lossCost+condounitownersrealprop.factor*:condoUnitownersRealPropLimit,0) AS condoCommercialOwnersLossCost,
+ROUND(earthquakerating.factor*:earthquakeCoinsuranceRate*((:buildingsLOI*(1+buildingslimitAnnualIncreaseFactor)+:bppLOI)+earthquakefunctionalbuilding.factor*:buildingsFunctionalLimit*(1+buildingslimitAnnualIncreaseFactor)+earthquakefunctionalbpp.factor*:bppFunctionalLimit)/100,0) AS earthquakeLossCost,
+ROUND(earthquakevolcanicsublimit.factor*:earthquakeCoinsuranceRate*((:buildingsLOI*(1+buildingslimitAnnualIncreaseFactor)+:bppLOI)+earthquakevolcanicsublimitfunctionalbuilding.factor*:buildingsFunctionalLimit*(1+buildingslimitAnnualIncreaseFactor)+earthquakevolcanicsublimitfunctionalbpp.factor*:bppFunctionalLimit)/100,0) AS earthquakeVolcanicLossCost,
+ROUND(IF(:foodContamination='Yes',foodcontamination.factor+foodcontamhighlimit.factor*:foodContamHighLimit+foodcontamadvertising.factor*:foodContamAdvertising,0),0) AS foodContaminationLossCost,
+ROUND(functionalbuildings.factor*base.buildingsRate*functionalBuildingsValuation,0) AS functionalBuildingsLosscost,
+ROUND(functionalbpp.factor*base.bppRate*functionalBppValuation,0) AS functionalBppLosscost,
+ROUND(IF(:fungiOption='Per Policy',fungioption.factor*:fungiSublimit/100,:numLocations*fungioption.factor*:fungiSublimit/100+GREATEST(0,:numLocations-1)*fungiperpremise.factor)+funginumberofdays.factor*(buildingsLossCost+bppLossCost),0) AS fungiLossCost
+-ROUND((buildingsLossCost+functionalBuildingsLossCost)*(CASE WHEN :namedPerils='Yes' AND :namedPerilsBurglary='Yes' THEN namedperilswithburgbuildings.factor WHEN :namedPerils='Yes' THEN namedperilswoutburgbuildings.factor ELSE 0 END)+(bppLossCost+functionalBppLossCost)*(CASE WHEN :namedPerils='Yes' AND :namedPerilsBurglary='Yes' THEN namedperilswithburgbpp.factor WHEN :namedPerils='Yes' THEN namedperilswoutburgbpp.factor ELSE 0 END),0) AS namedPerilsLossCost,
+ROUND(IF(:ordinanceCoverage='Coverage 1 only' OR :ordinanceCoverage='Coverages 1 and 2' OR :ordinanceCoverage='Coverages 1, 2 and 3',(ordinancecoverage1undamaged.factor+IF(:earthquakeCoinsuranceRate>0,ordinancecoverage1earthquake.factor,0))*buildingsLossCost,0)
++IF(:ordinanceCoverage='Coverages 1 and 2' OR :ordinanceCoverage='Coverages 1, 2 and 3',buildingsRate*:ordinanceCoverage2Limit/100,0)
++IF(:ordinanceCoverage='Coverage 3 only' OR :ordinanceCoverage='Coverages 1, 2 and 3',buildingsRate*:ordinanceCoverage3Limit/100,0)
++IF(:ordinanceCoverage='Coverages 1, 2 and 3 with combined limit for 2 and 3',buildingsRate*:ordinanceCoverage2And3CombLimit/100,0)
++IF(:ordinanceBiExpense='Yes',ordinancebiexpensenonearthquake.factor*buildingsLossCost+IF(:earthquakeCoinsuranceRate>0,ordinancebiexpenseearthquake.factor*ROUND(earthquakerating.factor*:earthquakeCoinsuranceRate*((:buildingsLOI*(1+buildingslimitAnnualIncreaseFactor)+:bppLOI)+earthquakefunctionalbuilding.factor*:buildingsFunctionalLimit*(1+buildingslimitAnnualIncreaseFactor)+earthquakefunctionalbpp.factor*:bppFunctionalLimit)/100,0),0),0),0) AS ordinanceOrLawLossCost,
+ROUND(spoilage.lossCostPer100*:spoilageLimit) AS spoilageLossCost,
+ROUND(:sprinklercoinsurance*sprinklerearthquake.factor*base.deductibleFactor(:spinklerLimit*(1+buildingslimitAnnualIncreaseFactor)+sprinklerfunctionalbuilding.factor*:functionalBuildingsValuation + sprinklerfunctionalbpp.factor*:functionalBppValuation)/100,0) AS sprinklerLossCost,
+ROUND(:utilitiesNumPublic*(:utilitiesBuildingsSublimit*utilityservicesdirectdamagepublicbuilding.losscost + :utilitiesBppSublimit*utilityservicesdirectdamagepublicbpp.losscost+IF(:utilitiesincludeEarthquake="Yes",utilityservicesdirectdamagepublicearthquake.losscost*(:utilitiesBuildingsSublimit+:utilitiesBppSublimit),0))+:utilitiesNumNonpublic*(:utilitiesBuildingsSublimit*utilityservicesdirectdamagenonpubbuilding.losscost + :utilitiesBppSublimit*utilityservicesdirectdamagenonpubbpp.losscost+IF(:utilitiesincludeEarthquake="Yes",utilityservicesdirectdamagenonpubearthquake.losscost*(:utilitiesBuildingsSublimit+:utilitiesBppSublimit),0))+IF(:utilitiesincludeOverhead='Yes',:utilitiesBuildingsSublimit*utilityservicesdirectdamageoverheadbuilding.losscost + :utilitiesBppSublimit*utilityservicesdirectdamageoverheadbpp.losscost+IF(:utilitiesincludeEarthquake="Yes",utilityservicesdirectdamageoverheadearthquake.losscost*(:utilitiesBuildingsSublimit+:utilitiesBppSublimit),0)),0)/100*base.propertyDeductible AS utilityDirectDamageLossCost,
+ROUND((:utilitiesNumPublic*(utilitytimepublicnonearthquake.factor+IF(:utilityTimeEarthquake='Yes',utilitytimepublicearthquake.factor,0))
++IF(:utilityTimeCommunication='Yes',utilitytimecommunicationnonearthquake.factor+IF(:utilityTimeEarthquake='Yes',utilitytimecommunicationearthquake.factor,0),0)
++IF(:utilityTimeOverheadPower='Yes',utilitytimeoverheadnonearthquake.factor+IF(:utilityTimeEarthquake='Yes',utilitytimeoverheadearthquake.factor,0),0)
++IF(:utilityTimeOverheadCommunication='Yes',utilitytimeoverheadnonearthquake.factor+IF(:utilityTimeEarthquake='Yes',utilitytimeoverheadearthquake.factor,0),0))*:utilityTimeElementLimit/100,0) AS utilityTimeElementLossCost,
+ROUND(IF(:vacancyPermit='Vacancy Permit BP 04 87',vacancypermit.factor*buildingsRate*:vacancyLimit/100,0),0) AS vacancyPermitLossCost,
+ROUND(IF(:waterBackup='Yes',waterbackup.lossCost*base.propertyDeductible,0),0) AS waterBackupLossCost,
+ROUND(IF(:brandsLabels='Yes',(brandslabels.factor-1)*bppRate*bppLOI/100,0),0) AS brandsLabelsLossCost,
+ROUND(IF(:windRoofAcv='Yes',(windroofacv.factor-1)*buildingsRate*buildingsLOI/100,0),0) AS windRoofAcvLossCost,
+ROUND(IF(:identityFraud='Yes',identityfraud.factor+identityfraudhigherlimits.factor*:identityFraudHigherLimit/100,0),0) AS identityFraudLossCost
 
 
-
-
-LEFT JOIN (SELECT factor FROM `singleconditions` WHERE `condition`='Accounts Receivable') AS accountsreceivable
+1
+INNER JOIN (SELECT factor FROM `singleconditions` WHERE `condition`='Business Income Changes Time Period Factor') AS businessincomechanges
 ON 1=1
-LEFT JOIN (SELECT factor FROM `singleconditions` WHERE `condition`='Actual Cash Value Buildings Option') AS acvbuildings
+2
+INNER JOIN (SELECT bldgFactor, bppFactor FROM `mu_ru_businessincomeandextraexpensecoveragelimitofinsurance` WHERE limitOfInsurance=:businessIncomeExpenseLimit AND classType= CASE 
+WHEN :classDesc1='Offices' THEN 'Offices'
+WHEN :classDesc1='Apartment Building' OR :classDesc1='Dwellings – Three or Four Family (Lessor\'s Risk Only)' OR :classDesc1='Townhouses or Similar Associations' THEN 'Motels And Residential'
+WHEN :classDesc1='Contractor' THEN 'Contractors'
+ELSE 'All Other' 
+END ) AS businessincomeextraexpense
+3
+INNER JOIN (SELECT factor FROM `mu_ru_businessincomeandextraexpensecoveragerevisedperiodofindem` WHERE numberOfMonths=:businessIncomeExtraExpenseNumberOfMonths) AS businessincomeextraexpensenumbermonths
+4
+INNER JOIN (SELECT lossCost0To5Employees, lossCostAdditionalEmployee, lossCostAdditionalLocation FROM `mu_lc_computerfraudandfundstransferfraudoptionalcoverage` WHERE `limit`=:compuerFraudLimit) AS computerfraud
+5
+INNER JOIN (SELECT lossCost FROM `mu_lc_condocommercialunitownerslossassessmentoptionalcoverage` WHERE `limit`=:condoUnitownersOptionalLimit) AS condounitownersoptional
+INNER JOIN (SELECT lossCost FROM `mu_lc_condocommunitownlossassessincrsublimitcondoassocdeduc` WHERE `limit`=:condoUnitownersAssocSublimit) AS condounitownersassoc
+INNER JOIN (SELECT factor FROM `singleconditions` WHERE `condition`='Condominium Commercial Unit-owners Miscellaneous Real Property Optional Coverage (per $100)') AS condounitownersrealprop
+7
+INNER JOIN (SELECT factor FROM `singleconditions` WHERE `condition`='Earthquake Rating') AS earthquakerating
 ON 1=1
-LEFT JOIN (SELECT factor FROM `mu_ru_automaticincreaseininsurance` WHERE amountOfAnnualIncrease=:buildingsAnnualLimitIncrease) AS autoincrease
+INNER JOIN (SELECT factor FROM `singleconditions` WHERE `condition`='Earthquake Functional Building Valuation') AS earthquakefunctionalbuilding
 ON 1=1
-LEFT JOIN (SELECT factor FROM `mu_ru_bidependentproperties` WHERE biType=:businessIncomeDependentPropertiesType) AS biproperties
+INNER JOIN (SELECT factor FROM `singleconditions` WHERE `condition`='Earthquake Functional Business Personal Property Valuation') AS earthquakefunctionalbpp
 ON 1=1
-LEFT JOIN (SELECT factor FROM `mu_ru_businessincomeextendedperiodofindemnity` WHERE numberOfDays=:businessIncomePayrollNumDays) AS bipayrollperiod
+8
+INNER JOIN (SELECT factor FROM `singleconditions` WHERE `condition`='Earthquake And Volcanic Eruption (Sub-limit)') AS earthquakevolcanicsublimit
 ON 1=1
-LEFT JOIN (SELECT factor FROM `mu_ru_businessincomeordinarypayroll` WHERE numberOfDays=:businessIncomeExtendedNumDays) AS biextendedperiod
+INNER JOIN (SELECT factor FROM `singleconditions` WHERE `condition`='Earthquake And Volcanic Eruption (Sub-limit) Functional Building Valuation') AS earthquakevolcanicsublimitfunctionalbuilding
 ON 1=1
-LEFT JOIN (SELECT factor FROM `singleconditions` WHERE `condition`='Electronic Data') AS electronicdata
+INNER JOIN (SELECT factor FROM `singleconditions` WHERE `condition`='Earthquake And Volcanic Eruption (Sub-limit) Functional Business Personal Property Valuation') AS earthquakevolcanicsublimitfunctionalbpp
 ON 1=1
-LEFT JOIN (SELECT lossCost FROM `mu_lc_firedepartmentservicecharge` WHERE `limit`=:fireDepartmentLimit) AS firedepartmentservice
+11
+INNER JOIN (SELECT factor FROM `singleconditions` WHERE `condition`='Food Contamination') AS foodcontamination
 ON 1=1
-LEFT JOIN (SELECT factor FROM `singleconditions` WHERE `condition`='Forgery Or Alteration') AS forgeryalteration
+INNER JOIN (SELECT factor FROM `singleconditions` WHERE `condition`='Food Contamination Optional Higher Limits (per $100)') AS foodcontamhighlimit
 ON 1=1
-LEFT JOIN (SELECT factor FROM `singleconditions` WHERE `condition`='Interruption Of Computer Operations') AS interruptioncomputeroperations
+INNER JOIN (SELECT factor FROM `singleconditions` WHERE `condition`='Food Contamination Additional Advertising Expenses Optional Higher Limits (per $100)') AS foodcontamadvertising
 ON 1=1
-LEFT JOIN (SELECT lossCost FROM `mu_lc_equipmentbreakdownprotectioncoverage` WHERE IF(:buildingsLOI=0,bppLimit,buildingsLOI)>=limitFrom AND (IF(:buildingsLOI=0,bppLimit,buildingsLOI)<limitTo OR limitTo=0)) AS equipmentbreakdownbaseloss
+12
+INNER JOIN (SELECT factor FROM `singleconditions` WHERE `condition`='Functional Building Valuation') AS functionalbuildings
 ON 1=1
-LEFT JOIN (SELECT factor FROM `singleconditions` WHERE `condition`='Equipment Breakdown') AS equipmentbreakdownhighloi
+13
+INNER JOIN (SELECT factor FROM `singleconditions` WHERE `condition`='Functional Business Personal Property Valuation') AS functionalbpp
 ON 1=1
-LEFT JOIN (SELECT factor FROM `mu_ru_optionalpropertydamagedeductible` WHERE `deductible`=:equipmentBreakdownDeductible) AS equipmentbreakdowndeductible
+18
+INNER JOIN (SELECT factor FROM `singleconditions` WHERE `condition`='Limited Fungi Or Bacteria Coverage Options') AS fungioption
 ON 1=1
-LEFT JOIN (SELECT factor FROM `mu_ru_optionaltimedeductible` WHERE `hours`=:equipmentBreakdownTimeDeductible) AS equipmentbreakdowntimedeductible
+INNER JOIN (SELECT factor FROM `singleconditions` WHERE `condition`='Limited Fungi Or Bacteria Coverage Options number of premises or locations (minus one)') AS fungiperpremise
 ON 1=1
-LEFT JOIN (
-	SELECT onPremisesLossCostPer100, offPremisesLossCostPer100 FROM `ca_lc_moneyandsecurities` 
-	WHERE territory=:territory AND CASE WHEN GREATEST(LOCATE('Apartment',CONCAT(:classDesc1,:classDesc2,:classDesc3)),LOCATE('Residential Condominium',CONCAT(:classDesc1,:classDesc2,:classDesc3))) >0   THEN 'Apartment & Apartment Condominiums' WHEN GREATEST(LOCATE('Office',CONCAT(:classDesc1,:classDesc2,:classDesc3)),LOCATE('Commercial Condominium',CONCAT(:classDesc1,:classDesc2,:classDesc3)))>0  THEN 'Office & Office Condominiums' ELSE 'All Other' END = classType
-) AS moneysecurities
-On 1=1
-LEFT JOIN (SELECT factor FROM `singleconditions` WHERE `condition`='Outdoor Signs (per $100)') AS outdoorsigns
+INNER JOIN (SELECT factor FROM `mu_ru_fungicoverageoptions` WHERE numberOfDays=:fungiNumberOfDays) AS funginumberofdays
+19
+INNER JOIN (SELECT factor FROM `singleconditions` WHERE `condition`='Named Perils Building With Burglary') AS namedperilswithburgbuildings
 ON 1=1
-LEFT JOIN (SELECT factor FROM `singleconditions` WHERE `condition`='Valuable Papers And Records') AS valuablepapers
+INNER JOIN (SELECT factor FROM `singleconditions` WHERE `condition`='Named Perils Business Personal Property With Burglary') AS namedperilswithburgbpp
 ON 1=1
-LEFT JOIN (SELECT factor FROM `singleconditions` WHERE `condition`='Outdoor Property') AS outdoorproperty
+INNER JOIN (SELECT factor FROM `singleconditions` WHERE `condition`='Named Perils Building Without Burglary') AS namedperilswoutburgbuildings
 ON 1=1
+INNER JOIN (SELECT factor FROM `singleconditions` WHERE `condition`='Named Perils Business Personal Property Without Burglary') AS namedperilswoutburgbpp
+ON 1=1
+20
+INNER JOIN (SELECT factor FROM `singleconditions` WHERE `condition`='Coverage 1 Coverage For Loss In Value Of The Undamaged Portion Of The Building') AS ordinancecoverage1undamaged
+ON 1=1
+INNER JOIN (SELECT factor FROM `singleconditions` WHERE `condition`='Earthquake') AS ordinancecoverage1earthquake
+ON 1=1
+INNER JOIN (SELECT factor FROM `singleconditions` WHERE `condition`='Business Income And Extra Expense Option Other Than Earthquake') AS ordinancebiexpensenonearthquake
+ON 1=1
+INNER JOIN (SELECT factor FROM `singleconditions` WHERE `condition`='Business Income And Extra Expense Option Earthquake') AS ordinancebiexpenseearthquake
+ON 1=1
+21
+INNER JOIN (SELECT a.lossCostPer100 FROM `mu_lc_spoilagecoveragelosscostsper100` AS a INNER JOIN `mu_lc_spoilageclass` AS b ON a.`class`=b.`class` WHERE a.coverage=:spoilageCoverage AND (a.refrigerationAgreement='' OR a.refrigerationAgreement=:refrigerationAgreement) AND ((LOCATE(b.desc1Contains,LOWER(CONCAT(:classDesc1,:classDesc2,:classDesc3)))>0 AND b.desc3contains='') OR (b.desc1Contains='' AND LOCATE(b.desc3contains,LOWER(CONCAT(:classDesc1,:classDesc2,:classDesc3)))>0))) AS spoilage
+22
+INNER JOIN (SELECT factor FROM `singleconditions` WHERE `condition`='Sprinkler Leakage Earthquake Extension') AS sprinklerearthquake
+ON 1=1
+INNER JOIN (SELECT factor FROM `singleconditions` WHERE `condition`='Sprinkler Leakage Functional Building Valuation') AS sprinklerfunctionalbuilding
+ON 1=1
+INNER JOIN (SELECT factor FROM `singleconditions` WHERE `condition`='Sprinkler Leakage Functional Business Personal Property') AS sprinklerfunctionalbpp
+ON 1=1
+23
+INNER JOIN (SELECT lossCost FROM `mu_lc_utilityservicesdirectdamagelosscosts` WHERE utilty='Public Utilities' AND causeOfLoss='Building') AS utilityservicesdirectdamagepublicbuilding
+INNER JOIN (SELECT lossCost FROM `mu_lc_utilityservicesdirectdamagelosscosts` WHERE utilty='Public Utilities' AND causeOfLoss='Business Personal Property') AS utilityservicesdirectdamagepublicbpp
+INNER JOIN (SELECT lossCost FROM `mu_lc_utilityservicesdirectdamagelosscosts` WHERE utilty='Public Utilities' AND causeOfLoss='Earthquake') AS utilityservicesdirectdamagepublicearthquake
+INNER JOIN (SELECT lossCost FROM `mu_lc_utilityservicesdirectdamagelosscosts` WHERE utilty='Other Than Public Utilities' AND causeOfLoss='Building') AS utilityservicesdirectdamagenonpubbuilding
+INNER JOIN (SELECT lossCost FROM `mu_lc_utilityservicesdirectdamagelosscosts` WHERE utilty='Other Than Public Utilities' AND causeOfLoss='Business Personal Property') AS utilityservicesdirectdamagenonpubbpp
+INNER JOIN (SELECT lossCost FROM `mu_lc_utilityservicesdirectdamagelosscosts` WHERE utilty='Other Than Public Utilities' AND causeOfLoss='Earthquake') AS utilityservicesdirectdamagenonpubearthquake
+INNER JOIN (SELECT lossCost FROM `mu_lc_utilityservicesdirectdamagelosscosts` WHERE utilty='Overhead Power And Communication' AND causeOfLoss='Building') AS utilityservicesdirectdamageoverheadbuilding
+INNER JOIN (SELECT lossCost FROM `mu_lc_utilityservicesdirectdamagelosscosts` WHERE utilty='Overhead Power And Communication' AND causeOfLoss='Business Personal Property') AS utilityservicesdirectdamageoverheadbpp
+INNER JOIN (SELECT lossCost FROM `mu_lc_utilityservicesdirectdamagelosscosts` WHERE utilty='Overhead Power And Communication' AND causeOfLoss='Earthquake') AS utilityservicesdirectdamageoverheadearthquake
+24
+INNER JOIN (SELECT lossCost FROM `mu_lc_utilityservicestimeelementlosscosts` WHERE utilty='Power Supply And Water Supply' AND causeOfLoss='Other Than Earthquake') AS utilitytimepublicnonearthquake
+INNER JOIN (SELECT lossCost FROM `mu_lc_utilityservicestimeelementlosscosts` WHERE utilty='Power Supply And Water Supply' AND causeOfLoss='Earthquake') AS utilitytimepublicearthquake
+INNER JOIN (SELECT lossCost FROM `mu_lc_utilityservicestimeelementlosscosts` WHERE utilty='Communication Supply' AND causeOfLoss='Other Than Earthquake') AS utilitytimecommunicationnonearthquake
+INNER JOIN (SELECT lossCost FROM `mu_lc_utilityservicestimeelementlosscosts` WHERE utilty='Communication Supply' AND causeOfLoss='Earthquake') AS utilitytimecommunicationearthquake
+INNER JOIN (SELECT lossCost FROM `mu_lc_utilityservicestimeelementlosscosts` WHERE utilty='Overhead Power Transmission And Overhead Communication Lines' AND causeOfLoss='Other Than Earthquake') AS utilitytimeoverheadnonearthquake
+INNER JOIN (SELECT lossCost FROM `mu_lc_utilityservicestimeelementlosscosts` WHERE utilty='Overhead Power Transmission And Overhead Communication Lines' AND causeOfLoss='Earthquake') AS utilitytimeoverheadearthquake
+25
+INNER JOIN (SELECT factor FROM `singleconditions` WHERE `condition`='Vacancy Permit') AS vacancypermit
+ON 1=1
+26
+INNER JOIN (SELECT lossCost FROM `mu_lc_waterbackupandsumpoverflowpremiumdeterminationperlocation` WHERE bpp=IF(:bppLOI>0,"Yes","No")) AS waterbackup
+27
+INNER JOIN (SELECT factor FROM `singleconditions` WHERE `condition`='Brands And Labels') AS brandslabels
+ON 1=1
+28
+INNER JOIN (SELECT factor FROM `singleconditions` WHERE `condition`='Windstorm Or Hail Losses To Roof Surfacing Actual Cash Value Loss Settlement') AS windroofacv
+ON 1=1
+29
+INNER JOIN (SELECT factor FROM `singleconditions` WHERE `condition`='Identity Fraud Expense Coverage') AS identityfraud
+INNER JOIN (SELECT factor FROM `singleconditions` WHERE `condition`='Identity Fraud Expense Coverage Optional Higher Limits') AS identityfraudhigherlimits
+30
+INNER JOIN (SELECT factor FROM `singleconditions` WHERE `condition`='Theft Of Clients Property') AS blah
+ON 1=1
+32
+INNER JOIN (SELECT factor FROM `singleconditions` WHERE `condition`='Debris Removal Additional Insurance') AS blah
+ON 1=1
+34
+INNER JOIN (SELECT factor FROM `singleconditions` WHERE `condition`='Specified Business Personal Property Temporarily Away From Premises All Risk') AS blah
+ON 1=1
+INNER JOIN (SELECT factor FROM `singleconditions` WHERE `condition`='Specified Business Personal Property Temporarily Away From Premises Named Perils') AS blah
+ON 1=1
+35
+INNER JOIN (SELECT factor FROM `singleconditions` WHERE `condition`='Higher Limits Theft Limitations') AS blah
+ON 1=1
+36
+INNER JOIN (SELECT factor FROM `mu_ru_limitationsoncoverageforroofsurfacing` WHERE limitations=:) AS blah
+37
+INNER JOIN (SELECT factor FROM `singleconditions` WHERE `condition`='Increase In Rebuilding Expenses Following Disaster (Additional Expense Coverage On Annual Aggregate Basis)') AS blah
+ON 1=1
+39
+INNER JOIN (SELECT buildingsCredit, bppCredit FROM `ca_lc_windstormorhailexclusioncredits` WHERE territory=:) AS blah
+40
+INNER JOIN (SELECT factor FROM `singleconditions` WHERE `condition`='Business Income Coverage No Waiting Period') AS blah
+ON 1=1
+INNER JOIN (SELECT factor FROM `mu_ru_insurancetoexposure` WHERE `percentageOfInsuranceToExposure`=:) AS blah
+INNER JOIN (SELECT factor FROM `mu_ru_endorsementsmodifyingcoveredcausesoflossfactors` WHERE `endorsement`=:) AS blah
+INNER JOIN (SELECT factor FROM `mu_ru_extendedbusinessincomecoverage` WHERE `numberOfDays`=:) AS blah
+INNER JOIN (SELECT factor FROM `mu_lc_offpremisesinterruptionofbusinessvehiclesmobileequipment` WHERE `causeOfLoss`=:) AS blah
