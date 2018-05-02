@@ -167,3 +167,36 @@ INNER JOIN (SELECT factor FROM `mu_ru_insurancetoexposure` WHERE `percentageOfIn
 INNER JOIN (SELECT factor FROM `mu_ru_endorsementsmodifyingcoveredcausesoflossfactors` WHERE `endorsement`=:) AS blah
 INNER JOIN (SELECT factor FROM `mu_ru_extendedbusinessincomecoverage` WHERE `numberOfDays`=:) AS blah
 INNER JOIN (SELECT factor FROM `mu_lc_offpremisesinterruptionofbusinessvehiclesmobileequipment` WHERE `causeOfLoss`=:) AS blah
+
+
+
+
+ROUND(IF(:theftClientsProperty='Yes',theftClientsPropertyFactor*employeeDishonestyLossCost,0),0) AS theftClientsPropertyLossCost,
+ROUND(IF(:debrisRemoval='Yes',debrisRemovalFactor*base.buildingsRate*:debrisRemovalLimit/100,0),0) AS debrisRemovalLossCost,
+ROUND(bppRate*IF(:namedPerils='Yes',namedPerilsBppFactor*specfiedBppTempPremisesNamedPerilsFactor,specfiedBppTempPremisesAllRiskFactor)*IF(functionalBppValuation>0,functionalBppValuationFactor,1),0) AS specifiedBppTempAwayPremisesLossCost,
+ROUND(base.bppTerritoryFactor*higherTheftLimitFactor*:higherTheftLimit/100,0) As higherTheftLimitLossCost,
+ROUND(limitationsRoofSurfacingFactor*base.buildingsLossCost,0) AS limitationsRoofSurfacingLossCost,
+ROUND(buildingsRate*increaseRebuildingExpensesFactor*:increaseReguildingExpensesLimit/100,0) AS increaseReguildingExpensesLossCost,
+ROUND(IF(:windstormHailExclusion='Yes',windstormhailexclusionfactor.buildingsCredit/base.buildingsTerritoryFactor*buildingsLossCost+windstormhailexclusionfactor.bppCredit/base.bppTerritoryFactor*bppLossCost,0),0) AS windstormHailExclusionLossCost
+
+
+
+(SELECT factor FROM `singleconditions` WHERE `condition`='Theft Of Clients Property') AS theftClientsPropertyFactor,
+(SELECT factor FROM `singleconditions` WHERE `condition`='Debris Removal Additional Insurance') AS debrisRemovalFactor,
+(SELECT factor FROM `singleconditions` WHERE `condition`='Specified Business Personal Property Temporarily Away From Premises All Risk') AS specfiedBppTempPremisesAllRiskFactor,
+(SELECT factor FROM `singleconditions` WHERE `condition`='Specified Business Personal Property Temporarily Away From Premises Named Perils') AS specfiedBppTempPremisesNamedPerilsFactor,
+(SELECT factor FROM `singleconditions` WHERE `condition`='Higher Limits Theft Limitations') AS higherTheftLimitFactor,
+(SELECT factor FROM `mu_ru_limitationsoncoverageforroofsurfacing` WHERE limitations=:limitationsRoofSurfacing) AS limitationsRoofSurfacingFactor,
+(SELECT factor FROM `singleconditions` WHERE `condition`='Increase In Rebuilding Expenses Following Disaster (Additional Expense Coverage On Annual Aggregate Basis)') AS increaseRebuildingExpensesFactor,
+40
+(SELECT factor FROM `singleconditions` WHERE `condition`='Business Income Coverage No Waiting Period') AS businessIncomeNoWaitingPeriodFactor
+(SELECT factor FROM `mu_ru_insurancetoexposure` WHERE `percentageOfInsuranceToExposure`=:) AS insuranceToExposureFactor
+(SELECT factor FROM `mu_ru_endorsementsmodifyingcoveredcausesoflossfactors` WHERE `endorsement`=:) AS blah
+(SELECT factor FROM `mu_ru_extendedbusinessincomecoverage` WHERE `numberOfDays`=:) AS blah
+(SELECT factor FROM `mu_lc_offpremisesinterruptionofbusinessvehiclesmobileequipment` WHERE `causeOfLoss`=:) AS blah
+
+
+INNER JOIN (SELECT buildingsCredit, bppCredit FROM `ca_lc_windstormorhailexclusioncredits` WHERE territory=:territory) AS windstormhailexclusionfactor
+
+
+Theft of clients property not eligible for selection on self storage faciltiies or residential cleaning services
