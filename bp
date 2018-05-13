@@ -237,10 +237,10 @@ $sql = "
 		) AS o		
 		INNER JOIN (
 			SELECT CASE 
-				WHEN :windDeductible=0 THEN fixedDollarDeductibleFactor 
-				WHEN :windDeductible=1 THEN WindstormOrHailDeductible_1percent 
-				WHEN :windDeductible=2 THEN WindstormOrHailDeductible_2percent 
-				WHEN :windDeductible=3 THEN WindstormOrHailDeductible_3percent 
+				WHEN :windDeductible='None' THEN fixedDollarDeductibleFactor 
+				WHEN :windDeductible='1%' THEN WindstormOrHailDeductible_1percent 
+				WHEN :windDeductible='2%' THEN WindstormOrHailDeductible_2percent 
+				WHEN :windDeductible='3%' THEN WindstormOrHailDeductible_3percent 
 			END AS factor
 			FROM mu_ru_optionalpropertydeductible
 			WHERE fixedDollarDeductible=:propertyDeductible AND bldgAndBPPLOIFrom <= (:buildingsLOI+:bppLOI) AND (bldgAndBPPLOITo > (:buildingsLOI+:bppLOI) OR bldgAndBPPLOITo=0)
@@ -403,7 +403,7 @@ $sql = "
 		(SELECT factor FROM `mu_ru_endorsementsmodifyingcoveredcausesoflossfactors` WHERE `endorsement`='Flood Coverage') AS endorsementCoveredCauseOfLossFloodFactor,
 		(SELECT factor FROM `mu_ru_endorsementsmodifyingcoveredcausesoflossfactors` WHERE `endorsement`='Earthquake And Volcanic Eruption Coverage') AS endorsementCoveredCauseOfLossEarthquakeFactor,
 		(SELECT factor FROM `mu_ru_endorsementsmodifyingcoveredcausesoflossfactors` WHERE `endorsement`='Windstorm Or Hail Exclusion') AS endorsementCoveredCauseOfLossWindstormExclFactor,
-		(SELECT factor FROM `mu_ru_extendedbusinessincomecoverage` WHERE `numberOfDays`=:offPremiseInterruptionVehiclesExtendedIncomeNumDays) AS extendedBusinessIncomeFactor,
+		(SELECT factor FROM `mu_ru_extendedbusinessincomecoverage` WHERE `numberOfDays`=:offPremiseInterruptionVehiclesExtendedIncomeNumDay) AS extendedBusinessIncomeFactor,
 		(SELECT factor FROM `singleconditions` WHERE `condition`='Business Income Coverage No Waiting Period') AS businessIncomeNoWaitingPeriodFactor,		
 
 		(SELECT factor FROM `ca_ru_employmentpracticesliabilityloi` WHERE `limit`=':eplLimit') AS eplLimitFactor,
@@ -614,7 +614,7 @@ $defaultinputs['offPremiseInterruptionVehiclesMaximumPotentialExposure']=0;
 $defaultinputs['offPremiseInterruptionVehiclesLimit1']=0;
 $defaultinputs['offPremiseInterruptionVehiclesLimit2']=0;
 $defaultinputs['offPremiseInterruptionVehiclesLimit3']=0;
-$defaultinputs['offPremiseInterruptionVehiclesExtendedIncomeNumDays']=60;
+$defaultinputs['offPremiseInterruptionVehiclesExtendedIncomeNumDay']=60;
 $defaultinputs['offPremiseInterruptionVehiclesIncomeNoWaitPeriod']='No';
 
 
@@ -794,7 +794,7 @@ $stmt -> bindParam(':offPremiseInterruptionVehiclesLimit1',$_GET['offPremiseInte
 $stmt -> bindParam(':offPremiseInterruptionVehiclesLimit2',$_GET['offPremiseInterruptionVehiclesLimit2'], PDO::PARAM_INT);
 $stmt -> bindParam(':offPremiseInterruptionVehiclesLimit3',$_GET['offPremiseInterruptionVehiclesLimit3'], PDO::PARAM_INT);
 $stmt -> bindParam(':offPremiseInterruptionVehiclesIncomeNoWaitPeriod',$_GET['offPremiseInterruptionVehiclesIncomeNoWaitPeriod'], PDO::PARAM_INT);
-$stmt -> bindParam(':offPremiseInterruptionVehiclesExtendedIncomeNumDays',$_GET['offPremiseInterruptionVehiclesExtendedIncomeNumDays'], PDO::PARAM_INT);
+$stmt -> bindParam(':offPremiseInterruptionVehiclesExtendedIncomeNumDay',$_GET['offPremiseInterruptionVehiclesExtendedIncomeNumDay'], PDO::PARAM_INT);
 
 $stmt -> bindParam(':eplLimit',$_GET['eplLimit'], PDO::PARAM_INT);
 $stmt -> bindParam(':eplDeductible',$_GET['eplDeductible'], PDO::PARAM_INT);
@@ -841,3 +841,141 @@ echo json_encode($result, JSON_PRETTY_PRINT);
 // - Combine the two abuse and molestation endorsements into one dropdown, with none as an option and make one of them compulsory for photography
 // Theft of clients property not eligible for selection on self storage faciltiies or residential cleaning services
 ?>
+
+classDesc1
+classDesc2
+classDesc3
+territory
+ppc
+buildingCode
+constructionType
+sprinklered
+occupantLessor
+buildingsLOI
+bppLOI
+payroll_sales
+numberPools
+limitContractorYards
+policyTerm
+propertyDeductible
+windDeductible
+propertyLiabDeductible
+liabMedExpensesLimit
+aggLimitProductsOperations
+aggLimitLiabMedical
+numLocations
+numEmployees
+contractorsInstallationLimit
+contractorsToolsType
+contractorsBlanketSublimit
+contractorsToolsLimit
+contractorsNonownedTools
+contractorsEmployeesTools
+motelLimitPerGuest
+motelSafeDepositLimitPerGuest
+selfStorageLimit
+apartmentBuildings
+autoLiabilityLimit
+autoLiabiityDeductible
+fineArtsCoverage
+residentialCleaningServices
+photography
+scheduledPhotographicEquipment
+worldwidePhotographicEquipment
+accountsReceivableLimit
+buildingsACV
+buildingsAnnualLimitIncrease
+businessIncomeDependentPropertiesType
+businessIncomeDependentPropertiesLimit
+businessIncomePayrollNumDays
+businessIncomeExtendedNumDays
+electronicDataLimit
+employeeDishonestyLimit
+employeeDishonestyNumberEmployees
+fireDepartmentLimit
+forgeryAlteration
+interruptionComputerOperationsLimit
+equipmentBreakdown
+equipmentBreakdownDeductible
+equipmentBreakdownTimeDeductible
+moneySecuritiesOnPremiseLimit
+moneySecuritiesOffPremiseLimit
+outdoorSignsLimit
+valuablePapersRecordsLimit
+outdoorPropertyLimit
+damagePremisesRented
+damagePremisesRentedLimit
+optionalPerPersonMedicalLimit
+businessIncomeChanges
+businessIncomeExpenseLimit
+businessIncomeExtraExpenseNumberOfMonths
+computerFraudLimit
+condoUnitownersOptionalLimit
+condoUnitownersAssocSublimit
+condoUnitownersRealPropLimit
+earthquakeCoinsuranceRate
+buildingsFunctionalValuation
+bppFunctionalValuation
+eCommerce
+fireDepartmentServiceContract
+foodContamination
+foodContamHighLimit
+foodContamAdvertising
+fungiSublimit
+fungiOption
+fungiNumberOfDays
+namedPerils
+namedPerilsBurglary
+ordinanceCoverage
+ordinanceCoverage2Limit
+ordinanceCoverage3Limit
+ordinanceCoverage2And3CombLimit
+ordinanceBiExpense
+spoilageCoverage
+spoilageLimit
+refrigerationAgreement
+sprinklerCoinsurance
+sprinklerLimit
+utilitiesNumPublic
+utilitiesNumNonpublic
+utilitiesBuildingsSublimit
+utilitiesBppSublimit
+utilitiesIncludeEarthquake
+utilitiesIncludeOverhead
+htmlId
+utilityTimeEarthquake
+utilityTimeCommunication
+utilityTimeOverheadPower
+utilityTimeOverheadCommunication
+utilityTimeElementLimit
+vacancyPermit
+vacancyLimit
+waterBackup
+brandsLabels
+windRoofAcv
+identityFraud
+identityFraudHigherLimit
+theftClientsProperty
+discretionaryPayroll
+debrisRemoval
+debrisRemovalLimit
+floodCoverage
+specifiedBppTempAwayLimit
+higherTheftLimit
+limitationsRoofSurfacing
+increaseRebuildingExpensesLimit
+windstormHailExclusion
+offPremiseVehicleMobile
+offPremisesMobileCollision
+offPremiseInterruptionVehiclesMaximumPotentialExpo...
+offPremiseInterruptionVehiclesLimit1
+offPremiseInterruptionVehiclesLimit2
+offPremiseInterruptionVehiclesLimit3
+offPremiseInterruptionVehiclesExtendedIncomeNumDay
+offPremiseInterruptionVehiclesIncomeNoWaitPeriod
+epl
+eplLimit
+eplDeductible
+hiredAutoCoverage
+hiredAutoLimit
+medicalExpensesExclusion
