@@ -1,3 +1,329 @@
+
+:additionalPersonNotice
+"Is an additional person designated to receive notice of lapse, termination, expiration, nonrenewal or cancellation of a policy for nonpayment of premium?"
+
+:protectiveSafeguards
+Protective Devices or Services Required?
+
+:midTermChanges
+Is this a mid-term policy change?
+
+:photographyMakeup
+Photography – Makeup And Hairstyling
+
+:y2kComputerProblems
+Coverage For Year 2000 Computer-related And Other Electronic Problems
+
+:eCommerce
+Electronic Commerce (E-Commerce)
+
+:fireDeptContract
+Fire Department Service Contract Required
+
+:deleteInsuranceToValue
+Delete Insurance-To-Value Requirement
+
+:lossOfRentalValue
+Loss Of Rental Value – Landlord As Designated Payee
+
+:lossPayableClauses
+Loss Payable Clauses
+
+:additionalInsuredBuildingsOwners
+Additional Insured – Building Owners
+
+:discretionaryPayrollExpense
+Discretionary Payroll Expense
+
+:empDisNamedEmployees
+Employee Dishonesty – Named Employee(s)
+
+:confidentialPersonalInformation
+Exclusion – Access Or Disclosure Of Confidential Or Personal Information And Data related Liability – With Limited Bodily Injury Exception BP 15 04
+Exclusion – Access Or Disclosure Of Confidential Or Personal Information And Data-related Liability – Limited Bodily Injury Exception Not Included Endorsement BP 15 05
+Exclusion – Access Or Disclosure Of Confidential Or Personal Information (Personal And Advertising Injury Only) Endorsement BP 15 06
+Electronic Data Liability – Limited Coverage Endorsement BP 05 95
+
+:electronicDataLiability
+None
+Limited Coverage
+Broad Coverage
+Extended Reporting Period For Broad Coverage
+
+:abuseMolestation
+Abuse Or Molestation Exclusion (BP 04 39)
+Abuse Or Molestation Exclusion - Specified Professional Services (BP 14 11)
+Note-if photography, one muist be selected, otherwise None is an option
+
+:compBusinessLiabExclusion
+Comprehensive Business Liability Exclusion (All Hazards In Connection With Designated Premises Operations Or Products) BP 04 01
+
+:injuryLeasedWorkers
+Coverage For Injury To Leased Workers BP 04 40
+
+:employeeBenefits
+Employee Benefits
+
+:exclusionPersonalAdvertising
+Exclusion – Personal And Advertising Injury BP 04 37
+
+:exclusionPersonalAdvertisingLawyers
+Exclusion – Personal And Advertising Injury – Lawyers BP 14 15
+
+:exclusionSilica
+Exclusion – Silica And Silica-related Dust BP 05 17
+
+:exclusionVolunteerWorkers
+Exclusion – Volunteer Workers Endorsement BP 04 71
+
+:limitDesignatedPremises
+Limitation Of Coverage To Designated Premises, Project Or Operation BP 04 12
+
+:liquorLiability
+None
+Liquor Liability Endorsement BP 04 88
+Liquor Liability Coverage Endorsement BP 04 89
+Liquor Liability Coverage Endorsement BP 04 89 AND Liquor Liability Coverage – Bring Your Own Alcohol Establishments Endorsement BP 14 89
+Amendment – Liquor Liability Exclusion – Exception For Scheduled Premises Or Activities Endorsement BP 04 19
+
+:moldExclusion
+Mold – Fungi Or Bacteria Exclusion (Liability) BP 05 77
+
+:moldLimited
+Mold – Limited Fungi Or Bacteria Coverage (Liability) BP 05 78
+
+:newlyAcquiredOrganizations
+Newly Acquired Organizations – Businessowners Liability Coverage BP 04 54
+
+:pollution
+None
+Pollution Exclusion – Limited Exception For Short-term Pollution Event BP 04 90
+Pollution Exclusion – Limited Exception For Designated Pollutants BP 04 91
+Total Pollution Exclusion BP 04 92
+Total Pollution Exclusion With A Building Heating Equipment And A Hostile Fire Exception BP 04 93
+Limited Pollution Liability Extension BP 04 94
+
+:waiverTransferRights
+Waiver Of Transfer Of Rights Of Recovery Against Others To Us BP 04 97
+
+:y2kComputerLiability
+Exclusion – Year 2000 Computer-related And Other Electronic Problems Endorsement BP 10 05
+Exclusion – Year 2000 Computer-related And Other Electronic Problems (Products-completed Operations Hazard) Endorsement BP 10 06
+Year 2000 Computerrelated And Other Electronic Problems – Limited Coverage Options Endorsement BP 04 64
+Exclusion – Year 2000 Computer-related And Other Electronic Problems – With Exception For Bodily Injury On Your Premises
+Year 2000 Computer-related And Other Electronic Problems – Exclusion Of Specified Coverages For Designated Locations, Operations, Products Or Services
+Default - No Liability Endorsement
+
+
+
+:exclusionExteriorInsulation
+Exclusion – Exterior Insulation And Finish Systems BP 14 08
+
+:snowPlowProducts
+Snow Plow Products – Completed Operations Hazard Coverage BP 14 16
+
+:exclusionDesignatedWork
+Exclusion – Designated Work BP 14 21
+
+:exclusionProductsCompleted
+Exclusion – Products-completed Operations Hazard BP 14 22
+
+:exclusionDesignatedProducts
+Exclusion – Designated Products BP 14 23
+
+:designatedLocationAggLim
+Designated Location(s) General Aggregate Limit BP 14 17
+
+:designatedConstructionAggLim
+Designated Construction Project(s) General Aggregate Limit BP 14 18
+
+:exclusionDamageWorkSubcontractors
+Exclusion – Damage To Work Performed By Subcontractors On Your Behalf BP 14 19
+
+:exclusionDamageWorkSubcontractorsDesignatedSites
+Exclusion – Damage To Work Performed By Subcontractors On Your Behalf – Designated Sites Or Operations BP 14 20
+
+:communicableDiseaseExcl
+Communicable Disease Exclusion BP 14 86
+
+:amendmentPersonalAdvertisingDefinition
+Amendment Of Personal And Advertising Injury Definition BP 14 91
+
+
+
+
+SELECT 
+'Y' AS `BP 00 03`, 
+'Y' AS AS `BP DS 01`,
+IF(:policyTerm != '12 months','Y','N') AS `BP 05 01`,
+IF(:occupantLessor='Occupant Tenant' OR :occupantLessor='Lessor','Y','N') AS `BP 14 78`,
+'Y' AS `BP 01 55`,
+ IF(LOCATE('Residental',CONCAT(classDesc1,classDesc2,classDesc3))>0 AND :additionalPersonNotice='Yes','Y','N') AS `BP 01 61`,
+ IF(:protectiveSafeguards='Yes','Y','N') AS `BP 04 30`,
+ IF(:midTermChanges='Yes','Y','N') AS `BP 12 01`, 
+ IF(LOCATE('condominium (association',LOWER(classDesc2))>0,'Y','N') AS `BP 17 01`,
+ IF(LOCATE('Condominium',LOWER(CONCAT(classDesc1,classDesc2,classDesc3)))>0 AND LOCATE('Residential',LOWER(CONCAT(classDesc1,classDesc2,classDesc3)))=0 AND (:occupantLessor='Occupant Owner' OR :occupantLessor='Lessor'),'Y','N') AS `BP 17 02`,
+ IF(:classDesc1='Contractor','Y','N') AS `BP 07 01`,
+ IF(:classDesc1='Contractor' AND :aggLimitPerProject='Yes','Y','N') AS `BP 07 02`,
+ IF(:classDesc1='Motels','Y','N') AS `BP 07 10`,
+ IF(:motelSafeDepositLimitPerGuest='None','N','Y') AS `BP 07 11`,
+ IF(:classDesc1='Contractor' AND :classDesc1='Landscape Gardening – No Tree Removal or Excavation','Y','N') AS `BP 07 08`,
+ IF(:classDesc1='Self-storage Facilities','Y','N') AS `BP 07 12`,
+ IF((:classDesc1='Apartment Building' OR :classDesc1='Boarding Houses/Rooms') AND :apartmentBuildings='Yes','Y','N') AS `BP 07 75`,
+ IF((:classDesc1='Apartment Building' OR :classDesc1='Boarding Houses/Rooms') AND :autoLiabilityLimit !='None','Y','N') AS `BP 07 76`,
+ IF((:classDesc1='Apartment Building' OR :classDesc1='Boarding Houses/Rooms' OR :classDesc1='Restaurants') AND :fineArtsCoverage='Yes','Y','N') AS `BP 07 77`,
+ IF(:classDesc1='Apartment Building' OR :classDesc1='Boarding Houses/Rooms','Y','N') AS `BP DS 02`,
+ IF(:classDesc1='Restaurants' AND :restaurants='Yes','Y','N') AS `BP 07 78`,
+ IF(:classDesc1='Restaurants' AND :autoLiabilityLimit !='None','Y','N') AS `BP 07 79`,
+ IF(:classDesc1='Restaurants','Y','N') AS `BP DS 03`,
+ IF(:residentialCleaningServices='Yes','Y','N') AS `BP 07 81`,
+ IF(:photography='Yes','Y','N') AS `BP 07 83`,
+ IF(:worldwidePhotographicEquipment='Yes','Y','N') AS `BP 07 87`,
+ IF(:scheduledPhotographicEquipment>0,'Y','N') AS `BP DS 07`,
+ IF(:photographyMakeup='Yes','Y','N') AS `BP 07 84`,
+ IF(:businessIncomeChanges='Yes','Y','N') AS `BP 04 41`,
+ IF(:businessIncomeExpenseLimit != 'None','Y','N') AS `BP 14 06`,
+ IF(:businessIncomeExtraExpenseNumberOfMonths != '12 Months','Y','N') AS `BP 14 07`,
+ IF(:condoUnitownersOptionalLimit != 'None','Y','N') AS `BP 05 47`,
+ IF(:condoUnitownersOptionalLimit =! 'None' OR :condoUnitownersAssocSublimit>1000 OR :condoUnitownersRealPropLimit>0,'Y','N') AS `BP 17 03`,
+ IF(:y2kComputerProblems = 'Yes','Y','N') AS `BP 04 58`,
+ IF(:earthquakeCoinsuranceRate > 0,'Y','N') AS `BP 10 03`,
+ IF(:earthquakeCoinsuranceRate > 0,'Y','N') AS `BP 10 11`,
+ IF(:eCommerce = 'Yes','Y','N') AS `BP 05 94`,
+ IF(:fireDeptContract='Yes','Y','N') AS `BP 12 02`,
+ IF(:foodContamination='Yes','Y','N') AS `BP 04 31`,
+ IF(:buildingsFunctionalValuation>0,'Y','N') AS `BP 04 84`,
+ IF(:bppFunctionalValuation>0,'Y','N') AS `BP 04 85`,
+ IF(:deleteInsuranceToValue='Yes','Y','N') AS `BP 04 83`,
+ IF(:lossOfRentalValue='Yes','Y','N') AS `BP 05 93`,
+ IF(:lossPayableClauses='Yes','Y','N') AS `BP 12 03`,
+ IF(:additionalInsuredBuildingsOwners='Yes','Y','N') AS `BP 12 31`,
+ IF(:fungiSublimit>0,'Y','N') AS `BP 05 76`,
+ IF(:namedPerils='Yes','Y','N') AS `BP 10 09`,
+ IF(:ordinanceCoverage != 'None','Y','N') AS `BP 04 46`,
+ IF(:spoilageCoverage != 'None' AND :restaurants != 'Yes'),'Y','N') AS `BP 04 15`,
+ IF(:sprinklerCoinsurance>0,'Y','N') AS `BP 10 10`,
+ IF(:utilitiesBuildingsSublimit+:utilitiesBppSublimit>0,'Y','N') AS `BP 04 56`,
+ IF(:utilityTimeElementLimit>0,'Y','N') AS `BP 04 57`,
+ IF(:vacancyPermit='Vacancy Permit','Y','N') AS `BP 04 87`,
+ IF(:vacancyPermit='Vacancy Changes','Y','N') AS `BP 04 86`,
+ IF(:waterBackup='Yes','Y','N') AS `BP 04 53`,
+ IF(:brandsLabels='Yes','Y','N') AS `BP 14 10`,
+ IF(:windRoofAcv='Yes','Y','N') AS `BP 14 04`,
+ IF(:identityFraud='Yes','Y','N') AS `BP 14 01`,
+ IF(:theftClientsProperty='Yes','Y','N') AS `BP 14 03`,
+ IF(:discretionaryPayrollExpense='Yes','Y','N') AS `BP 14 30`,
+ IF(:debrisRemoval='Yes','Y','N') AS `BP 14 09`,
+ IF(:floodCoverage='Yes','Y','N') AS `BP 10 79`,
+ IF(:floodCoverage='Yes','Y','N') AS `BP DS 06`,
+ IF(:specifiedBppTempAwayLimit>0,'Y','N') AS `BP 14 79`,
+ IF(:higherTheftLimit>0,'Y','N') AS `BP 14 80`,
+ IF(limitationsRoofSurfacing != 'None','Y','N') AS `BP 14 81`,
+ IF(:increaseRebuildingExpensesLimit>0,'Y','N') AS `BP 14 82`,
+ IF(:empDisNamedEmployees='Yes','Y','N') AS `BP 14 83`,
+ IF(:windstormHailExclusion='Yes','Y','N') AS `BP 14 84`,
+ IF(:offPremiseInterruptionVehiclesLimit1+:offPremiseInterruptionVehiclesLimit2+:offPremiseInterruptionVehiclesLimit3>0,'Y','N') AS `BP 10 80`,
+ IF(:damagePremisesRented='Broadened Coverage For Damage To Premises Rented To You','Y','N') AS `BP 04 55`,
+ IF(:propertyLiabDeductible != 0 OR (:classDesc1='Contractor' AND (classDesc2='Painting - Exterior – Buildings or Structures - 3 stories or less in height (Not Otherwise Classified)' OR classDesc2=Painting - Interior Buildings or Structures'))),'Y','N') AS `BP 07 04`,
+ IF(:confidentialPersonalInformation='Exclusion - Access Or Disclosure Of Confidential Or Personal Information And Data related Liability - With Limited Bodily Injury Exception BP 15 04
+','Y','N') AS `BP 15 04`,
+ IF(:confidentialPersonalInformation='Exclusion - Access Or Disclosure Of Confidential Or Personal Information And Data-related Liability - Limited Bodily Injury Exception Not Included Endorsement BP 15 05','Y','N') AS `BP 15 05`,
+ IF(:confidentialPersonalInformation='Exclusion - Access Or Disclosure Of Confidential Or Personal Information (Personal And Advertising Injury Only) Endorsement BP 15 06','Y','N') AS `BP 15 06`,
+ IF(:confidentialPersonalInformation='Electronic Data Liability - Limited Coverage Endorsement BP 05 95' OR :electronicDataLiability='Limited Coverage','Y','N') AS `BP 05 95`,
+ IF(:electronicDataLiability='Broad Coverage','Y','N') AS `BP 05 96`,
+ IF(:electronicDataLiability='Extended Reporting Period For Broad Coverage','Y','N') AS `BP 05 97`,
+ IF(:abuseMolestation='Abuse Or Molestation Exclusion (BP 04 39)','Y','N') AS `BP 04 39`,
+ IF(:liabMedExpensesLimit != '300_600_600','Y','N') AS `BP 07 07`,
+ IF(:compBusinessLiabExclusion='Yes','Y','N') AS `BP 04 01`,
+ IF(:injuryLeasedWorkers='Yes','Y','N') AS `BP 04 40`,
+ IF(:employeeBenefits='Employee Benefits Liability Coverage','Y','N') AS `BP 04 98`,
+ IF(:employeeBenefits='Extended Reporting Period Option','Y','N') AS `BP 04 99`,
+ IF(:epl='Employment-related Practices Liability Exclusion','Y','N') AS `BP 04 17`,
+ IF(:epl='Employment-related Practices Liability Coverage','Y','N') AS `BP 05 89`,
+ IF(:exclusionPersonalAdvertising = 'Exclusion – Personal And Advertising Injury BP 04 37' OR LOWER(:classDesc2)='lawyers' OR LOWER(:classDesc2)='detective or investigative agencies - private' OR LOWER(:classDesc2)='employment agencies' OR LOWER(:classDesc2)='labor union' OR LOWER(:classDesc2)='political campaign headquarters or offices' OR LOWER(:classDesc2)='security and patrol agencies','Y','N') AS `BP 04 37`,
+ IF(:exclusionSilica='Yes','Y','N') AS `BP 05 17`,
+ IF(:exclusionVolunteerWorkers='Yes','Y','N') AS `BP 04 71`,
+ IF(:hiredAutoCoverage != 'None','Y','N') AS `BP 04 04`,
+ IF(:limitDesignatedPremises ='Yes','Y','N') AS `BP 04 12`,
+ IF(:liquorLiability='Liquor Liability Endorsement BP 04 88','Y','N') AS `BP 04 88`,
+ IF(:liquorLiability='Liquor Liability Coverage Endorsement BP 04 89' OR :liquorLiability='Liquor Liability Coverage Endorsement BP 04 89 AND Liquor Liability Coverage – Bring Your Own Alcohol Establishments Endorsement BP 14 89','Y','N') AS `BP 04 89`,
+ IF(:liquorLiability='Liquor Liability Coverage Endorsement BP 04 89 AND Liquor Liability Coverage – Bring Your Own Alcohol Establishments Endorsement BP 14 89','Y','N') AS `BP 14 89`,
+ IF(:liquorLiability='Amendment – Liquor Liability Exclusion – Exception For Scheduled Premises Or Activities Endorsement BP 04 19','Y','N') AS `BP 04 19`,
+ IF(:medicalExpensesExclusion='Yes','Y','N') AS `BP 04 38`,
+ IF(:moldExclusion='Yes','Y','N') AS `BP 05 77`,
+ IF(:moldLimited='Yes','Y','N') AS `BP 05 78`,
+ IF(:newlyAcquiredOrganizations='Yes','Y','N') AS `BP 04 54`,
+ IF(:pollution='Pollution Exclusion – Limited Exception For Short-term Pollution Event BP 04 90','Y','N') AS `BP 04 90`,
+ IF(:pollution='Pollution Exclusion – Limited Exception For Designated Pollutants BP 04 91','Y','N') AS `BP 04 91`,
+ IF(:pollution='Total Pollution Exclusion BP 04 92','Y','N') AS `BP 04 92`,
+ IF(:pollution='Total Pollution Exclusion With A Building Heating Equipment And A Hostile Fire Exception BP 04 93','Y','N') AS `BP 04 93`,
+ IF(:pollution='Limited Pollution Liability Extension BP 04 94','Y','N') AS `BP 04 94`,
+ IF(:waiverTransferRights='Yes','Y','N') AS `BP 04 97`,
+ IF(:y2kComputerLiability='Exclusion – Year 2000 Computer-related And Other Electronic Problems Endorsement BP 10 05','Y','N') AS `BP 10 05`,
+ IF(:y2kComputerLiability='Exclusion – Year 2000 Computer-related And Other Electronic Problems (Products-completed Operations Hazard) Endorsement BP 10 06','Y','N') AS `BP 10 06`,
+ IF(:y2kComputerLiability='Year 2000 Computerrelated And Other Electronic Problems – Limited Coverage Options Endorsement BP 04 64','Y','N') AS `BP 04 64`,
+ IF(:y2kComputerLiability='Exclusion – Year 2000 Computer-related And Other Electronic Problems – With Exception For Bodily Injury On Your Premises','Y','N') AS `BP 10 07`,
+ IF(:y2kComputerLiability='Year 2000 Computer-related And Other Electronic Problems – Exclusion Of Specified Coverages For Designated Locations, Operations, Products Or Services','Y','N') AS `BP 10 08`,
+ IF(:abuseMolestation='Abuse Or Molestation Exclusion - Specified Professional Services (BP 14 11),'Y','N') AS `BP 14 11`,
+ IF(:exclusionExteriorInsulation='Yes','Y','N') AS `BP 14 08`,
+ IF(:snowPlowProducts='Yes','Y','N') AS `BP 14 16`,
+ IF(:exclusionDesignatedWork='Yes','Y','N') AS `BP 14 21`,
+ IF(:exclusionProductsCompleted='Yes','Y','N') AS `BP 14 22`,
+ IF(:exclusionDesignatedProducts='Yes','Y','N') AS `BP 14 23`,
+ IF(:designatedLocationAggLim='Yes','Y','N') AS `BP 14 17`,
+ IF(:exclusionPersonalAdvertisingLawyers='Yes','Y','N') AS `BP 14 15`,
+ IF(:designatedConstructionAggLim='Yes','Y','N') AS `BP 14 18`,
+ IF(:exclusionDamageWorkSubcontractors='Yes','Y','N') AS `BP 14 19`,
+ IF(:exclusionDamageWorkSubcontractorsDesignatedSites='Yes','Y','N') AS `BP 14 20`,
+ IF(:communicableDiseaseExcl='Yes','Y','N') AS `BP 14 86`,
+ IF(:amendmentPersonalAdvertisingDefinition='Yes','Y','N') AS `BP 14 91`,
+ IF(,'Y','N') AS `BP 04 02`,
+ IF(,'Y','N') AS `BP 04 06`,
+ IF(,'Y','N') AS `BP 04 07`,
+ IF(,'Y','N') AS `BP 04 08`,
+ IF(,'Y','N') AS `BP 04 09`,
+ IF(,'Y','N') AS `BP 04 10`,
+ IF(,'Y','N') AS `BP 04 11`,
+ IF(,'Y','N') AS `BP 04 13`,
+ IF(,'Y','N') AS `BP 04 16`,
+ IF(,'Y','N') AS `BP 04 47`,
+ IF(,'Y','N') AS `BP 04 48`,
+ IF(,'Y','N') AS `BP 04 49`,
+ IF(,'Y','N') AS `BP 04 50`,
+ IF(,'Y','N') AS `BP 04 51`,
+ IF(,'Y','N') AS `BP 04 52`,
+ IF(,'Y','N') AS `BP 05 98`,
+ IF(,'Y','N') AS `BP 14 02`,
+ IF(,'Y','N') AS `BP 14 05`,
+ IF(,'Y','N') AS `BP 14 87`,
+ IF(,'Y','N') AS `BP 14 88`,
+ IF(,'Y','N') AS `BP 08 01`,
+ IF(,'Y','N') AS `BP 08 09`,
+ IF(,'Y','N') AS `BP 08 02`,
+ IF(,'Y','N') AS `BP 08 03`,
+ IF(:pharmacistsProfLiab='Pharmacists','Y','N') AS `BP 08 07`,
+ IF(:pharmacistsProfLiab='Pharmacists - Broad Coverage','Y','N') AS `BP 08 06`,
+ IF(,'Y','N') AS `BP 08 04`,
+ IF(:numberVeterinarian>0,'Y','N') AS `BP 08 05`,
+ IF(,'Y','N') AS `BP 14 12`,
+ IF(,'Y','N') AS `BP 14 13`,
+ IF(,'Y','N') AS `BP 14 14`,
+ IF(,'Y','N') AS `BP 17 24`,
+ IF(:infoSecurityTier != 'None','Y','N') AS `BP 15 07`,
+ IF(,'Y','N') AS `BP 15 08`,
+ IF(,'Y','N') AS `BP 15 10`,
+ IF(,'Y','N') AS `BP 15 11`,
+ IF(,'Y','N') AS `BP 15 12`,
+
+
+
+
+
+
+
+
+
+
 <?php
 
 include '../sqlCredentials.php';
