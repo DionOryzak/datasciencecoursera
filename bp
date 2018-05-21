@@ -1,4 +1,3 @@
-
 :additionalPersonNotice
 "Is an additional person designated to receive notice of lapse, termination, expiration, nonrenewal or cancellation of a policy for nonpayment of premium?"
 
@@ -116,6 +115,7 @@ Default - No Liability Endorsement
 
 
 
+
 :exclusionExteriorInsulation
 Exclusion – Exterior Insulation And Finish Systems BP 14 08
 
@@ -149,7 +149,64 @@ Communicable Disease Exclusion BP 14 86
 :amendmentPersonalAdvertisingDefinition
 Amendment Of Personal And Advertising Injury Definition BP 14 91
 
+:additInsuredControlInterest
+Additional Insured – Controlling Interest
+:additInsuredGovt
+Additional Insured – State Or Governmental Agency Or Subdivision Or Political Subdivision – Permits Or Authorizations Relating To Premises
+:additInsuredTownhouseAssoc
+Additional Insured – Townhouse Associations
+:additInsuredMortgagee
+Additional Insured – Mortgagee, Assignee, Or Receiver
+:additInsuredLandOwner
+Additional Insured – Owner Or Other Interests From Whom Land Has Been Leased
+:additInsuredCoownerPremises
+Additional Insured – Co-owner Of Insured Premises
+:additInsuredEngineer
+Additional Insured – Engineers, Architects, Or Surveyors
+:additInsuredVendor
+Additional Insured – Vendors
+:additInsuredDesignated
+Additional Insured – Designated Person Or Organization
+:additInsuredEngineerNotEngaged
+Additional Insured – Engineers, Architects, Or Surveyors Not Engaged By The Named Insured
+:additInsuredOwnerLesseeContractor
+Additional Insured – Owners, Lessees Or Contractors
+:additInsuredOwnerLesseeContractorRequirement
+Additional Insured – Owners, Lessees Or Contractors – With Additional Insured Requirement In Construction Contract
+:additInsuredGovtPermit
+Additional Insured – State Or Governmental Agency Or Subdivision Or Political Subdivision – Permits Or Authorizations
+:amendmentContract
+Amendment Of Insured Contract Definition
+:additInsuredOwnerLesseeContractorCompleted
+Additional Insured – Owners, Lessees Or Contractors – Completed Operations
+:additInsuredGrantorFranchise
+Additional Insured – Grantor Of Franchise
+:additInsuredOwnerLesseeContractorRequirementOtherParty
+Additional Insured – Owners, Lessees Or Contractors – With Additional Insured Requirement For Other Parties In Construction Contract
+:primaryNoncontributory
+Primary And Noncontributory – Other Insurance Condition
 
+
+:profLiabBarberSalon
+Barber Shops And Hair Salons Professional Liability BP 08 01
+:profLiabBeautySalon
+Beauty Salons BP 08 09
+:profLiabFuneral
+Funeral Directors BP 08 02
+:profLiabOpticalHearing
+Optical And Hearing Aid Establishments BP 08 03
+:profLiabPrinters
+Printer's Errors And Omissions BP 08 04
+:profLiabSeedMerchant
+Exclusion – Erroneous Delivery Or Mixture And Resulting Failure Of Seed To Germinate – Seed Merchants
+Seed Merchants – Coverage For Erroneous Delivery Or Mixture (Resulting Failure Of Seed To Germinate Not Included)
+Seed Merchants – Coverage For Erroneous Delivery Or Mixture And Resulting Failure Of Seed To Germinate
+:profLiabCondoDO
+Condominiums, Co-ops, Associations – Directors And Officers Liability BP 17 24
+
+:unmannedAircraft
+Exclusion – Unmanned Aircraft
+Limited Coverage For Designated Unmanned Aircraft Coverage
 
 
 SELECT 
@@ -277,43 +334,44 @@ IF(:occupantLessor='Occupant Tenant' OR :occupantLessor='Lessor','Y','N') AS `BP
  IF(:exclusionDamageWorkSubcontractorsDesignatedSites='Yes','Y','N') AS `BP 14 20`,
  IF(:communicableDiseaseExcl='Yes','Y','N') AS `BP 14 86`,
  IF(:amendmentPersonalAdvertisingDefinition='Yes','Y','N') AS `BP 14 91`,
- IF(,'Y','N') AS `BP 04 02`,
- IF(,'Y','N') AS `BP 04 06`,
- IF(,'Y','N') AS `BP 04 07`,
- IF(,'Y','N') AS `BP 04 08`,
- IF(,'Y','N') AS `BP 04 09`,
- IF(,'Y','N') AS `BP 04 10`,
- IF(,'Y','N') AS `BP 04 11`,
- IF(,'Y','N') AS `BP 04 13`,
- IF(,'Y','N') AS `BP 04 16`,
- IF(,'Y','N') AS `BP 04 47`,
- IF(,'Y','N') AS `BP 04 48`,
- IF(,'Y','N') AS `BP 04 49`,
- IF(,'Y','N') AS `BP 04 50`,
- IF(,'Y','N') AS `BP 04 51`,
- IF(,'Y','N') AS `BP 04 52`,
- IF(,'Y','N') AS `BP 05 98`,
- IF(,'Y','N') AS `BP 14 02`,
- IF(,'Y','N') AS `BP 14 05`,
- IF(,'Y','N') AS `BP 14 87`,
- IF(,'Y','N') AS `BP 14 88`,
- IF(,'Y','N') AS `BP 08 01`,
- IF(,'Y','N') AS `BP 08 09`,
- IF(,'Y','N') AS `BP 08 02`,
- IF(,'Y','N') AS `BP 08 03`,
+ IF(:additionaInsuredManagerApartmentNumber+:additionaInsuredManagerOtherNumber>0,'Y','N') AS `BP 04 02`,
+ IF(:additInsuredControlInterest='Yes','Y','N') AS `BP 04 06`,
+ IF(:additInsuredGovt='Yes','Y','N') AS `BP 04 07`,
+ IF(:additInsuredTownhouseAssoc='Yes','Y','N') AS `BP 04 08`,
+ IF(:additInsuredMortgagee='Yes','Y','N') AS `BP 04 09`,
+ IF(:additInsuredLandOwner='Yes','Y','N') AS `BP 04 10`,
+ IF(:additInsuredCoownerPremises='Yes','Y','N') AS `BP 04 11`,
+ IF(:additInsuredEngineer='Yes','Y','N') AS `BP 04 13`,
+ IF(:additionaInsuredEquipmentApartmentNumber+:additionaInsuredEquipmentOtherNumber>0,'Y','N') AS `BP 04 16`,
+ IF(:additInsuredVendor='Yes','Y','N') AS `BP 04 47`,
+ IF(:additInsuredDesignated='Yes','Y','N') AS `BP 04 48`,
+ IF(:additInsuredEngineerNotEngaged='Yes','Y','N') AS `BP 04 49`,
+ IF(:additInsuredOwnerLesseeContractor='Yes','Y','N') AS `BP 04 50`,
+ IF(:additInsuredOwnerLesseeContractorRequirement='Yes','Y','N') AS `BP 04 51`,
+ IF(:additInsuredGovtPermit='Yes','Y','N') AS `BP 04 52`,
+ IF(:amendmentContract='Yes','Y','N') AS `BP 05 98`,
+ IF(:additInsuredOwnerLesseeContractorCompleted='Yes','Y','N') AS `BP 14 02`,
+ IF(:additInsuredGrantorFranchise='Yes','Y','N') AS `BP 14 05`,
+ IF(:additInsuredOwnerLesseeContractorRequirementOtherParty='Yes','Y','N') AS `BP 14 87`,
+ IF(:primaryNoncontributory='Yes','Y','N') AS `BP 14 88`,
+ IF(:profLiabBarberSalon='Yes','Y','N') AS `BP 08 01`,
+ IF(:profLiabBeautySalon='Yes','Y','N') AS `BP 08 09`,
+ IF(:profLiabFuneral='Yes','Y','N') AS `BP 08 02`,
+ IF(:profLiabOpticalHearing='Yes','Y','N') AS `BP 08 03`,
  IF(:pharmacistsProfLiab='Pharmacists','Y','N') AS `BP 08 07`,
  IF(:pharmacistsProfLiab='Pharmacists - Broad Coverage','Y','N') AS `BP 08 06`,
- IF(,'Y','N') AS `BP 08 04`,
+ IF(:profLiabPrinters='Yes','Y','N') AS `BP 08 04`,
  IF(:numberVeterinarian>0,'Y','N') AS `BP 08 05`,
- IF(,'Y','N') AS `BP 14 12`,
- IF(,'Y','N') AS `BP 14 13`,
- IF(,'Y','N') AS `BP 14 14`,
- IF(,'Y','N') AS `BP 17 24`,
+ IF(:profLiabSeedMerchant='Exclusion – Erroneous Delivery Or Mixture And Resulting Failure Of Seed To Germinate – Seed Merchants','Y','N') AS `BP 14 12`,
+ IF(:profLiabSeedMerchant='Seed Merchants – Coverage For Erroneous Delivery Or Mixture (Resulting Failure Of Seed To Germinate Not Included)','Y','N') AS `BP 14 13`,
+ IF(:profLiabSeedMerchant='Seed Merchants – Coverage For Erroneous Delivery Or Mixture And Resulting Failure Of Seed To Germinate','Y','N') AS `BP 14 14`,
+ IF(:profLiabCondoDO !='None','Y','N') AS `BP 17 24`,
  IF(:infoSecurityTier != 'None','Y','N') AS `BP 15 07`,
- IF(,'Y','N') AS `BP 15 08`,
- IF(,'Y','N') AS `BP 15 10`,
- IF(,'Y','N') AS `BP 15 11`,
- IF(,'Y','N') AS `BP 15 12`,
+ IF(:paymentCardIndustry='Yes','Y','N') AS `BP 15 08`,
+ IF(:dishonestActsEmployees='Yes','Y','N') AS `BP 15 10`,
+ IF(:unmannedAircraft='Exclusion – Unmanned Aircraft','Y','N') AS `BP 15 11`,
+ IF(:unmannedAircraft='Limited Coverage For Designated Unmanned Aircraft Coverage','Y','N') AS `BP 15 12`,
+
 
 
 
