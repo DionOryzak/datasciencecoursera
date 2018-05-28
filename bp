@@ -1,1365 +1,377 @@
-:additionalPersonNotice
-"Is an additional person designated to receive notice of lapse, termination, expiration, nonrenewal or cancellation of a policy for nonpayment of premium?"
 
-:protectiveSafeguards
-Protective Devices or Services Required?
-
-:midTermChanges
-Is this a mid-term policy change?
-
-:photographyMakeup
-Photography – Makeup And Hairstyling
-
-:y2kComputerProblems
-Coverage For Year 2000 Computer-related And Other Electronic Problems
-
-:eCommerce
-Electronic Commerce (E-Commerce)
-
-:fireDeptContract
-Fire Department Service Contract Required
-
-:deleteInsuranceToValue
-Delete Insurance-To-Value Requirement
-
-:lossOfRentalValue
-Loss Of Rental Value – Landlord As Designated Payee
-
-:lossPayableClauses
-Loss Payable Clauses
-
-:additionalInsuredBuildingsOwners
-Additional Insured – Building Owners
-
-:discretionaryPayrollExpense
-Discretionary Payroll Expense
-
-:empDisNamedEmployees
-Employee Dishonesty – Named Employee(s)
-
-:confidentialPersonalInformation
-Exclusion – Access Or Disclosure Of Confidential Or Personal Information And Data related Liability – With Limited Bodily Injury Exception BP 15 04
-Exclusion – Access Or Disclosure Of Confidential Or Personal Information And Data-related Liability – Limited Bodily Injury Exception Not Included Endorsement BP 15 05
-Exclusion – Access Or Disclosure Of Confidential Or Personal Information (Personal And Advertising Injury Only) Endorsement BP 15 06
-Electronic Data Liability – Limited Coverage Endorsement BP 05 95
-
-:electronicDataLiability
-None
-Limited Coverage
-Broad Coverage
-Extended Reporting Period For Broad Coverage
-
-:abuseMolestation
-Abuse Or Molestation Exclusion (BP 04 39)
-Abuse Or Molestation Exclusion - Specified Professional Services (BP 14 11)
-Note-if photography, one muist be selected, otherwise None is an option
-
-:compBusinessLiabExclusion
-Comprehensive Business Liability Exclusion (All Hazards In Connection With Designated Premises Operations Or Products) BP 04 01
-
-:injuryLeasedWorkers
-Coverage For Injury To Leased Workers BP 04 40
-
-:employeeBenefits
-Employee Benefits
-
-:exclusionPersonalAdvertising
-Exclusion – Personal And Advertising Injury BP 04 37
-
-:exclusionPersonalAdvertisingLawyers
-Exclusion – Personal And Advertising Injury – Lawyers BP 14 15
-
-:exclusionSilica
-Exclusion – Silica And Silica-related Dust BP 05 17
-
-:exclusionVolunteerWorkers
-Exclusion – Volunteer Workers Endorsement BP 04 71
-
-:limitDesignatedPremises
-Limitation Of Coverage To Designated Premises, Project Or Operation BP 04 12
-
-:liquorLiability
-None
-Liquor Liability Endorsement BP 04 88
-Liquor Liability Coverage Endorsement BP 04 89
-Liquor Liability Coverage Endorsement BP 04 89 AND Liquor Liability Coverage – Bring Your Own Alcohol Establishments Endorsement BP 14 89
-Amendment – Liquor Liability Exclusion – Exception For Scheduled Premises Or Activities Endorsement BP 04 19
-
-:moldExclusion
-Mold – Fungi Or Bacteria Exclusion (Liability) BP 05 77
-
-:moldLimited
-Mold – Limited Fungi Or Bacteria Coverage (Liability) BP 05 78
-
-:newlyAcquiredOrganizations
-Newly Acquired Organizations – Businessowners Liability Coverage BP 04 54
-
-:pollution
-None
-Pollution Exclusion – Limited Exception For Short-term Pollution Event BP 04 90
-Pollution Exclusion – Limited Exception For Designated Pollutants BP 04 91
-Total Pollution Exclusion BP 04 92
-Total Pollution Exclusion With A Building Heating Equipment And A Hostile Fire Exception BP 04 93
-Limited Pollution Liability Extension BP 04 94
-
-:waiverTransferRights
-Waiver Of Transfer Of Rights Of Recovery Against Others To Us BP 04 97
-
-:y2kComputerLiability
-Exclusion – Year 2000 Computer-related And Other Electronic Problems Endorsement BP 10 05
-Exclusion – Year 2000 Computer-related And Other Electronic Problems (Products-completed Operations Hazard) Endorsement BP 10 06
-Year 2000 Computerrelated And Other Electronic Problems – Limited Coverage Options Endorsement BP 04 64
-Exclusion – Year 2000 Computer-related And Other Electronic Problems – With Exception For Bodily Injury On Your Premises
-Year 2000 Computer-related And Other Electronic Problems – Exclusion Of Specified Coverages For Designated Locations, Operations, Products Or Services
-Default - No Liability Endorsement
-
-
-
-
-:exclusionExteriorInsulation
-Exclusion – Exterior Insulation And Finish Systems BP 14 08
-
-:snowPlowProducts
-Snow Plow Products – Completed Operations Hazard Coverage BP 14 16
-
-:exclusionDesignatedWork
-Exclusion – Designated Work BP 14 21
-
-:exclusionProductsCompleted
-Exclusion – Products-completed Operations Hazard BP 14 22
-
-:exclusionDesignatedProducts
-Exclusion – Designated Products BP 14 23
-
-:designatedLocationAggLim
-Designated Location(s) General Aggregate Limit BP 14 17
-
-:designatedConstructionAggLim
-Designated Construction Project(s) General Aggregate Limit BP 14 18
-
-:exclusionDamageWorkSubcontractors
-Exclusion – Damage To Work Performed By Subcontractors On Your Behalf BP 14 19
-
-:exclusionDamageWorkSubcontractorsDesignatedSites
-Exclusion – Damage To Work Performed By Subcontractors On Your Behalf – Designated Sites Or Operations BP 14 20
-
-:communicableDiseaseExcl
-Communicable Disease Exclusion BP 14 86
-
-:amendmentPersonalAdvertisingDefinition
-Amendment Of Personal And Advertising Injury Definition BP 14 91
-
-:additInsuredControlInterest
-Additional Insured – Controlling Interest
-:additInsuredGovt
-Additional Insured – State Or Governmental Agency Or Subdivision Or Political Subdivision – Permits Or Authorizations Relating To Premises
-:additInsuredTownhouseAssoc
-Additional Insured – Townhouse Associations
-:additInsuredMortgagee
-Additional Insured – Mortgagee, Assignee, Or Receiver
-:additInsuredLandOwner
-Additional Insured – Owner Or Other Interests From Whom Land Has Been Leased
-:additInsuredCoownerPremises
-Additional Insured – Co-owner Of Insured Premises
-:additInsuredEngineer
-Additional Insured – Engineers, Architects, Or Surveyors
-:additInsuredVendor
-Additional Insured – Vendors
-:additInsuredDesignated
-Additional Insured – Designated Person Or Organization
-:additInsuredEngineerNotEngaged
-Additional Insured – Engineers, Architects, Or Surveyors Not Engaged By The Named Insured
-:additInsuredOwnerLesseeContractor
-Additional Insured – Owners, Lessees Or Contractors
-:additInsuredOwnerLesseeContractorRequirement
-Additional Insured – Owners, Lessees Or Contractors – With Additional Insured Requirement In Construction Contract
-:additInsuredGovtPermit
-Additional Insured – State Or Governmental Agency Or Subdivision Or Political Subdivision – Permits Or Authorizations
-:amendmentContract
-Amendment Of Insured Contract Definition
-:additInsuredOwnerLesseeContractorCompleted
-Additional Insured – Owners, Lessees Or Contractors – Completed Operations
-:additInsuredGrantorFranchise
-Additional Insured – Grantor Of Franchise
-:additInsuredOwnerLesseeContractorRequirementOtherParty
-Additional Insured – Owners, Lessees Or Contractors – With Additional Insured Requirement For Other Parties In Construction Contract
-:primaryNoncontributory
-Primary And Noncontributory – Other Insurance Condition
-
-
-:profLiabBarberSalon
-Barber Shops And Hair Salons Professional Liability BP 08 01
-:profLiabBeautySalon
-Beauty Salons BP 08 09
-:profLiabFuneral
-Funeral Directors BP 08 02
-:profLiabOpticalHearing
-Optical And Hearing Aid Establishments BP 08 03
-:profLiabPrinters
-Printer's Errors And Omissions BP 08 04
-:profLiabSeedMerchant
-Exclusion – Erroneous Delivery Or Mixture And Resulting Failure Of Seed To Germinate – Seed Merchants
-Seed Merchants – Coverage For Erroneous Delivery Or Mixture (Resulting Failure Of Seed To Germinate Not Included)
-Seed Merchants – Coverage For Erroneous Delivery Or Mixture And Resulting Failure Of Seed To Germinate
-:profLiabCondoDO
-Condominiums, Co-ops, Associations – Directors And Officers Liability BP 17 24
-
-:unmannedAircraft
-Exclusion – Unmanned Aircraft
-Limited Coverage For Designated Unmanned Aircraft Coverage
-
-
-SELECT 
-'Y' AS `BP 00 03`, 
-'Y' AS AS `BP DS 01`,
-IF(:policyTerm != '12 months','Y','N') AS `BP 05 01`,
-IF(:occupantLessor='Occupant Tenant' OR :occupantLessor='Lessor','Y','N') AS `BP 14 78`,
-'Y' AS `BP 01 55`,
- IF(LOCATE('Residental',CONCAT(classDesc1,classDesc2,classDesc3))>0 AND :additionalPersonNotice='Yes','Y','N') AS `BP 01 61`,
- IF(:protectiveSafeguards='Yes','Y','N') AS `BP 04 30`,
- IF(:midTermChanges='Yes','Y','N') AS `BP 12 01`, 
- IF(LOCATE('condominium (association',LOWER(classDesc2))>0,'Y','N') AS `BP 17 01`,
- IF(LOCATE('Condominium',LOWER(CONCAT(classDesc1,classDesc2,classDesc3)))>0 AND LOCATE('Residential',LOWER(CONCAT(classDesc1,classDesc2,classDesc3)))=0 AND (:occupantLessor='Occupant Owner' OR :occupantLessor='Lessor'),'Y','N') AS `BP 17 02`,
- IF(:classDesc1='Contractor','Y','N') AS `BP 07 01`,
- IF(:classDesc1='Contractor' AND :aggLimitPerProject='Yes','Y','N') AS `BP 07 02`,
- IF(:classDesc1='Motels','Y','N') AS `BP 07 10`,
- IF(:motelSafeDepositLimitPerGuest='None','N','Y') AS `BP 07 11`,
- IF(:classDesc1='Contractor' AND :classDesc1='Landscape Gardening – No Tree Removal or Excavation','Y','N') AS `BP 07 08`,
- IF(:classDesc1='Self-storage Facilities','Y','N') AS `BP 07 12`,
- IF((:classDesc1='Apartment Building' OR :classDesc1='Boarding Houses/Rooms') AND :apartmentBuildings='Yes','Y','N') AS `BP 07 75`,
- IF((:classDesc1='Apartment Building' OR :classDesc1='Boarding Houses/Rooms') AND :autoLiabilityLimit !='None','Y','N') AS `BP 07 76`,
- IF((:classDesc1='Apartment Building' OR :classDesc1='Boarding Houses/Rooms' OR :classDesc1='Restaurants') AND :fineArtsCoverage='Yes','Y','N') AS `BP 07 77`,
- IF(:classDesc1='Apartment Building' OR :classDesc1='Boarding Houses/Rooms','Y','N') AS `BP DS 02`,
- IF(:classDesc1='Restaurants' AND :restaurants='Yes','Y','N') AS `BP 07 78`,
- IF(:classDesc1='Restaurants' AND :autoLiabilityLimit !='None','Y','N') AS `BP 07 79`,
- IF(:classDesc1='Restaurants','Y','N') AS `BP DS 03`,
- IF(:residentialCleaningServices='Yes','Y','N') AS `BP 07 81`,
- IF(:photography='Yes','Y','N') AS `BP 07 83`,
- IF(:worldwidePhotographicEquipment='Yes','Y','N') AS `BP 07 87`,
- IF(:scheduledPhotographicEquipment>0,'Y','N') AS `BP DS 07`,
- IF(:photographyMakeup='Yes','Y','N') AS `BP 07 84`,
- IF(:businessIncomeChanges='Yes','Y','N') AS `BP 04 41`,
- IF(:businessIncomeExpenseLimit != 'None','Y','N') AS `BP 14 06`,
- IF(:businessIncomeExtraExpenseNumberOfMonths != '12 Months','Y','N') AS `BP 14 07`,
- IF(:condoUnitownersOptionalLimit != 'None','Y','N') AS `BP 05 47`,
- IF(:condoUnitownersOptionalLimit =! 'None' OR :condoUnitownersAssocSublimit>1000 OR :condoUnitownersRealPropLimit>0,'Y','N') AS `BP 17 03`,
- IF(:y2kComputerProblems = 'Yes','Y','N') AS `BP 04 58`,
- IF(:earthquakeCoinsuranceRate > 0,'Y','N') AS `BP 10 03`,
- IF(:earthquakeCoinsuranceRate > 0,'Y','N') AS `BP 10 11`,
- IF(:eCommerce = 'Yes','Y','N') AS `BP 05 94`,
- IF(:fireDeptContract='Yes','Y','N') AS `BP 12 02`,
- IF(:foodContamination='Yes','Y','N') AS `BP 04 31`,
- IF(:buildingsFunctionalValuation>0,'Y','N') AS `BP 04 84`,
- IF(:bppFunctionalValuation>0,'Y','N') AS `BP 04 85`,
- IF(:deleteInsuranceToValue='Yes','Y','N') AS `BP 04 83`,
- IF(:lossOfRentalValue='Yes','Y','N') AS `BP 05 93`,
- IF(:lossPayableClauses='Yes','Y','N') AS `BP 12 03`,
- IF(:additionalInsuredBuildingsOwners='Yes','Y','N') AS `BP 12 31`,
- IF(:fungiSublimit>0,'Y','N') AS `BP 05 76`,
- IF(:namedPerils='Yes','Y','N') AS `BP 10 09`,
- IF(:ordinanceCoverage != 'None','Y','N') AS `BP 04 46`,
- IF(:spoilageCoverage != 'None' AND :restaurants != 'Yes'),'Y','N') AS `BP 04 15`,
- IF(:sprinklerCoinsurance>0,'Y','N') AS `BP 10 10`,
- IF(:utilitiesBuildingsSublimit+:utilitiesBppSublimit>0,'Y','N') AS `BP 04 56`,
- IF(:utilityTimeElementLimit>0,'Y','N') AS `BP 04 57`,
- IF(:vacancyPermit='Vacancy Permit','Y','N') AS `BP 04 87`,
- IF(:vacancyPermit='Vacancy Changes','Y','N') AS `BP 04 86`,
- IF(:waterBackup='Yes','Y','N') AS `BP 04 53`,
- IF(:brandsLabels='Yes','Y','N') AS `BP 14 10`,
- IF(:windRoofAcv='Yes','Y','N') AS `BP 14 04`,
- IF(:identityFraud='Yes','Y','N') AS `BP 14 01`,
- IF(:theftClientsProperty='Yes','Y','N') AS `BP 14 03`,
- IF(:discretionaryPayrollExpense='Yes','Y','N') AS `BP 14 30`,
- IF(:debrisRemoval='Yes','Y','N') AS `BP 14 09`,
- IF(:floodCoverage='Yes','Y','N') AS `BP 10 79`,
- IF(:floodCoverage='Yes','Y','N') AS `BP DS 06`,
- IF(:specifiedBppTempAwayLimit>0,'Y','N') AS `BP 14 79`,
- IF(:higherTheftLimit>0,'Y','N') AS `BP 14 80`,
- IF(limitationsRoofSurfacing != 'None','Y','N') AS `BP 14 81`,
- IF(:increaseRebuildingExpensesLimit>0,'Y','N') AS `BP 14 82`,
- IF(:empDisNamedEmployees='Yes','Y','N') AS `BP 14 83`,
- IF(:windstormHailExclusion='Yes','Y','N') AS `BP 14 84`,
- IF(:offPremiseInterruptionVehiclesLimit1+:offPremiseInterruptionVehiclesLimit2+:offPremiseInterruptionVehiclesLimit3>0,'Y','N') AS `BP 10 80`,
- IF(:damagePremisesRented='Broadened Coverage For Damage To Premises Rented To You','Y','N') AS `BP 04 55`,
- IF(:propertyLiabDeductible != 0 OR (:classDesc1='Contractor' AND (classDesc2='Painting - Exterior – Buildings or Structures - 3 stories or less in height (Not Otherwise Classified)' OR classDesc2=Painting - Interior Buildings or Structures'))),'Y','N') AS `BP 07 04`,
- IF(:confidentialPersonalInformation='Exclusion - Access Or Disclosure Of Confidential Or Personal Information And Data related Liability - With Limited Bodily Injury Exception BP 15 04
-','Y','N') AS `BP 15 04`,
- IF(:confidentialPersonalInformation='Exclusion - Access Or Disclosure Of Confidential Or Personal Information And Data-related Liability - Limited Bodily Injury Exception Not Included Endorsement BP 15 05','Y','N') AS `BP 15 05`,
- IF(:confidentialPersonalInformation='Exclusion - Access Or Disclosure Of Confidential Or Personal Information (Personal And Advertising Injury Only) Endorsement BP 15 06','Y','N') AS `BP 15 06`,
- IF(:confidentialPersonalInformation='Electronic Data Liability - Limited Coverage Endorsement BP 05 95' OR :electronicDataLiability='Limited Coverage','Y','N') AS `BP 05 95`,
- IF(:electronicDataLiability='Broad Coverage','Y','N') AS `BP 05 96`,
- IF(:electronicDataLiability='Extended Reporting Period For Broad Coverage','Y','N') AS `BP 05 97`,
- IF(:abuseMolestation='Abuse Or Molestation Exclusion (BP 04 39)','Y','N') AS `BP 04 39`,
- IF(:liabMedExpensesLimit != '300_600_600','Y','N') AS `BP 07 07`,
- IF(:compBusinessLiabExclusion='Yes','Y','N') AS `BP 04 01`,
- IF(:injuryLeasedWorkers='Yes','Y','N') AS `BP 04 40`,
- IF(:employeeBenefits='Employee Benefits Liability Coverage','Y','N') AS `BP 04 98`,
- IF(:employeeBenefits='Extended Reporting Period Option','Y','N') AS `BP 04 99`,
- IF(:epl='Employment-related Practices Liability Exclusion','Y','N') AS `BP 04 17`,
- IF(:epl='Employment-related Practices Liability Coverage','Y','N') AS `BP 05 89`,
- IF(:exclusionPersonalAdvertising = 'Exclusion – Personal And Advertising Injury BP 04 37' OR LOWER(:classDesc2)='lawyers' OR LOWER(:classDesc2)='detective or investigative agencies - private' OR LOWER(:classDesc2)='employment agencies' OR LOWER(:classDesc2)='labor union' OR LOWER(:classDesc2)='political campaign headquarters or offices' OR LOWER(:classDesc2)='security and patrol agencies','Y','N') AS `BP 04 37`,
- IF(:exclusionSilica='Yes','Y','N') AS `BP 05 17`,
- IF(:exclusionVolunteerWorkers='Yes','Y','N') AS `BP 04 71`,
- IF(:hiredAutoCoverage != 'None','Y','N') AS `BP 04 04`,
- IF(:limitDesignatedPremises ='Yes','Y','N') AS `BP 04 12`,
- IF(:liquorLiability='Liquor Liability Endorsement BP 04 88','Y','N') AS `BP 04 88`,
- IF(:liquorLiability='Liquor Liability Coverage Endorsement BP 04 89' OR :liquorLiability='Liquor Liability Coverage Endorsement BP 04 89 AND Liquor Liability Coverage – Bring Your Own Alcohol Establishments Endorsement BP 14 89','Y','N') AS `BP 04 89`,
- IF(:liquorLiability='Liquor Liability Coverage Endorsement BP 04 89 AND Liquor Liability Coverage – Bring Your Own Alcohol Establishments Endorsement BP 14 89','Y','N') AS `BP 14 89`,
- IF(:liquorLiability='Amendment – Liquor Liability Exclusion – Exception For Scheduled Premises Or Activities Endorsement BP 04 19','Y','N') AS `BP 04 19`,
- IF(:medicalExpensesExclusion='Yes','Y','N') AS `BP 04 38`,
- IF(:moldExclusion='Yes','Y','N') AS `BP 05 77`,
- IF(:moldLimited='Yes','Y','N') AS `BP 05 78`,
- IF(:newlyAcquiredOrganizations='Yes','Y','N') AS `BP 04 54`,
- IF(:pollution='Pollution Exclusion – Limited Exception For Short-term Pollution Event BP 04 90','Y','N') AS `BP 04 90`,
- IF(:pollution='Pollution Exclusion – Limited Exception For Designated Pollutants BP 04 91','Y','N') AS `BP 04 91`,
- IF(:pollution='Total Pollution Exclusion BP 04 92','Y','N') AS `BP 04 92`,
- IF(:pollution='Total Pollution Exclusion With A Building Heating Equipment And A Hostile Fire Exception BP 04 93','Y','N') AS `BP 04 93`,
- IF(:pollution='Limited Pollution Liability Extension BP 04 94','Y','N') AS `BP 04 94`,
- IF(:waiverTransferRights='Yes','Y','N') AS `BP 04 97`,
- IF(:y2kComputerLiability='Exclusion – Year 2000 Computer-related And Other Electronic Problems Endorsement BP 10 05','Y','N') AS `BP 10 05`,
- IF(:y2kComputerLiability='Exclusion – Year 2000 Computer-related And Other Electronic Problems (Products-completed Operations Hazard) Endorsement BP 10 06','Y','N') AS `BP 10 06`,
- IF(:y2kComputerLiability='Year 2000 Computerrelated And Other Electronic Problems – Limited Coverage Options Endorsement BP 04 64','Y','N') AS `BP 04 64`,
- IF(:y2kComputerLiability='Exclusion – Year 2000 Computer-related And Other Electronic Problems – With Exception For Bodily Injury On Your Premises','Y','N') AS `BP 10 07`,
- IF(:y2kComputerLiability='Year 2000 Computer-related And Other Electronic Problems – Exclusion Of Specified Coverages For Designated Locations, Operations, Products Or Services','Y','N') AS `BP 10 08`,
- IF(:abuseMolestation='Abuse Or Molestation Exclusion - Specified Professional Services (BP 14 11),'Y','N') AS `BP 14 11`,
- IF(:exclusionExteriorInsulation='Yes','Y','N') AS `BP 14 08`,
- IF(:snowPlowProducts='Yes','Y','N') AS `BP 14 16`,
- IF(:exclusionDesignatedWork='Yes','Y','N') AS `BP 14 21`,
- IF(:exclusionProductsCompleted='Yes','Y','N') AS `BP 14 22`,
- IF(:exclusionDesignatedProducts='Yes','Y','N') AS `BP 14 23`,
- IF(:designatedLocationAggLim='Yes','Y','N') AS `BP 14 17`,
- IF(:exclusionPersonalAdvertisingLawyers='Yes','Y','N') AS `BP 14 15`,
- IF(:designatedConstructionAggLim='Yes','Y','N') AS `BP 14 18`,
- IF(:exclusionDamageWorkSubcontractors='Yes','Y','N') AS `BP 14 19`,
- IF(:exclusionDamageWorkSubcontractorsDesignatedSites='Yes','Y','N') AS `BP 14 20`,
- IF(:communicableDiseaseExcl='Yes','Y','N') AS `BP 14 86`,
- IF(:amendmentPersonalAdvertisingDefinition='Yes','Y','N') AS `BP 14 91`,
- IF(:additionaInsuredManagerApartmentNumber+:additionaInsuredManagerOtherNumber>0,'Y','N') AS `BP 04 02`,
- IF(:additInsuredControlInterest='Yes','Y','N') AS `BP 04 06`,
- IF(:additInsuredGovt='Yes','Y','N') AS `BP 04 07`,
- IF(:additInsuredTownhouseAssoc='Yes','Y','N') AS `BP 04 08`,
- IF(:additInsuredMortgagee='Yes','Y','N') AS `BP 04 09`,
- IF(:additInsuredLandOwner='Yes','Y','N') AS `BP 04 10`,
- IF(:additInsuredCoownerPremises='Yes','Y','N') AS `BP 04 11`,
- IF(:additInsuredEngineer='Yes','Y','N') AS `BP 04 13`,
- IF(:additionaInsuredEquipmentApartmentNumber+:additionaInsuredEquipmentOtherNumber>0,'Y','N') AS `BP 04 16`,
- IF(:additInsuredVendor='Yes','Y','N') AS `BP 04 47`,
- IF(:additInsuredDesignated='Yes','Y','N') AS `BP 04 48`,
- IF(:additInsuredEngineerNotEngaged='Yes','Y','N') AS `BP 04 49`,
- IF(:additInsuredOwnerLesseeContractor='Yes','Y','N') AS `BP 04 50`,
- IF(:additInsuredOwnerLesseeContractorRequirement='Yes','Y','N') AS `BP 04 51`,
- IF(:additInsuredGovtPermit='Yes','Y','N') AS `BP 04 52`,
- IF(:amendmentContract='Yes','Y','N') AS `BP 05 98`,
- IF(:additInsuredOwnerLesseeContractorCompleted='Yes','Y','N') AS `BP 14 02`,
- IF(:additInsuredGrantorFranchise='Yes','Y','N') AS `BP 14 05`,
- IF(:additInsuredOwnerLesseeContractorRequirementOtherParty='Yes','Y','N') AS `BP 14 87`,
- IF(:primaryNoncontributory='Yes','Y','N') AS `BP 14 88`,
- IF(:profLiabBarberSalon='Yes','Y','N') AS `BP 08 01`,
- IF(:profLiabBeautySalon='Yes','Y','N') AS `BP 08 09`,
- IF(:profLiabFuneral='Yes','Y','N') AS `BP 08 02`,
- IF(:profLiabOpticalHearing='Yes','Y','N') AS `BP 08 03`,
- IF(:pharmacistsProfLiab='Pharmacists','Y','N') AS `BP 08 07`,
- IF(:pharmacistsProfLiab='Pharmacists - Broad Coverage','Y','N') AS `BP 08 06`,
- IF(:profLiabPrinters='Yes','Y','N') AS `BP 08 04`,
- IF(:numberVeterinarian>0,'Y','N') AS `BP 08 05`,
- IF(:profLiabSeedMerchant='Exclusion – Erroneous Delivery Or Mixture And Resulting Failure Of Seed To Germinate – Seed Merchants','Y','N') AS `BP 14 12`,
- IF(:profLiabSeedMerchant='Seed Merchants – Coverage For Erroneous Delivery Or Mixture (Resulting Failure Of Seed To Germinate Not Included)','Y','N') AS `BP 14 13`,
- IF(:profLiabSeedMerchant='Seed Merchants – Coverage For Erroneous Delivery Or Mixture And Resulting Failure Of Seed To Germinate','Y','N') AS `BP 14 14`,
- IF(:profLiabCondoDO !='None','Y','N') AS `BP 17 24`,
- IF(:infoSecurityTier != 'None','Y','N') AS `BP 15 07`,
- IF(:paymentCardIndustry='Yes','Y','N') AS `BP 15 08`,
- IF(:dishonestActsEmployees='Yes','Y','N') AS `BP 15 10`,
- IF(:unmannedAircraft='Exclusion – Unmanned Aircraft','Y','N') AS `BP 15 11`,
- IF(:unmannedAircraft='Limited Coverage For Designated Unmanned Aircraft Coverage','Y','N') AS `BP 15 12`,
-
-
-
-
-
-
-
-
-
-
-
-<?php
-
-include '../sqlCredentials.php';
-$dbh=mySQLConnect();
-
-
-$sql = "
-	SELECT base.classCode,	base.sicCode,	base.naicsCode, base.propertyRateNumber, base.liabilityClassGroup, base.liabilityExposureBase, base.eq, base.eqsl, base.buildingRate, base.bppRate, base.liabilityRate, base.liabilityExposure, 
-		ROUND(base.buildingRate*:buildingsLOI/100,0) AS buildingLossCost, 
-		ROUND(base.bppRate*:bppLOI/100,0) AS bppLossCost, 
-		ROUND(base.liabilityRate*base.liabilityExposure,0) AS liabilityLossCost, 
-		ROUND(a.poolFactor*:numberPools,0) AS swimmingPoolLossCost,
-		ROUND(a.contractorYardFactor*:limitContractorYards/100,0) AS contractorYardsLossCost,
-		ROUND(a.concov1Factor,0) AS contractorsCoverage1LossCost,
-		ROUND(IF(:contractorsToolsType='blanket', concov2.lossCost+concov2.higherLoiLossCostPer100*:contractorsToolsLimit/100,concov2.scheduledToolsLossCostPer100*:contractorsToolsLimit/100),0) AS contractorsCoverage2LossCost,
-	 	ROUND(a.concov3Factor*:contractorsNonownedTools/100,0) AS contractorsCoverage3LossCost,
-	 	ROUND(a.concov4Factor*:contractorsEmployeesTools/100,0) AS contractorsCoverage4LossCost,
-	 	ROUND(a.motelLimitPerGuestFactor,0) AS motelLiabilityForGuestsPropertyLossCost, 
-		ROUND(a.motelSafeDepositFactor,0) AS motelLiabilitySafeDepositLossCost, 
-		ROUND(a.selfStorageLiabilityFactor*:selfStorageLimit/100,0) AS selfStorageLiabilityLossCost,		
-		ROUND(IF(:apartmentBuildings='Yes', a.apartmentFactor*:numLocations + (a.apartmentEmpdisFactor-1)*a.employeeDishonestyLossCost ,0),0) AS apartmentBuildingLossCost,
-		ROUND(a.apartmentAutoLiabilityFactor*autodeductible.apartmentsFactor*:numLocations,0) AS apartmentAutoLiabilityLossCost,
-		ROUND(IF(:fineArtsCoverage='Yes',a.apartmentFineartsFactor*:numLocations,0),0) AS apartmentFineArtLossCost,
-		ROUND(IF(:residentialCleaningServices='Yes', a.residentialCleaningFactor + (a.residentialCleaningEmpdisFactor-1)*a.employeeDishonestyLossCost,0),0) AS residentialCleaningServicesLossCost,
-		ROUND(IF(:photography='Yes',a.photographyFactor+ a.photographyEmpdisFactor*a.employeeDishonestyLossCost,0),0) AS photographyLossCost,
-  		ROUND(a.photographyScheduledFactor*:scheduledPhotographicEquipment/100,0) AS photographyScheduledEquipmentLossCost,
-  		ROUND(IF(:worldwidePhotographicEquipment='Yes',(a.photographyScheduledFactor*:scheduledPhotographicEquipment/100+a.photographyWorldwideAdditiveFactor)*a.photographyWorldwideMultiplicativeFactor,0),0) AS photographyWorldwideLossCost,
-  		ROUND(base.bppRate*a.accountsReceivableFactor*:accountsReceivableLimit/100,0) AS accountsReceivableLossCost,
-  		ROUND(IF(:buildingsACV='Yes',a.acvBuildingsFactor*base.liabilityRate*base.liabilityExposure,0),0) AS acvBuildingsLossCost, 	 	
- 	 	ROUND(a.autoIncreaseFactor*(base.buildingRate*:buildingsLOI/100 + a.functionalBuildingsFactor*base.buildingRate*:buildingsFunctionalValuation),0) AS buildingsAnnualIncreaseLossCost,
- 	 	ROUND(base.bppRate*a.biPropertiesFactor*:businessIncomeDependentPropertiesLimit/100,0) AS businessIncomeDependentPropertiesLossCost,
- 	 	ROUND(a.autoIncreaseFactor*(base.buildingRate*:buildingsLOI/100 + a.functionalBuildingsFactor*base.buildingRate*:buildingsFunctionalValuation + base.bppRate*:bppLOI/100 + a.functionalBppFactor*base.bppRate*:bppFunctionalValuation),0) AS buildingsAnnualIncreaseLossCost,
-		ROUND(a.biPayrollPeriodFactor*(base.buildingRate*:buildingsLOI/100 + a.functionalBuildingsFactor*base.buildingRate*:buildingsFunctionalValuation + base.bppRate*:bppLOI/100 + a.functionalBppFactor*base.bppRate*:bppFunctionalValuation),0) AS biPayrollLossCost,
-		ROUND(a.biExtendedPeriodFactor*(base.buildingRate*:buildingsLOI/100 + a.functionalBuildingsFactor*base.buildingRate*:buildingsFunctionalValuation + base.bppRate*:bppLOI/100 + a.functionalBppFactor*base.bppRate*:bppFunctionalValuation),0) AS biExtendedLossCost,
-		ROUND(base.bppRate*a.electronicDataFactor*:electronicDataLimit/100,0) AS electronicDataLossCost,
-		ROUND(a.employeeDishonestyLossCost,0) AS employeeDishonestyLossCost,
-		ROUND(a.fireDepartmentServiceFactor*:numLocations,0) AS fireDepartmentServiceLossCost,
-		ROUND(IF(:forgeryAlteration='Yes',a.forgeryAlterationFactor*a.employeeDishonestyLossCost,0),0) AS forgeryAlterationLossCost,
-		ROUND(base.bppRate*a.interruptionComputerOperationsFactor*:interruptionComputerOperationsLimit/100,0) AS interruptionComputerOperationsLossCost,
-		ROUND(IF(:equipmentBreakdown='Yes',(a.equipmentBreakdownBaseLossCost+a.equipmentBreakdownHighLoiFactor*GREATEST(IF(:buildingsLOI=0,:bppLOI,:buildingsLOI)-600000,0)/100000)*a.equipmentBreakdownDeductibleFactor*a.equipmentBreakdownTimeDeductibleFactor,0),0) AS equipmentBreakdownLossCost,
-		ROUND(moneysecurities.onPremisesLossCostPer100*:moneySecuritiesOnPremiseLimit/100,0) AS onPremisesMoneyLossCost,
-		ROUND(moneysecurities.offPremisesLossCostPer100*:moneySecuritiesOffPremiseLimit/100,0) AS offPremisesMoneyLossCost,
-		ROUND(a.outdoorSignsFactor*:outdoorSignsLimit,0) AS outdoorSignsLossCost,
-		ROUND(a.valuablePapersFactor*:valuablePapersRecordsLimit,0) AS valuablePapersLossCost,
-		ROUND(a.outdoorPropertyFactor*:outdoorPropertyLimit,0) AS outdoorPropertyLossCost,
-		CASE 
-		WHEN :damagePremisesRented='None' THEN 0 
-		WHEN :damagePremisesRentedLimit > 950000 THEN 'Limit too high' 
-		WHEN :damagePremisesRentedLimit <  50000 THEN 'Limit too low'  
-		WHEN :damagePremisesRented='Damage To Premises Rented To You' THEN ROUND(a.damagePremisesRentedFactor*base.bppRate*:damagePremisesRentedLimit/100,0)
-		WHEN :damagePremisesRented='Broadened Coverage For Damage To Premises Rented To You' THEN ROUND(a.broadenedDamagePremisesRentedFactor*base.bppRate*:damagePremisesRentedLimit/100,0)
-		END AS damagePremisesRentedLossCost,
-		ROUND(a.perPersonMedicalExpensesFactor*base.liabilityRate*base.liabilityExposure,0) AS perPersonMedicalExpensesLossCost,
- 		ROUND(IF(:businessIncomeChanges='Yes',a.businessIncomeChangesFactor*(base.buildingRate*:buildingsLOI/100 + a.functionalBuildingsFactor*base.buildingRate*:buildingsFunctionalValuation + base.bppRate*:bppLOI/100 + a.functionalBppFactor*base.bppRate*:bppFunctionalValuation),0),0) AS businessIncomeChangesLossCost,
-		ROUND((businessincomeextraexpense.bldgFactor-1)*(base.buildingRate*:buildingsLOI/100 + a.functionalBuildingsFactor*base.buildingRate*:buildingsFunctionalValuation)+(businessincomeextraexpense.bppFactor-1)*(base.bppRate*:bppLOI/100 + a.functionalBppFactor*base.bppRate*:bppFunctionalValuation),0) AS businessIncomeExtraExpenseLimitLossCost,
-		ROUND((a.businessIncomeExtraExpenseNumberMonthsFactor-1)*(base.buildingRate*:buildingsLOI/100 + a.functionalBuildingsFactor*base.buildingRate*:buildingsFunctionalValuation + base.bppRate*:bppLOI/100 + a.functionalBppFactor*base.bppRate*:bppFunctionalValuation),0) AS businessIncomeExtraExpenseTimePeriodLossCost,
-		ROUND(computerfraud.lossCost0To5Employees+computerfraud.lossCostAdditionalEmployee*GREATEST(0,:numEmployees-5)+computerfraud.lossCostAdditionalLocation*GREATEST(0,:numLocations-1),0) AS computerFraudLossCost,
-		ROUND(a.condoUnitownersOptionalLossCost+a.condoUnitownersAssocLossCost+a.condoUnitownersRealPropFactor*:condoUnitownersRealPropLimit,0) AS condoCommercialOwnersLossCost,
-		ROUND(a.earthquakeRatingFactor*:earthquakeCoinsuranceRate*((:buildingsLOI*(1+a.autoIncreaseFactor)+:bppLOI)+a.earthquakeFunctionalBuildingFactor*:buildingsFunctionalValuation*(1+a.autoIncreaseFactor)+a.earthquakeFunctionalBppFactor*:bppFunctionalValuation)/100,0) AS earthquakeLossCost,
-		ROUND(a.earthquakeVolcanicSublimitFactor*:earthquakeCoinsuranceRate*((:buildingsLOI*(1+a.autoIncreaseFactor)+:bppLOI)+a.earthquakeVolcanicSublimitFunctionalBuildingFactor*:buildingsFunctionalValuation*(1+a.autoIncreaseFactor)+a.earthquakeVolcanicSublimitFunctionalBppFactor*:bppFunctionalValuation)/100,0) AS earthquakeVolcanicLossCost,		
-		ROUND(IF(:foodContamination='Yes',a.foodContaminationFactor+a.foodContamHighLimitFactor*:foodContamHighLimit+a.foodContamAdvertisingFactor*:foodContamAdvertising,0),0) AS foodContaminationLossCost,
-		ROUND(a.functionalBuildingsFactor*base.buildingRate*:buildingsFunctionalValuation,0) AS functionalBuildingsLosscost,
-		ROUND(a.functionalBppFactor*base.bppRate*:bppFunctionalValuation,0) AS functionalBppLosscost,
-		
-		ROUND(IF(:fungiOption='Per Policy',a.fungiOptionFactor*:fungiSublimit/100,:numLocations*a.fungiOptionFactor*:fungiSublimit/100+GREATEST(0,:numLocations-1)*a.fungiPerPremiseFactor)+a.fungiNumberOfDaysFactor*(base.buildingRate*:buildingsLOI/100 + base.bppRate*:bppLOI/100),0) AS fungiLossCost,
-		-ROUND((base.buildingRate*:buildingsLOI/100 + a.functionalBuildingsFactor*base.buildingRate*:buildingsFunctionalValuation)*(CASE WHEN :namedPerils='Yes' AND :namedPerilsBurglary='Yes' THEN a.namedPerilsWithBurgBuildingsFactor WHEN :namedPerils='Yes' THEN a.namedPerilsWoutBurgBuildingsFactor ELSE 0 END)+(base.bppRate*:bppLOI/100 + a.functionalBppFactor*base.bppRate*:bppFunctionalValuation)*(CASE WHEN :namedPerils='Yes' AND :namedPerilsBurglary='Yes' THEN a.namedPerilsWithBurgBppFactor WHEN :namedPerils='Yes' THEN a.namedPerilsWoutBurgbppFactor ELSE 0 END),0) AS namedPerilsLossCost,
-		ROUND(
-			IF(:ordinanceCoverage='Coverage 1 only' OR :ordinanceCoverage='Coverages 1 and 2' OR :ordinanceCoverage='Coverages 1, 2 and 3',
-				(a.ordinanceCoverage1UndamagedFactor
-					+IF(:earthquakeCoinsuranceRate>0,a.ordinanceCoverage1EarthquakeFactor,0)
-				)*(base.buildingRate*:buildingsLOI/100)
-			,0)
-			+IF(:ordinanceCoverage='Coverages 1 and 2' OR :ordinanceCoverage='Coverages 1, 2 and 3',base.buildingRate*:ordinanceCoverage2Limit/100,0)
-			+IF(:ordinanceCoverage='Coverage 3 only' OR :ordinanceCoverage='Coverages 1, 2 and 3',base.buildingRate*:ordinanceCoverage3Limit/100,0)
-			+IF(:ordinanceCoverage='Coverages 1, 2 and 3 with combined limit for 2 and 3',base.buildingRate*:ordinanceCoverage2And3CombLimit/100,0)			
-			+IF(:ordinanceBiExpense='Yes',
-				a.ordinanceBiExpenseNonearthquakeFactor*(base.buildingRate*:buildingsLOI/100 )
-				+IF(:earthquakeCoinsuranceRate>0,
-					a.ordinanceBiExpenseEarthquakeFactor*ROUND(
-						a.earthquakeRatingFactor*:earthquakeCoinsuranceRate*(
-							(:buildingsLOI*(1+a.autoIncreaseFactor)+:bppLOI)+a.earthquakeFunctionalBuildingFactor*:buildingsFunctionalValuation*(1+a.autoIncreaseFactor)+a.earthquakeFunctionalBppFactor*:bppFunctionalValuation
-						)/100
-					,0)
-				,0)
-			,0)
-		,0) AS ordinanceOrLawLossCost,	
-		ROUND(a.spoilageLossCostPer100*:spoilageLimit) AS spoilageLossCost,
-		ROUND(:sprinklerCoinsurance*a.sprinklerEarthquakeFactor*base.propertyDeductibleFactor*(:sprinklerLimit*(1+a.autoIncreaseFactor)+a.sprinklerFunctionalBuildingFactor*:buildingsFunctionalValuation + a.sprinklerFunctionalBppFactor*:bppFunctionalValuation)/100,0) AS sprinklerLossCost,
-		ROUND(
-			(
-				:utilitiesNumPublic*(
-					:utilitiesBuildingsSublimit*a.utilityServicesDirectDamagePublicBuildingFactor 
-					+ :utilitiesBppSublimit*a.utilityServicesDirectDamagePublicBppFactor 
-					+ IF(:utilitiesIncludeEarthquake='Yes',
-						a.utilityServicesDirectDamagePublicEarthquakeFactor*(:utilitiesBuildingsSublimit+:utilitiesBppSublimit)
-					,0)
-				)
-				+:utilitiesNumNonpublic*(
-					:utilitiesBuildingsSublimit*a.utilityServicesDirectDamageNonpubBuildingFactor 
-					+ :utilitiesBppSublimit*a.utilityServicesDirectDamageNonpubBppFactor
-					+IF(:utilitiesIncludeEarthquake='Yes',
-						a.utilityServicesDirectDamageNonpubEarthquakeFactor*(:utilitiesBuildingsSublimit+:utilitiesBppSublimit)
-					,0)
-				)
-				+IF(:utilitiesIncludeOverhead='Yes',
-					:utilitiesBuildingsSublimit*a.utilityServicesDirectDamageOverheadBuildingFactor 
-					+ :utilitiesBppSublimit*a.utilityServicesDirectDamageOverheadBppFactor
-					+IF(:utilitiesIncludeEarthquake='Yes',
-						a.utilityServicesDirectDamageOverheadEarthquakeFactor*(:utilitiesBuildingsSublimit+:utilitiesBppSublimit)
-					,0)
-				,0)
-			)/100*base.propertyDeductibleFactor 
-		,0) AS utilityDirectDamageLossCost,
-		ROUND((:utilitiesNumPublic*(a.utilityTimePublicNonearthquakeFactor+IF(:utilityTimeEarthquake='Yes',a.utilityTimePublicEarthquakeFactor,0))
-		+IF(:utilityTimeCommunication='Yes',a.utilityTimeCommunicationnonEarthquakeFactor+IF(:utilityTimeEarthquake='Yes',a.utilityTimeCommunicationEarthquakeFactor,0),0)
-		+IF(:utilityTimeOverheadPower='Yes',a.utilityTimeOverheadNonearthquakeFactor+IF(:utilityTimeEarthquake='Yes',a.utilityTimeOverheadEarthquakeFactor,0),0)
-		+IF(:utilityTimeOverheadCommunication='Yes',a.utilityTimeOverheadNonearthquakeFactor+IF(:utilityTimeEarthquake='Yes',a.utilityTimeOverheadEarthquakeFactor,0),0))*:utilityTimeElementLimit/100,0) AS utilityTimeElementLossCost,
-		ROUND(IF(:vacancyPermit='Vacancy Permit BP 04 87',a.vacancyPermitFactor*base.buildingRate*:vacancyLimit/100,0),0) AS vacancyPermitLossCost,		
-		ROUND(IF(:waterBackup='Yes',a.waterBackupFactor*base.propertyDeductibleFactor,0),0) AS waterBackupLossCost,
-		ROUND(IF(:brandsLabels='Yes',(a.brandsLabelsFactor-1)*base.bppRate*:bppLOI/100,0),0) AS brandsLabelsLossCost,
-		ROUND(IF(:windRoofAcv='Yes',(a.windRoofAcvFactor-1)*base.buildingRate*:buildingsLOI/100,0),0) AS windRoofAcvLossCost,
-		ROUND(IF(:identityFraud='Yes',a.identityFraudFactor+a.identityFraudHigherLimitsFactor*:identityFraudHigherLimit/100,0),0) AS identityFraudLossCost,
-		ROUND(IF(:theftClientsProperty='Yes',a.theftClientsPropertyFactor*a.employeeDishonestyLossCost,0),0) AS theftClientsPropertyLossCost,
-		ROUND(IF(:debrisRemoval='Yes',a.debrisRemovalFactor*base.buildingRate*:debrisRemovalLimit/100,0),0) AS debrisRemovalLossCost,
-		ROUND(base.bppRate*(CASE WHEN :namedPerils='Yes' AND :namedPerilsBurglary='Yes' THEN a.namedPerilsWithBurgBppFactor*a.specifiedBppTempPremisesNamedPerilsFactor WHEN :namedPerils='Yes' THEN a.namedPerilsWoutBurgbppFactor*a.specifiedBppTempPremisesNamedPerilsFactor ELSE a.specifiedBppTempPremisesAllRiskFactor END)*IF(:bppFunctionalValuation>0,a.functionalBppFactor,1)*:specifiedBppTempAwayLimit,0) AS specifiedBppTempAwayPremisesLossCost,
-		ROUND(base.bppTerritoryLossCostPer100*a.higherTheftLimitFactor*:higherTheftLimit/100,0) As higherTheftLimitLossCost,
-		ROUND(a.limitationsRoofSurfacingFactor*(base.buildingRate*:buildingsLOI/100),0) AS limitationsRoofSurfacingLossCost,
-		ROUND(base.buildingRate*a.increaseRebuildingExpensesFactor*:increaseRebuildingExpensesLimit/100,0) AS increaseRebuildingExpensesLossCost,
-		ROUND(IF(:windstormHailExclusion='Yes',windstormhailexclusionfactor.buildingsCredit/base.buildingTerritoryLossCostPer100*(base.buildingRate*:buildingsLOI/100 )+windstormhailexclusionfactor.bppCredit/base.bppTerritoryLossCostPer100*(base.bppRate*:bppLOI/100),0),0) AS windstormHailExclusionLossCost,
-		ROUND(
-			(
-				a.offPremisesInterruptionMobileEquipmentOtcFactor+
-				IF(:offPremisesMobileCollision='Yes',a.offPremisesInterruptionMobileEquipmentCollisionFactor,0)
-			)*(1+a.extendedBusinessIncomeFactor+
-				IF(:offPremiseInterruptionVehiclesIncomeNoWaitPeriod='Yes',a.businessIncomeNoWaitingPeriodFactor,0)
-			)*(a.insuranceToExposureFactor1*:offPremiseInterruptionVehiclesLimit1+a.insuranceToExposureFactor2*:offPremiseInterruptionVehiclesLimit2+a.insuranceToExposureFactor3*:offPremiseInterruptionVehiclesLimit3
-			)/100
-			+((
-					IF(:floodCoverage='Yes',a.endorsementCoveredCauseOfLossFloodFactor,0)+
-					IF(:earthquakeCoinsuranceRate>0,a.endorsementCoveredCauseOfLossEarthquakeFactor,0)+
-					IF(:windstormHailExclusion='Yes',a.endorsementCoveredCauseOfLossWindstormExclFactor,0)
-			)
-			*a.offPremisesInterruptionMobileEquipmentOtcFactor
-			*(a.insuranceToExposureFactor1*:offPremiseInterruptionVehiclesLimit1+a.insuranceToExposureFactor2*:offPremiseInterruptionVehiclesLimit2+a.insuranceToExposureFactor3*:offPremiseInterruptionVehiclesLimit3)
-			)/100
-		,0) AS offPremiseInterruptionVehiclesMobileEquipmentLossCost,
-		ROUND(
-			IF(:epl='Employment-related Practices Liability Coverage',
-				(
-					LEAST(:numEmployees,25)
-					*eplCostPerEmp.lossCostPerEmpFirst25
-					+GREATEST(0,:numEmployees-25)
-					*eplCostPerEmp.lossCostPerEmpAfter25
-				)
-				*(a.eplLimitFactor-a.eplDeductibleFactor)
-				,0)
-		,0) As eplLossCost,		
-		ROUND(a.hiredAutoLossCost*a.hiredAutoLimitFactor,0) AS hiredAutoLossCost,
-		ROUND(IF(:medicalExpensesExclusion='Yes',-a.medicalExclusionFactor*(base.liabilityRate*base.liabilityExposure),0),0) AS medicalExclusionLossCost,
-		ROUND(a.additionaInsuredManagerApartmentLossCost*:additionaInsuredManagerApartmentNumber,0) AS additionaInsuredManagerApartmentLossCost,
-		ROUND(a.additionaInsuredManagerOtherLossCost*:additionaInsuredManagerOtherNumber,0) AS additionaInsuredManagerOtherLossCost,
-		ROUND(a.additionaInsuredEquipmentApartmentLossCost*:additionaInsuredEquipmentApartmentNumber,0) AS additionaInsuredEquipmentApartmentLossCost,
-		ROUND(a.additionaInsuredEquipmentOtherLossCost*:additionaInsuredEquipmentOtherNumber,0) AS additionaInsuredEquipmentOtherLossCost,
-		ROUND((CASE WHEN :pharmacistsProfLiab='Professional Liability' THEN a.pharmacistsProfLiabFactor WHEN :pharmacistsProfLiab='Broad Professional Liability' THEN a.pharmacistsBroadProfLiabFactor ELSE 0 END)*base.pharmacistFactor*base.liabilityExposure/1000,0) AS pharmacyProfLiabLossCost,
-		ROUND(:numberVeterinarians*a.veterinariansProfLiabFactor*base.veterinarianFactor,0) AS veterinarianProfLiabLossCost,
-		ROUND(a.infoSecurityProtectionLossCost*IF(:infoSecurityTier=3 AND :eightHourWaitingPeriod='Yes',a.eightHourWaitingPeriodFactor,1)*a.infoSecurityBreachContractFactor*(1
-			+IF(:infoSecurityOnlineTransactions='Yes',a.infoSecurityOnlineTransactionsFactor,0)
-			+IF(:infoSecurityRemoteTransactions='Yes',a.infoSecurityRemoteTransactionsFactor,0)
-			+IF(:infoSecurityNoWebsite='Yes',a.infoSecurityNoWebsiteFactor,0)
-			+IF(:infoSecurityActiveSocial='Yes',a.infoSecurityActiveSocialFactor,0)
-			+IF(:infoSecurityCollectsVisitor='Yes',a.infoSecurityCollectsVisitorFactor,0)
-			+IF(:infoSecurityRetainsMinors='Yes',a.infoSecurityRetainsMinorsFactor,0)
-			+IF(:infoSecurityMedicalRecords='Yes',a.infoSecurityMedicalRecordsFactor,0)
-			+IF(:infoSecurityCreditChecks='Yes',a.infoSecurityCreditChecksFactor,0)
-			+IF(:infoSecurityEncryption='Yes',a.infoSecurityEncryptionFactor,0)
-			+IF(:infoSecurityHighHazard='Yes',a.infoSecurityHighHazardFactor,0)
-		)*IF(:paymentCardIndustry='Yes' AND (:infoSecurityTier=2 OR :infoSecurityTier=3),1+a.paymentCardIndustryFactor,1)
-		*IF(:dishonestActsEmployees='Yes',1+a.dishonestActsEmployeesFactor,1)
-		,0) AS infoSecurityProtectionLossCost,
-		a.policyTermFactor
-
-	FROM (
-	 	SELECT a.classCode,	a.sicCode,	a.naicsCode, a.propertyRateNumber, a.liabilityClassGroup, a.liabilityExposureBase, a.eq, a.eqsl,  
-		ROUND(b.bldgFactor*c.bldgFactor*h.bldgFactor*i.buildingLossCostPer100*j.bldgFactor*n.factor*p.factor*k.factor,3) AS buildingRate, 
-		ROUND(b.bppFactor*c.bppFactor*h.bppFactor*i.bppLossCostPer100*j.bppFactor*o.factor*p.factor*k.factor,3) AS bppRate, 
-		CASE 
-			WHEN 'Lessor'= :occupantLessor THEN ROUND(g.factor*i.lessorsLossCostPer100*l.perOccurenceFactor*m.factor,3) 
-			WHEN d.factor IS NOT NULL THEN ROUND(d.factor*i.occupantLossCostPer100*l.perOccurenceFactor*m.factor,3)
-			WHEN e.factor IS NOT NULL THEN ROUND(e.factor*i.occupantLossCostPer1000AGS*l.perOccurenceFactor*m.factor,3)
-			WHEN f.factor IS NOT NULL THEN ROUND(f.factor*i.occupantLossCostPer1000AP*l.perOccurenceFactor*m.factor,3)
-		END AS liabilityRate,	
-		CASE 
-			WHEN 'Lessor'=:occupantLessor THEN :buildingsLOI/100
-			WHEN d.factor IS NOT NULL THEN :bppLOI/100
-			WHEN e.factor IS NOT NULL THEN :payroll_sales/1000
-			WHEN f.factor IS NOT NULL THEN :payroll_sales/1000
-		END AS liabilityExposure,
-		p.factor AS propertyDeductibleFactor,
-		i.buildingLossCostPer100 AS buildingTerritoryLossCostPer100, 
-		i.bppLossCostPer100 AS bppTerritoryLossCostPer100,
-		m.pharmacistFactor, m.veterinarianFactor		
-		FROM (SELECT * FROM mu_ru_classcodes WHERE classDesc1=:classDesc1 AND classDesc2=:classDesc2 AND classDesc3=:classDesc3) AS a
-		INNER JOIN mu_ru_ratenumberrelativities AS b
-		ON a.propertyRateNumber=b.propertyRateNumber
-		INNER JOIN (
-			SELECT propertyRateNumber, 
-			CASE WHEN :sprinklered='Yes' THEN bldgFactor ELSE 1 END AS bldgFactor, 
-			CASE WHEN :sprinklered='Yes' THEN bppFactor ELSE 1 END AS bppFactor 
-			FROM `mu_ru_sprinklered`
-		) AS c
-		ON a.propertyRateNumber=c.propertyRateNumber
-		LEFT JOIN mu_ru_occupantliabilityclassgrouprelativitiesloi AS d
-		ON a.liabilityClassGroup=d.classGroup
-		LEFT JOIN mu_ru_occupantliabilityclassgrouprelativitiesags AS e
-		ON a.liabilityClassGroup=e.classGroup
-		LEFT JOIN mu_ru_occupantliabilityclassgrouprelativitiesap AS f
-		ON a.liabilityClassGroup=f.classGroup
-		LEFT JOIN (SELECT classGroup, factor FROM mu_ru_lessorsliabilityclassgrouprelativities WHERE premise='' OR (:classDesc3='Office' AND premise='office') OR (:classDesc3='Shop' AND premise='shop_storage')) AS g
-		ON a.liabilityClassGroup=g.classGroup
-		INNER JOIN (SELECT bldgFactor, bppFactor FROM mu_ru_constructionrelativities WHERE constructionType=:constructionType) AS h
-		INNER JOIN (SELECT buildingLossCostPer100, bppLossCostPer100, lessorsLossCostPer100, occupantLossCostPer100, occupantLossCostPer1000AGS, occupantLossCostPer1000AP FROM ca_lc_baselosscostspropertyandliability WHERE territory=:territory) AS i		
-		INNER JOIN (SELECT bldgFactor, bppFactor FROM mu_ru_ppc WHERE ppc=:ppc) AS j
-		INNER JOIN (SELECT factor FROM ca_ru_buildingcodeeffectivenessgrading WHERE grade=:buildingCode) AS k		
-		INNER JOIN (SELECT perOccurenceFactor FROM mu_ru_propertydamageliabilitydeductible WHERE deductible=:propertyLiabDeductible) AS l 		
-		INNER JOIN (SELECT factor, pharmacistFactor, veterinarianFactor FROM mu_ru_increasedlimits WHERE liabMedExpensesLimit=:liabMedExpensesLimit AND aggLimitProductsOperations=:aggLimitProductsOperations AND aggLimitLiabMedical=:aggLimitLiabMedical) AS m		
-		INNER JOIN (
-			SELECT b.factor+(:buildingsLOI-b.buildingLimitFrom)/100000*b.marginalPer100000 AS factor
-			FROM `ca_ru_buildinglimitofinsurancerelativitygroup` AS a
-			INNER JOIN mu_ru_buildinglimitofinsurancerelativity AS b
-			ON a.buildinglimitofinsurancerelativitygroup=b.group
-			WHERE a.territory=:territory AND buildingLimitFrom<=:buildingsLOI AND (buildingLimitTo>:buildingsLOI OR buildingLimitTo=0)
-		) AS n			
-		INNER JOIN (
-			SELECT factor+(:bppLOI-bppLimitFrom)/100000*marginalPer100000 AS factor
-			FROM mu_ru_businesspersonalpropertylimitofinsurancerelativity
-			WHERE bppLimitFrom<=:bppLOI AND (bppLimitTo>:bppLOI OR bppLimitTo=0)
-		) AS o		
-		INNER JOIN (
-			SELECT CASE 
-				WHEN :windDeductible='None' THEN fixedDollarDeductibleFactor 
-				WHEN :windDeductible='1%' THEN WindstormOrHailDeductible_1percent 
-				WHEN :windDeductible='2%' THEN WindstormOrHailDeductible_2percent 
-				WHEN :windDeductible='3%' THEN WindstormOrHailDeductible_3percent 
-			END AS factor
-			FROM mu_ru_optionalpropertydeductible
-			WHERE fixedDollarDeductible=:propertyDeductible AND bldgAndBPPLOIFrom <= (:buildingsLOI+:bppLOI) AND (bldgAndBPPLOITo > (:buildingsLOI+:bppLOI) OR bldgAndBPPLOITo=0)
-		) AS p		
-	) AS base
-	INNER JOIN (
-		SELECT a.lossCost AS lossCost, b.lossCostPer100 AS higherLoiLossCostPer100, c.lossCostPer100 AS scheduledToolsLossCostPer100
- 		FROM mu_lc_contractorsinstallationtoolsequipmentcoverageendorsement AS a
- 		INNER JOIN mu_lc_toolsandequipmentcoverageoptionalhigherloiblanketbasis AS b
- 		ON a.sublimit=b.sublimit
- 		INNER JOIN mu_lc_scheduledtoolsandequipmentcoverage AS c
-		ON 1=1
-		WHERE a.sublimit=:contractorsBlanketSublimit AND :contractorsToolsLimit>=b.limitFrom AND :contractorsToolsLimit<b.limitTo
-		AND :contractorsToolsLimit  >=c.limitFrom AND :contractorsToolsLimit < c.limitTo
-	) AS concov2 	
- 	INNER JOIN (
- 		SELECT apartmentsFactor, restaurantsfactor FROM mu_ru_lossordamagetocustomersautosdeductible WHERE `deductibleDisplay`=:autoLiabiityDeductible
- 	) AS autodeductible
-	INNER JOIN (
-		SELECT onPremisesLossCostPer100, offPremisesLossCostPer100 FROM `ca_lc_moneyandsecurities` 
-		WHERE territory=:territory AND CASE WHEN GREATEST(LOCATE('Apartment',CONCAT(:classDesc1,:classDesc2,:classDesc3)),LOCATE('Residential Condominium',CONCAT(:classDesc1,:classDesc2,:classDesc3))) >0   THEN 'Apartment & Apartment Condominiums' WHEN GREATEST(LOCATE('Office',CONCAT(:classDesc1,:classDesc2,:classDesc3)),LOCATE('Commercial Condominium',CONCAT(:classDesc1,:classDesc2,:classDesc3)))>0  THEN 'Office & Office Condominiums' ELSE 'All Other' END = classType
-	) AS moneysecurities
-	INNER JOIN (SELECT lossCost0To5Employees, lossCostAdditionalEmployee, lossCostAdditionalLocation FROM `mu_lc_computerfraudandfundstransferfraudoptionalcoverage` WHERE `limit`=:computerFraudLimit) AS computerfraud
-	INNER JOIN (SELECT bldgFactor, bppFactor FROM `mu_ru_businessincomeandextraexpensecoveragelimitofinsurance` WHERE limitOfInsurance=:businessIncomeExpenseLimit AND classType= CASE 
-			WHEN :classDesc1='Offices' THEN 'Offices'
-			WHEN :classDesc1='Apartment Building' OR :classDesc1='Dwellings – Three or Four Family (Lessor\'s Risk Only)' OR :classDesc1='Townhouses or Similar Associations' THEN 'Motels And Residential'
-			WHEN :classDesc1='Contractor' THEN 'Contractors'
-			ELSE 'All Other' 
-			END 
-		) AS businessincomeextraexpense
-	INNER JOIN (SELECT buildingsCredit, bppCredit FROM `ca_lc_windstormorhailexclusioncredits` WHERE territory=:territory) AS windstormhailexclusionfactor
-
-	INNER JOIN (
-		SELECT lossCostPerEmpFirst25, lossCostPerEmpAfter25 
-		FROM `ca_lc_employmentpracticesliability` 
-		WHERE `class`= 
-			CASE WHEN :classDesc1='Restaurants' OR 
-				(
-					LOCATE('mercantile',LOWER(:classDesc2))>0 AND LOCATE('mercantile',LOWER(:classDesc2))=0
-				) THEN 'Mercantile Restaurant' 
-			WHEN LOCATE('distributor',LOWER(CONCAT(:classDesc2,:classDesc3)))>0 THEN 'Wholesale' 
-			ELSE 'All Other' 
-			END		
-	) AS eplCostPerEmp
-
-	INNER JOIN ( SELECT
-		(SELECT lossCost0to5Employees+GREATEST(:employeeDishonestyNumberEmployees-5,0)*lossCostAdditionalEmployee+GREATEST(:numLocations-1,0)*lossCostAdditionalLocation AS employeeDishonestyLossCost FROM mu_lc_employeedishonesty WHERE `limit`=:employeeDishonestyLimit) AS employeeDishonestyLossCost,
-		(SELECT factor FROM singleconditions WHERE `condition`='Per Swimming Pool Loss Cost') AS poolFactor,		
-		(SELECT lossCostPer100 FROM ca_lc_permanentyardsmaintenanceorstorage WHERE ppc=:ppc) AS contractorYardFactor,	
-		(SELECT factor FROM mu_ru_policyterm WHERE termOfPolicy=:policyTerm) AS policyTermFactor,	
-		(SELECT lossCost FROM mu_lc_contractorsinstallationcoverageoptionalhigherloi WHERE loiForPropertyAtEachCoveredJobSite=:contractorsInstallationLimit ) AS concov1Factor,		
-		(SELECT lossCostPer100 FROM mu_lc_nonownedtoolsandequipment WHERE :contractorsNonownedTools>=limitFrom AND :contractorsNonownedTools< limitTo ) AS concov3Factor, 
- 		(SELECT factor FROM singleconditions WHERE `condition` = 'Employees Tools loss cost (per $100)') AS concov4Factor,
-		(SELECT lossCost FROM mu_lc_optionalhigherlimitsforguestsproperty WHERE limitPerGuest=:motelLimitPerGuest) AS motelLimitPerGuestFactor, 
- 		(SELECT lossCost FROM mu_lc_motelliabilityforguestspropertyinsafedepositboxes WHERE `limit`= :motelSafeDepositLimitPerGuest) AS motelSafeDepositFactor, 	
- 		(SELECT factor FROM singleconditions WHERE `condition` = 'Customers Goods Legal Liability Optional Higher Limits (per $100)') AS selfStorageLiabilityFactor,
-		(SELECT factor FROM singleconditions WHERE `condition`='Apartment Buildings') AS apartmentFactor ,
-	 	(SELECT factor FROM singleconditions WHERE `condition`='Apartment Buildings Employee Dishonesty Optional Coverage' ) AS apartmentEmpdisFactor ,
-	 	(SELECT lossCost FROM ca_lc_lossordamagetotenantsautolegalliabilitycoverageapartments WHERE `limit`=:autoLiabilityLimit) AS apartmentAutoLiabilityFactor 	, 	
-		(SELECT factor FROM singleconditions WHERE `condition`='Fine Arts Coverage Apartments') AS apartmentFineartsFactor,		
-		(SELECT factor FROM singleconditions WHERE `condition`='Residential Cleaning Services') AS residentialCleaningFactor,
-	  	(SELECT factor FROM singleconditions WHERE `condition`='Residential Cleaning Services Employee Dishonesty Optional Coverage') AS residentialCleaningEmpdisFactor ,
-	  	(SELECT factor FROM singleconditions WHERE `condition`='Photography') AS photographyFactor  	,
-	 	(SELECT factor FROM singleconditions WHERE `condition`='Photography Employee Dishonesty Theft Of Clients Property') AS photographyEmpdisFactor ,
-	  	(SELECT factor FROM singleconditions WHERE `condition`='Photography Scheduled Photographic Equipment') AS photographyScheduledFactor,
-	 	(SELECT factor FROM singleconditions WHERE `condition`='Photography Worldwide Coverage Additive') AS photographyWorldwideAdditiveFactor ,
-	 	(SELECT factor FROM singleconditions WHERE `condition`='Photography Worldwide Coverage Multiplicative') AS photographyWorldwideMultiplicativeFactor ,
-	 	(SELECT factor FROM `singleconditions` WHERE `condition`='Accounts Receivable') AS accountsReceivableFactor	,
-		(SELECT factor FROM `singleconditions` WHERE `condition`='Actual Cash Value Buildings Option') AS acvBuildingsFactor	,
-		(SELECT factor FROM `mu_ru_automaticincreaseininsurance` WHERE amountOfAnnualIncrease=:buildingsAnnualLimitIncrease) AS autoIncreaseFactor,
-		(SELECT factor FROM `mu_ru_bidependentproperties` WHERE biType=:businessIncomeDependentPropertiesType) AS biPropertiesFactor,
-		(SELECT factor FROM `mu_ru_businessincomeextendedperiodofindemnity` WHERE numberOfDays=:businessIncomePayrollNumDays) AS biPayrollPeriodFactor,
-		(SELECT factor FROM `mu_ru_businessincomeordinarypayroll` WHERE numberOfDays=:businessIncomeExtendedNumDays) AS biExtendedPeriodFactor,
-		(SELECT factor FROM `singleconditions` WHERE `condition`='Electronic Data') AS electronicDataFactor,
-		(SELECT lossCost FROM `mu_lc_firedepartmentservicecharge` WHERE `limit`=:fireDepartmentLimit) AS fireDepartmentServiceFactor,
-		(SELECT factor FROM `singleconditions` WHERE `condition`='Forgery Or Alteration') AS forgeryAlterationFactor,
-		(SELECT factor FROM `singleconditions` WHERE `condition`='Interruption Of Computer Operations') AS interruptionComputerOperationsFactor,
-		(SELECT lossCost FROM `mu_lc_equipmentbreakdownprotectioncoverage` WHERE IF(:buildingsLOI=0,:bppLOI,:buildingsLOI)>=limitFrom AND (IF(:buildingsLOI=0,:bppLOI,:buildingsLOI)<limitTo OR limitTo=0)) AS equipmentBreakdownBaseLossCost,
-		(SELECT factor FROM `singleconditions` WHERE `condition`='Equipment Breakdown') AS equipmentBreakdownHighLoiFactor,
-		(SELECT factor FROM `mu_ru_optionalpropertydamagedeductible` WHERE `deductible`=:equipmentBreakdownDeductible) AS equipmentBreakdownDeductibleFactor,
-		(SELECT factor FROM `mu_ru_optionaltimedeductible` WHERE `hours`=:equipmentBreakdownTimeDeductible) AS equipmentBreakdownTimeDeductibleFactor,
-		(SELECT factor FROM `singleconditions` WHERE `condition`='Outdoor Signs (per $100)') AS outdoorSignsFactor,
-		(SELECT factor FROM `singleconditions` WHERE `condition`='Valuable Papers And Records') AS valuablePapersFactor,
-		(SELECT factor FROM `singleconditions` WHERE `condition`='Outdoor Property') AS outdoorPropertyFactor,
-
-		(SELECT factor FROM `singleconditions` WHERE `condition`='Damage To Premises Rented To You') AS damagePremisesRentedFactor,
-		(SELECT factor FROM `singleconditions` WHERE `condition`='Broadened Coverage For Damage To Premises Rented To You') AS broadenedDamagePremisesRentedFactor,
-		(SELECT factor FROM `mu_ru_perpersonmedicalexpenseslimit` WHERE `limit`=:optionalPerPersonMedicalLimit) AS perPersonMedicalExpensesFactor,
-
-		(SELECT factor FROM `singleconditions` WHERE `condition`='Business Income Changes Time Period Factor') AS businessIncomeChangesFactor,
-		(SELECT factor FROM `mu_ru_businessincomeandextraexpensecoveragerevisedperiodofindem` WHERE numberOfMonths=:businessIncomeExtraExpenseNumberOfMonths) AS businessIncomeExtraExpenseNumberMonthsFactor,
-		(SELECT lossCost FROM `mu_lc_condocommercialunitownerslossassessmentoptionalcoverage` WHERE `limit`=:condoUnitownersOptionalLimit) AS condoUnitownersOptionalLossCost,
-		(SELECT lossCost FROM `mu_lc_condocommunitownlossassessincrsublimitcondoassocdeduc` WHERE `limit`=:condoUnitownersAssocSublimit) AS condoUnitownersAssocLossCost,
-		(SELECT factor FROM `singleconditions` WHERE `condition`='Condominium Commercial Unit-owners Miscellaneous Real Property Optional Coverage (per $100)') AS condoUnitownersRealPropFactor,		
-		(SELECT factor FROM `singleconditions` WHERE `condition`='Earthquake Rating') AS earthquakeRatingFactor,
-		(SELECT factor FROM `singleconditions` WHERE `condition`='Earthquake Functional Building Valuation') AS earthquakeFunctionalBuildingFactor,
-		(SELECT factor FROM `singleconditions` WHERE `condition`='Earthquake Functional Business Personal Property Valuation') AS earthquakeFunctionalBppFactor,
-		(SELECT factor FROM `singleconditions` WHERE `condition`='Earthquake And Volcanic Eruption (Sub-limit)') AS earthquakeVolcanicSublimitFactor,
-		(SELECT factor FROM `singleconditions` WHERE `condition`='Earthquake And Volcanic Eruption (Sub-limit) Functional Building Valuation') AS earthquakeVolcanicSublimitFunctionalBuildingFactor,
-		(SELECT factor FROM `singleconditions` WHERE `condition`='Earthquake And Volcanic Eruption (Sub-limit) Functional Business Personal Property Valuation') AS earthquakeVolcanicSublimitFunctionalBppFactor,
-		(SELECT factor FROM `singleconditions` WHERE `condition`='Food Contamination') AS foodContaminationFactor,
-		(SELECT factor FROM `singleconditions` WHERE `condition`='Food Contamination Optional Higher Limits (per $100)') AS foodContamHighLimitFactor,
-		(SELECT factor FROM `singleconditions` WHERE `condition`='Food Contamination Additional Advertising Expenses Optional Higher Limits (per $100)') AS foodContamAdvertisingFactor,
-		(SELECT factor FROM `singleconditions` WHERE `condition`='Functional Building Valuation') AS functionalBuildingsFactor,
-		(SELECT factor FROM `singleconditions` WHERE `condition`='Functional Business Personal Property Valuation') AS functionalBppFactor,
-		(SELECT factor FROM `singleconditions` WHERE `condition`='Limited Fungi Or Bacteria Coverage Options') AS fungiOptionFactor,
-		(SELECT factor FROM `singleconditions` WHERE `condition`='Limited Fungi Or Bacteria Coverage Options number of premises or locations') AS fungiPerPremiseFactor,
-		(SELECT factor FROM `mu_ru_fungicoverageoptions` WHERE numberOfDays=:fungiNumberOfDays) AS fungiNumberOfDaysFactor,		
-		(SELECT factor FROM `singleconditions` WHERE `condition`='Named Perils Building With Burglary') AS namedPerilsWithBurgBuildingsFactor,
-		(SELECT factor FROM `singleconditions` WHERE `condition`='Named Perils Business Personal Property With Burglary') AS namedPerilsWithBurgBppFactor,
-		(SELECT factor FROM `singleconditions` WHERE `condition`='Named Perils Building Without Burglary') AS namedPerilsWoutBurgBuildingsFactor,
-		(SELECT factor FROM `singleconditions` WHERE `condition`='Named Perils Business Personal Property Without Burglary') AS namedPerilsWoutBurgbppFactor,
-		(SELECT factor FROM `singleconditions` WHERE `condition`='Coverage 1 Coverage For Loss In Value Of The Undamaged Portion Of The Building') AS ordinanceCoverage1UndamagedFactor,
-		(SELECT factor FROM `singleconditions` WHERE `condition`='Earthquake') AS ordinanceCoverage1EarthquakeFactor,
-		(SELECT factor FROM `singleconditions` WHERE `condition`='Business Income And Extra Expense Option Other Than Earthquake') AS ordinanceBiExpenseNonearthquakeFactor,
-		(SELECT factor FROM `singleconditions` WHERE `condition`='Business Income And Extra Expense Option Earthquake') AS ordinanceBiExpenseEarthquakeFactor,
-		(SELECT a.lossCostPer100 FROM `mu_lc_spoilagecoveragelosscostsper100` AS a INNER JOIN `mu_lc_spoilageclass` AS b ON a.`class`=b.`class` WHERE a.coverage=:spoilageCoverage AND (a.refrigerationAgreement='' OR a.refrigerationAgreement=:refrigerationAgreement) AND ((LOCATE(b.desc1Contains,LOWER(CONCAT(:classDesc1,:classDesc2,:classDesc3)))>0 AND b.desc3contains='') OR (b.desc1Contains='' AND LOCATE(b.desc3contains,LOWER(CONCAT(:classDesc1,:classDesc2,:classDesc3)))>0))) AS spoilageLossCostPer100,
-		(SELECT factor FROM `singleconditions` WHERE `condition`='Sprinkler Leakage Earthquake Extension') AS sprinklerEarthquakeFactor,
-		(SELECT factor FROM `singleconditions` WHERE `condition`='Sprinkler Leakage Functional Building Valuation') AS sprinklerFunctionalBuildingFactor,
-		(SELECT factor FROM `singleconditions` WHERE `condition`='Sprinkler Leakage Functional Business Personal Property') AS sprinklerFunctionalBppFactor,
-		(SELECT lossCost FROM `mu_lc_utilityservicesdirectdamagelosscosts` WHERE `utility`='Public Utilities' AND causeOfLoss='Building') AS utilityServicesDirectDamagePublicBuildingFactor,
-		(SELECT lossCost FROM `mu_lc_utilityservicesdirectdamagelosscosts` WHERE utility='Public Utilities' AND causeOfLoss='Business Personal Property') AS utilityServicesDirectDamagePublicBppFactor,
-		(SELECT lossCost FROM `mu_lc_utilityservicesdirectdamagelosscosts` WHERE utility='Public Utilities' AND causeOfLoss='Earthquake') AS utilityServicesDirectDamagePublicEarthquakeFactor,
-		(SELECT lossCost FROM `mu_lc_utilityservicesdirectdamagelosscosts` WHERE utility='Other Than Public Utilities' AND causeOfLoss='Building') AS utilityServicesDirectDamageNonpubBuildingFactor,
-		(SELECT lossCost FROM `mu_lc_utilityservicesdirectdamagelosscosts` WHERE utility='Other Than Public Utilities' AND causeOfLoss='Business Personal Property') AS utilityServicesDirectDamageNonpubBppFactor,
-		(SELECT lossCost FROM `mu_lc_utilityservicesdirectdamagelosscosts` WHERE utility='Other Than Public Utilities' AND causeOfLoss='Earthquake') AS utilityServicesDirectDamageNonpubEarthquakeFactor,
-		(SELECT lossCost FROM `mu_lc_utilityservicesdirectdamagelosscosts` WHERE utility='Overhead Power And Communication' AND causeOfLoss='Building') AS utilityServicesDirectDamageOverheadBuildingFactor,
-		(SELECT lossCost FROM `mu_lc_utilityservicesdirectdamagelosscosts` WHERE utility='Overhead Power And Communication' AND causeOfLoss='Business Personal Property') AS utilityServicesDirectDamageOverheadBppFactor,
-		(SELECT lossCost FROM `mu_lc_utilityservicesdirectdamagelosscosts` WHERE utility='Overhead Power And Communication' AND causeOfLoss='Earthquake') AS utilityServicesDirectDamageOverheadEarthquakeFactor,
-		(SELECT lossCost FROM `mu_lc_utilityservicestimeelementlosscosts` WHERE utility='Power Supply And Water Supply' AND causeOfLoss='Other Than Earthquake') AS utilityTimePublicNonearthquakeFactor,
-		(SELECT lossCost FROM `mu_lc_utilityservicestimeelementlosscosts` WHERE utility='Power Supply And Water Supply' AND causeOfLoss='Earthquake') AS utilityTimePublicEarthquakeFactor,
-		(SELECT lossCost FROM `mu_lc_utilityservicestimeelementlosscosts` WHERE utility='Communication Supply' AND causeOfLoss='Other Than Earthquake') AS utilityTimeCommunicationnonEarthquakeFactor,
-		(SELECT lossCost FROM `mu_lc_utilityservicestimeelementlosscosts` WHERE utility='Communication Supply' AND causeOfLoss='Earthquake') AS utilityTimeCommunicationEarthquakeFactor,
-		(SELECT lossCost FROM `mu_lc_utilityservicestimeelementlosscosts` WHERE utility='Overhead Power Transmission And Overhead Communication Lines' AND causeOfLoss='Other Than Earthquake') AS utilityTimeOverheadNonearthquakeFactor,
-		(SELECT lossCost FROM `mu_lc_utilityservicestimeelementlosscosts` WHERE utility='Overhead Power Transmission And Overhead Communication Lines' AND causeOfLoss='Earthquake') AS utilityTimeOverheadEarthquakeFactor,
-		(SELECT factor FROM `singleconditions` WHERE `condition`='Vacancy Permit') AS vacancyPermitFactor,
-		(SELECT lossCost FROM `mu_lc_waterbackupandsumpoverflowpremiumdeterminationperlocation` WHERE bpp=IF(:bppLOI>0,'Yes','No')) AS waterBackupFactor,
-		(SELECT factor FROM `singleconditions` WHERE `condition`='Brands And Labels') AS brandsLabelsFactor,
-		(SELECT factor FROM `singleconditions` WHERE `condition`='Windstorm Or Hail Losses To Roof Surfacing Actual Cash Value Loss Settlement') AS windRoofAcvFactor,
-		(SELECT factor FROM `singleconditions` WHERE `condition`='Identity Fraud Expense Coverage') AS identityFraudFactor,
-		(SELECT factor FROM `singleconditions` WHERE `condition`='Identity Fraud Expense Coverage Optional Higher Limits') AS identityFraudHigherLimitsFactor,
-		(SELECT factor FROM `singleconditions` WHERE `condition`='Theft Of Clients Property') AS theftClientsPropertyFactor,
-		(SELECT factor FROM `singleconditions` WHERE `condition`='Debris Removal Additional Insurance') AS debrisRemovalFactor,
-		(SELECT factor FROM `singleconditions` WHERE `condition`='Specified Business Personal Property Temporarily Away From Premises All Risk') AS specifiedBppTempPremisesAllRiskFactor,
-		(SELECT factor FROM `singleconditions` WHERE `condition`='Specified Business Personal Property Temporarily Away From Premises Named Perils') AS specifiedBppTempPremisesNamedPerilsFactor,
-		(SELECT factor FROM `singleconditions` WHERE `condition`='Higher Limits Theft Limitations') AS higherTheftLimitFactor,
-		(SELECT factor FROM `mu_ru_limitationsoncoverageforroofsurfacing` WHERE limitations=:limitationsRoofSurfacing) AS limitationsRoofSurfacingFactor,
-		(SELECT factor FROM `singleconditions` WHERE `condition`='Increase In Rebuilding Expenses Following Disaster (Additional Expense Coverage On Annual Aggregate Basis)') AS increaseRebuildingExpensesFactor,
-
-		(SELECT lossCostPer100 FROM `mu_lc_offpremisesinterruptionofbusinessvehiclesmobileequipment` WHERE `causeOfLoss`='Collision') AS offPremisesInterruptionMobileEquipmentCollisionFactor,
-		(SELECT lossCostPer100 FROM `mu_lc_offpremisesinterruptionofbusinessvehiclesmobileequipment` WHERE `causeOfLoss`='Other Than Collision') AS offPremisesInterruptionMobileEquipmentOtcFactor,
-		(SELECT IF(:offPremiseVehicleMobile='Separate Item Limit',1,factor) FROM `mu_ru_insurancetoexposure` WHERE `percentageOfInsuranceToExposureFrom`<=(:offPremiseInterruptionVehiclesLimit1/:offPremiseInterruptionVehiclesMaximumPotentialExposure)
-		AND `percentageOfInsuranceToExposureTo`>(:offPremiseInterruptionVehiclesLimit1/:offPremiseInterruptionVehiclesMaximumPotentialExposure)) AS insuranceToExposureFactor1,
-
-		(SELECT IF(:offPremiseVehicleMobile='Separate Item Limit',1,factor) FROM `mu_ru_insurancetoexposure` WHERE `percentageOfInsuranceToExposureFrom`<=(:offPremiseInterruptionVehiclesLimit2/:offPremiseInterruptionVehiclesMaximumPotentialExposure)
-		AND `percentageOfInsuranceToExposureTo`>(:offPremiseInterruptionVehiclesLimit2/:offPremiseInterruptionVehiclesMaximumPotentialExposure)) AS insuranceToExposureFactor2,
-
-		(SELECT IF(:offPremiseVehicleMobile='Separate Item Limit',1,factor) FROM `mu_ru_insurancetoexposure` WHERE `percentageOfInsuranceToExposureFrom`<=(:offPremiseInterruptionVehiclesLimit3/:offPremiseInterruptionVehiclesMaximumPotentialExposure)
-		AND `percentageOfInsuranceToExposureTo`>(:offPremiseInterruptionVehiclesLimit3/:offPremiseInterruptionVehiclesMaximumPotentialExposure)) AS insuranceToExposureFactor3,
-		(SELECT factor FROM `mu_ru_endorsementsmodifyingcoveredcausesoflossfactors` WHERE `endorsement`='Flood Coverage') AS endorsementCoveredCauseOfLossFloodFactor,
-		(SELECT factor FROM `mu_ru_endorsementsmodifyingcoveredcausesoflossfactors` WHERE `endorsement`='Earthquake And Volcanic Eruption Coverage') AS endorsementCoveredCauseOfLossEarthquakeFactor,
-		(SELECT factor FROM `mu_ru_endorsementsmodifyingcoveredcausesoflossfactors` WHERE `endorsement`='Windstorm Or Hail Exclusion') AS endorsementCoveredCauseOfLossWindstormExclFactor,
-		(SELECT factor FROM `mu_ru_extendedbusinessincomecoverage` WHERE `numberOfDays`=:offPremiseInterruptionVehiclesExtendedIncomeNumDay) AS extendedBusinessIncomeFactor,
-		(SELECT factor FROM `singleconditions` WHERE `condition`='Business Income Coverage No Waiting Period') AS businessIncomeNoWaitingPeriodFactor,		
-
-		(SELECT factor FROM `ca_ru_employmentpracticesliabilityloi` WHERE `limit`=':eplLimit') AS eplLimitFactor,
-		(SELECT factor FROM `ca_ru_employmentpracticesliabilitydeductible` WHERE `deductible`=':eplDeductible') AS eplDeductibleFactor,
-		(SELECT lossCost FROM `mu_lc_hiredautoandnonownedautoliability` WHERE `coverage`=':hiredAutoCoverage') AS hiredAutoLossCost,
-		(SELECT factor FROM `mu_ru_hiredautoandnonownedautoliabilityoptionalhigherlimits` WHERE `limit`=':hiredAutoLimit') AS hiredAutoLimitFactor,
-		(SELECT factor FROM `singleconditions` WHERE `condition`='Medical Expenses') AS medicalExclusionFactor,
-		(SELECT lossCost FROM `mu_lc_additionalinsured` WHERE `insuredType`='Managers Or Lessors Of Premises' AND riskType = 'Apartment and Office') AS additionaInsuredManagerApartmentLossCost,
-		(SELECT lossCost FROM `mu_lc_additionalinsured` WHERE `insuredType`='Managers Or Lessors Of Premises' AND riskType = 'All Other') AS additionaInsuredManagerOtherLossCost,
-		(SELECT lossCost FROM `mu_lc_additionalinsured` WHERE `insuredType`='Lessor Of Leased Equipment' AND riskType = 'Apartment and Office') AS additionaInsuredEquipmentApartmentLossCost,
-		(SELECT lossCost FROM `mu_lc_additionalinsured` WHERE `insuredType`='Lessor Of Leased Equipment' AND riskType = 'All Other') AS additionaInsuredEquipmentOtherLossCost,
-		(SELECT factor FROM `singleconditions` WHERE `condition`='Pharmacists Professional Liability') AS pharmacistsProfLiabFactor,
-		(SELECT factor FROM `singleconditions` WHERE `condition`='Pharmacists Broad Professional Liability') AS pharmacistsBroadProfLiabFactor,
-		(SELECT factor FROM `singleconditions` WHERE `condition`='Veterinarians Professional Liability') AS veterinariansProfLiabFactor,
-		(SELECT lossCost FROM `ca_lc_informationsecurityprotection` WHERE `tier`=':infoSecurityTier' AND `limit`=':infoSecurityLimit' AND `deductible`=':infoSecurityDeductible') AS infoSecurityProtectionLossCost,
-		(SELECT factor FROM `singleconditions` WHERE `condition`='Eight-hour Waiting Period') AS eightHourWaitingPeriodFactor,
-		(SELECT factor FROM `mu_ru_securitybreachservicescontract` WHERE `contract`=:infoSecurityBreachContract) AS infoSecurityBreachContractFactor, 
-		(SELECT factor FROM `mu_ru_riskcharacteristics` WHERE `riskCharacteristics`='Insured conducts online transactions') AS infoSecurityOnlineTransactionsFactor, 
-		(SELECT factor FROM `mu_ru_riskcharacteristics` WHERE `riskCharacteristics`='Remote access to insured\'s computer system(s) is granted to authorized third parties (employees, customers and/or business partners)') AS infoSecurityRemoteTransactionsFactor, 
-		(SELECT factor FROM `mu_ru_riskcharacteristics` WHERE `riskCharacteristics`='Insured does not have a website') AS infoSecurityNoWebsiteFactor, 
-		(SELECT factor FROM `mu_ru_riskcharacteristics` WHERE `riskCharacteristics`='Insured has active social media profiles') AS infoSecurityActiveSocialFactor, 
-		(SELECT factor FROM `mu_ru_riskcharacteristics` WHERE `riskCharacteristics`='Insured collects data from customers or visitors to their website(s) that is required by law to be protected') AS infoSecurityCollectsVisitorFactor, 
-		(SELECT factor FROM `mu_ru_riskcharacteristics` WHERE `riskCharacteristics`='Insured collects and retains information on minors') AS infoSecurityRetainsMinorsFactor, 
-		(SELECT factor FROM `mu_ru_riskcharacteristics` WHERE `riskCharacteristics`='Insured utilizes medical records in daily business') AS infoSecurityMedicalRecordsFactor, 
-		(SELECT factor FROM `mu_ru_riskcharacteristics` WHERE `riskCharacteristics`='Insured utilizes background and/or credit checks in daily business and retains this information') AS infoSecurityCreditChecksFactor, 
-		(SELECT factor FROM `mu_ru_riskcharacteristics` WHERE `riskCharacteristics`='Insured employs encryption in customer communications') AS infoSecurityEncryptionFactor, 
-		(SELECT factor FROM `mu_ru_riskcharacteristics` WHERE `riskCharacteristics`='High Hazard Classifications') AS infoSecurityHighHazardFactor, 
-		(SELECT factor FROM `singleconditions` WHERE `condition`='Payment Card Industry Coverage') AS paymentCardIndustryFactor,
-		(SELECT factor FROM `singleconditions` WHERE `condition`='Dishonest, Malicious Or Fraudulent Acts Committed By Employees Coverage Factor') AS dishonestActsEmployeesFactor
-	 ) AS a
-		
-";
-
-	
-
-
-
-
-// 
-
-
-
-// $sql = "
-
-// ";
-// echo $sql;
-$stmt = $dbh->prepare($sql);
-
-$defaultinputs['classDesc1']='Contractor';
-$defaultinputs['classDesc2']='Lawn Sprinkler Installation';
-$defaultinputs['classDesc3']='Shop';
-$defaultinputs['territory']=13;
-$defaultinputs['policyTerm']='12 Months';
-$defaultinputs['ppc']=5;
-$defaultinputs['buildingsLOI']=0;
-$defaultinputs['bppLOI']=0;
-$defaultinputs['payroll_sales']=0;
-$defaultinputs['limitContractorYards']=0;
-$defaultinputs['numberPools']=0;
-$defaultinputs['windDeductible']=0;
-$defaultinputs['propertyDeductible']=500;
-$defaultinputs['propertyLiabDeductible']=500;
-$defaultinputs['buildingCode']='Ungraded';
-$defaultinputs['constructionType']='Frame Construction';
-$defaultinputs['liabMedExpensesLimit']=300000;
-$defaultinputs['aggLimitProductsOperations']=600000;
-$defaultinputs['aggLimitLiabMedical']=600000;
-$defaultinputs['occupantLessor']='Occupant Tenant';
-$defaultinputs['sprinklered']='Yes';
-
-$defaultinputs['numLocations']=1;
-$defaultinputs['employeeDishonestyLimit']=0;
-$defaultinputs['employeeDishonestyNumberEmployees']=0;
-
-$defaultinputs['contractorsInstallationLimit']=3000;
-$defaultinputs['contractorsToolsType']='specified';
-$defaultinputs['contractorsBlanketSublimit']=500;
-$defaultinputs['contractorsToolsLimit']=0;
-$defaultinputs['contractorsNonownedTools']=0;
-$defaultinputs['contractorsEmployeesTools']=0;
-
-$defaultinputs['motelLimitPerGuest']=1000;
-$defaultinputs['motelSafeDepositLimitPerGuest']=0;
-
-$defaultinputs['selfStorageLimit']=0;
-
-$defaultinputs['apartmentBuildings']='No';
-$defaultinputs['autoLiabilityLimit']=0;
-$defaultinputs['autoLiabiityDeductible']='$250/$500/$500';
-$defaultinputs['fineArtsCoverage']='No';
-
-$defaultinputs['residentialCleaningServices']='No';
-
-$defaultinputs['photography']='No';
-$defaultinputs['scheduledPhotographicEquipment']=0;
-$defaultinputs['worldwidePhotographicEquipment']='No';
-
-$defaultinputs['buildingsAnnualLimitIncrease']=0.08;
-$defaultinputs['businessIncomeDependentPropertiesType']='Business Income From Dependent Properties';
-$defaultinputs['businessIncomePayrollNumDays']=60;
-$defaultinputs['businessIncomeExtendedNumDays']=60;
-$defaultinputs['fireDepartmentLimit']=2500;
-$defaultinputs['equipmentBreakdownDeductible']=500;
-$defaultinputs['equipmentBreakdownTimeDeductible']=72;
-
-$defaultinputs['accountsReceivableLimit']=0;
-$defaultinputs['buildingsACV']='No';
-$defaultinputs['businessIncomeDependentPropertiesLimit']=0;
-$defaultinputs['electronicDataLimit']=0;
-$defaultinputs['numLocations']=1;
-$defaultinputs['forgeryAlteration']=0;
-$defaultinputs['interruptionComputerOperationsLimit']=0;
-$defaultinputs['equipmentBreakdown']='No';
-$defaultinputs['moneySecuritiesOnPremiseLimit']=0;
-$defaultinputs['moneySecuritiesOffPremiseLimit']=0;
-$defaultinputs['outdoorSignsLimit']=0;
-$defaultinputs['valuablePapersRecordsLimit']=0;
-$defaultinputs['outdoorPropertyLimit']=0;
-
-$defaultinputs['damagePremisesRented']='Damage To Premises Rented To You';
-$defaultinputs['damagePremisesRentedLimit']=0;
-
-$defaultinputs['optionalPerPersonMedicalLimit']=5000;
-
-$defaultinputs['businessIncomeChanges']='No';
-$defaultinputs['businessIncomeExpenseLimit']=0;
-$defaultinputs['businessIncomeExtraExpenseNumberOfMonths']='12 Months';
-$defaultinputs['computerFraudLimit']=0;
-$defaultinputs['condoUnitownersOptionalLimit']=0;
-$defaultinputs['condoUnitownersAssocSublimit']=1000;
-$defaultinputs['condoUnitownersRealPropLimit']=0;
-$defaultinputs['earthquakeCoinsuranceRate']=0;
-$defaultinputs['buildingsFunctionalValuation']=0;
-$defaultinputs['bppFunctionalValuation']=0;
-$defaultinputs['foodContamination']='No';
-$defaultinputs['foodContamHighLimit']=0;
-$defaultinputs['foodContamAdvertising']=0;
-
-$defaultinputs['fungiNumberOfDays']=30;
-
-$defaultinputs['refrigerationAgreement']='None';
-
-$defaultinputs['numEmployees']=0;
-$defaultinputs['year2000ComputerCoverage']='No';
-
-$defaultinputs['eCommerce']='No';
-$defaultinputs['fireDepartmentServiceContract']='No';
-
-$defaultinputs['fungiSublimit']=0;
-$defaultinputs['fungiOption']='premises';
-
-$defaultinputs['namedPerils']='No';
-$defaultinputs['namedPerilsBurglary']='No';
-$defaultinputs['ordinanceCoverage']='None';
-$defaultinputs['ordinanceCoverage2Limit']=0;
-$defaultinputs['ordinanceCoverage3Limit']=0;
-$defaultinputs['ordinanceCoverage2And3CombLimit']=0;
-$defaultinputs['ordinanceBiExpense']='No';
-$defaultinputs['spoilageLimit']='None';
-
-$defaultinputs['sprinklerCoinsurance']=0;
-$defaultinputs['sprinklerLimit']=0;
-$defaultinputs['utilitiesNumPublic']=0;
-$defaultinputs['utilitiesNumNonpublic']=0;
-$defaultinputs['utilitiesBuildingsSublimit']=0;
-$defaultinputs['utilitiesBppSublimit']=0;
-$defaultinputs['utilitiesIncludeEarthquake']='No';
-$defaultinputs['utilitiesIncludeOverhead']='No';
-
-$defaultinputs['utilityTimeEarthquake']='No';
-$defaultinputs['utilityTimeCommunication']='No';
-$defaultinputs['utilityTimeOverheadPower']='No';
-$defaultinputs['utilityTimeOverheadCommunication']='No';
-$defaultinputs['utilityTimeElementLimit']=0;
-
-$defaultinputs['vacancyPermit']='None';
-$defaultinputs['vacancyLimit']=0;
-$defaultinputs['waterBackup']='No';
-$defaultinputs['brandsLabels']='No';
-$defaultinputs['windRoofAcv']='No';
-
-$defaultinputs['identityFraud']='No';
-$defaultinputs['identityFraudHigherLimit']=0;
-$defaultinputs['theftClientsProperty']='No';
-
-$defaultinputs['discretionaryPayroll']='No';
-
-$defaultinputs['debrisRemoval']='No';
-
-$defaultinputs['debrisRemovalLimit']=0;
-$defaultinputs['floodCoverage']='No';
-$defaultinputs['specifiedBppTempAwayLimit']=0;
-// $defaultinputs['higherLimits']='No';
-$defaultinputs['higherTheftLimit']=0;
-$defaultinputs['limitationsRoofSurfacing']='None';
-$defaultinputs['increaseRebuildingExpensesLimit']=0;
-$defaultinputs['employeeDishonestyNamedEmployees']='No';
-$defaultinputs['windstormHailExclusion']='No';
-
-$defaultinputs['insuranceToValue']='No';
-$defaultinputs['lossOfRentalValue']='No';
-$defaultinputs['lossPayable']='No';
-$defaultinputs['addtlInsuredBuildingOwners']='No';
-
-$defaultinputs['offPremiseVehicleMobile']='Separate Item Limit';
-$defaultinputs['offPremisesMobileCollision']='No';
-$defaultinputs['offPremiseInterruptionVehiclesMaximumPotentialExposure']=0;
-$defaultinputs['offPremiseInterruptionVehiclesLimit1']=0;
-$defaultinputs['offPremiseInterruptionVehiclesLimit2']=0;
-$defaultinputs['offPremiseInterruptionVehiclesLimit3']=0;
-$defaultinputs['offPremiseInterruptionVehiclesExtendedIncomeNumDay']=60;
-$defaultinputs['offPremiseInterruptionVehiclesIncomeNoWaitPeriod']='No';
-
-
-$defaultinputs['eplLimit']=10000;
-$defaultinputs['eplDeductible']=500;
-$defaultinputs['hiredAutoCoverage']='None';
-$defaultinputs['hiredAutoLimit']=0;
-$defaultinputs['infoSecurityTier']=1;
-$defaultinputs['infoSecurityLimit']=10000;
-$defaultinputs['infoSecurityDeductible']=500;
-$defaultinputs['infoSecurityBreachContract']='None';
-
-
-$defaultinputs['epl']='None';
-$defaultinputs['medicalExpensesExclusion']='No';
-$defaultinputs['additionaInsuredManagerApartmentNumber']=0;
-$defaultinputs['additionaInsuredManagerOtherNumber']=0;
-$defaultinputs['additionaInsuredEquipmentApartmentNumber']=0;
-$defaultinputs['additionaInsuredEquipmentOtherNumber']=0;
-$defaultinputs['pharmacistsProfLiab']='None';
-$defaultinputs['numberVeterinarians']=0;
-$defaultinputs['infoSecurityTier']=1;
-$defaultinputs['eightHourWaitingPeriod']='No';
-$defaultinputs['infoSecurityOnlineTransactions']='No';
-$defaultinputs['infoSecurityRemoteTransactions']='No';
-$defaultinputs['infoSecurityNoWebsite']='No';
-$defaultinputs['infoSecurityActiveSocial']='No';
-$defaultinputs['infoSecurityCollectsVisitor']='No';
-$defaultinputs['infoSecurityRetainsMinors']='No';
-$defaultinputs['infoSecurityMedicalRecords']='No';
-$defaultinputs['infoSecurityCreditChecks']='No';
-$defaultinputs['infoSecurityEncryption']='No';
-$defaultinputs['infoSecurityHighHazard']='No';
-$defaultinputs['paymentCardIndustry']='No';
-$defaultinputs['dishonestActsEmployees']='No';
-
-
-
-
-
-foreach ($defaultinputs as $key => $value) {
- if(!isset($_GET[$key])){
- 	$_GET[$key]=$value;
- }
+var app = angular.module('bopquote', ['ngMaterial', 'ngResource','google.places','ngSanitize','duScroll'])
+
+app.controller('quoteController', ['$scope','$http','$location','selectService','formdataService','$document','$timeout',function($scope,$http,$location,selectService,formdataService,$document,$timeout) {
+
+  $scope.newQuote={};
+  $scope.temp={};
+  $scope.hint= {}; 
+  // $scope.quoteResult={};
+  $scope.ngHide={};
+  $scope.showLoadingImage=true;
+  $scope.ratingQuestions={};
+  $scope.quoteResponse={};
+  
+
+  $scope.todayDate = new Date();
+  var utcDate= new Date(new Date().toUTCString());
+  var offset = new Date().getTimezoneOffset();  
+  utcDate.setMinutes(utcDate.getMinutes()-offset);
+  var offsetDate = new Date(utcDate);
+  var dateregex=new RegExp("[0-9]{4}-[0-9]{2}-[0-9]{2}");
+  
+  
+  $scope.formdata=formdataService.query();
+  $scope.formdata.$promise.then(function(result){
+    for(var i=0;i<$scope.formdata.length;i++){
+      for(var j=0; j<$scope.formdata[i].questions.length;j++){
+        var htmlId = $scope.formdata[i].questions[j].htmlId;
+        $scope.hint[htmlId]=$scope.formdata[i].questions[j].hint;
+        var questionValue = $scope.formdata[i].questions[j].value;
+        if(questionValue=='today'){
+          $scope.newQuote[htmlId]={value: offsetDate};
+        }else if(dateregex.test(questionValue)){
+          $scope.newQuote[htmlId]={value: new Date(questionValue.substr(0,4),(questionValue.substr(5,2)-1),questionValue.substr(8,2))};
+        }else if($scope.formdata[i].questions[j].htmlId.trim().length >0){
+          $scope.newQuote[htmlId]={value: questionValue};  
+        }
+      }
+    }
+
+    $scope.selectedIndex = 0;
+    $scope.disabled=[];
+    $scope.disabled[0]=false;
+    for(var k=1; k<$scope.formdata.length;k++){    
+        $scope.disabled[k]=true;
+    }
+    $scope.quoteTabDisabled=true;
+    $scope.submissionTabDisabled=true;
+    $scope.max= $scope.formdata.length+1;
+
+
+    angular.element(document).ready(function(){      
+        $scope.showLoadingImage=false;
+        // $scope.requestQuote();
+    });
+  });
+
+
+//Wizard
+   
+    $scope.showNextButton=true;
+
+    $scope.buttonNext='Next';
+
+//Question elements
+    $scope.selectunique=[
+        'territory',
+        'ppc',
+        'buildingCode',
+        'constructionType',
+        'occupantLessor',
+        'policyTerm',
+        'propertyDeductible',
+        'windDeductible',
+        'propertyLiabDeductible',
+        'liabMedExpensesLimit',
+        'aggLimitProductsOperations',
+        'aggLimitLiabMedical',
+        'contractorsInstallationLimit',
+        'contractorsToolsType',
+        'contractorsBlanketSublimit',
+        'motelLimitPerGuest',
+        'motelSafeDepositLimitPerGuest',
+        'autoLiabilityLimit',
+        'autoLiabiityDeductible',
+        'buildingsAnnualLimitIncrease',
+        'businessIncomeDependentPropertiesType',
+        'businessIncomePayrollNumDays',
+        'businessIncomeExtendedNumDays',
+        'employeeDishonestyLimit',
+        'fireDepartmentLimit',
+        'equipmentBreakdownDeductible',
+        'equipmentBreakdownTimeDeductible',
+        'damagePremisesRented',
+        'optionalPerPersonMedicalLimit',
+        'businessIncomeExpenseLimit',
+        'businessIncomeExtraExpenseNumberOfMonths',
+        'computerFraudLimit',
+        'condoUnitownersOptionalLimit',
+        'condoUnitownersAssocSublimit',
+        'fungiOption',
+        'fungiNumberOfDays',
+        'ordinanceCoverage',
+        'spoilageCoverage',
+        'refrigerationAgreement',
+        'vacancyPermit',
+        'limitationsRoofSurfacing',
+        'offPremiseVehicleMobile',
+        'offPremiseInterruptionVehiclesExtendedIncomeNumDay',
+        'epl',
+        'eplLimit',
+        'eplDeductible',
+        'hiredAutoCoverage',
+        'hiredAutoLimit',
+        'pharmacistsProfLiab',
+        'infoSecurityTier',
+        'infoSecurityLimit',
+        'infoSecurityDeductible',
+        'infoSecurityBreachContract'
+        ];  
+    $scope.options =[];    
+    $scope.selectunique.forEach(function(select){
+      $scope.options[select]=selectService.query({htmlId:select});  
+    });    
+
+    $scope.options.classDesc1=selectService.query({htmlId:"classDesc1"});
+    $scope.options.classDesc1.$promise.then(function(result){
+      $scope.options.classDesc1=result;
+      $scope.options.classDesc1.unshift({"value":"0","display":"Please select an industry class"});
+      $scope.newQuote.classDesc1.value="0"; 
+    });   
+
+    $scope.questiondisabled ={};
+    $scope.questiondisabled.classDesc2=true;
+    $scope.questiondisabled.classDesc3=true; 
+    $scope.ngHide.classDesc2=true;
+    $scope.ngHide.classDesc3=true;
+
+
+//Functions
+  
+    $scope.change=function(htmlId,newValue){
+      
+      $scope.newQuote[htmlId]={value:newValue};
+
+      $scope.hint[htmlId]='';
+      switch(htmlId){  
+
+        case 'classDesc1':
+          // alert('inside change. classDesc1='+$scope.newQuote.classDesc1.value);
+          $scope.options.classDesc2=selectService.query({htmlId:'classDesc2',classDesc1:$scope.newQuote.classDesc1.value});        
+          $scope.ngHide.classDesc3=true;
+          $scope.questiondisabled.classDesc3=true;
+          $scope.newQuote.classDesc3.value='';
+          // alert('about to get classDes2 values');
+          $scope.options.classDesc2.$promise.then(function(result){
+            if(result.length<=1){
+              // alert('sole value='+result[0].value);
+              $scope.ngHide.classDesc2=true;
+              $scope.questiondisabled.classDesc2=true;
+              $scope.newQuote.classDesc2.value=result[0].value;
+            }else{
+              $scope.ngHide.classDesc2=false;
+              $scope.questiondisabled.classDesc2=false;
+              $scope.options.classDesc2=result;
+              $scope.options.classDesc2.unshift({"value":"0","display":"Please select an industry sub-class"});
+              $scope.newQuote.classDesc2.value="0";   
+              $scope.hint.classDesc2='Please select sub-class';  
+            }             
+          });
+        case 'classDesc2':
+          // alert('inside change. classDesc2='+$scope.newQuote.classDesc2.value);
+          $scope.options.classDesc3=selectService.query({htmlId:'classDesc3',classDesc1:$scope.newQuote.classDesc1.value,classDesc2:$scope.newQuote.classDesc2.value});        
+          $scope.options.classDesc3.$promise.then(function(result){
+            if(result.length<=1){
+              // alert('sole value='+result[0].value);
+              $scope.ngHide.classDesc3=true;
+              $scope.questiondisabled.classDesc3=true;
+              $scope.newQuote.classDesc3.value=result[0].value;
+            }else{
+              $scope.ngHide.classDesc3=false;
+              $scope.questiondisabled.classDesc3=false;
+              $scope.options.classDesc3=result;
+              $scope.options.classDesc3.unshift({"value":"0","display":"Please select an industry sub-sub-class"}); 
+              $scope.newQuote.classDesc3.value="0";
+              $scope.hint.classDesc3='Please select sub-class';  
+            }            
+          });   
+        default:
+          break;     
+      }   
+    }  
+
+    $scope.scrollTop = function(){
+      $document.scrollTo(quoteController, 30, 1000);
+    };
+
+    $scope.clickTab = function() {
+      if($scope.selectedIndex == $scope.max){
+        //$scope.showNextButton=false;
+      }else if($scope.selectedIndex < $scope.max && $scope.buttonNext !== 'Next'){
+        $scope.buttonNext='Request Quote';
+        $scope.showNextButton=true;
+      }
+    };
+/*
+    $scope.cloneTab = function (index) {            
+      //Use JSON parse and stringify to copy by value rather than by reference
+      $scope.filters[newTabTitle]= JSON.parse(JSON.stringify($scope.filters[currentTabTitle]));
+      $scope.tablevalues[newTabTitle]= JSON.parse(JSON.stringify($scope.tablevalues[currentTabTitle]));      
+      $scope.policyTerm[newTabTitle]=$scope.policyTerm[currentTabTitle];
+      $scope.effectiveDate[newTabTitle]= $scope.effectiveDate[currentTabTitle];
+      $scope.showtable[newTabTitle]=true;
+      tabs.push({ section: "Location", questions: $scope.newQuote.questions, filters: $scope.filters[newTabTitle], showtable: $scope.showtable[newTabTitle], policyTerm: $scope.policyTerm[newTabTitle], effectiveDate: $scope.effectiveDate[newTabTitle], disabled: false});      
+    };
+*/
+    $scope.nextTab = function() {
+      var validform=true;
+      var index =$scope.selectedIndex + 1;    
+      switch(index){
+        case 1:
+         
+          break;
+
+        case 2:
+         
+          break;
+
+        case 3:
+         
+          break;
+
+        default:
+          break;     
+      }
+      if(validform==true){
+        // alert('inside validform. index='+index);
+        $scope.disabled[index]=false; 
+        $timeout(function(){         
+          $scope.selectedIndex = index;
+        },0);
+        // alert('index='+index);
+        // alert('index='+index+' out of $scope.max='+$scope.max);
+        if($scope.selectedIndex == ($scope.max-3)){
+          $scope.buttonNext='Request Quote';
+          // alert('changing to request quote button');
+         
+        }else if($scope.selectedIndex == ($scope.max-2)){
+          $scope.buttonNext='Finalize Quote';
+          // alert('triggering requestQuote');
+          $scope.requestQuote();
+        }else if($scope.selectedIndex == $scope.max-1){
+          // $scope.showNextButton=false;
+          // alert('triggering finalizeQuote');
+          $scope.finalizeQuote();
+        }
+      }
+      $scope.scrollTop();
+    };
+
+   
+     //$scope.$apply();      
+
+    $scope.requestQuote = function() {      
+      //alert(JSON.stringify($scope.newQuote));
+      var objectSize = Object.keys($scope.newQuote).length;
+      // alert(objectSize);
+      $scope.quoteTabDisabled=false;
+      
+      var i=0;
+      angular.forEach($scope.newQuote,function(value,key){
+        $scope.ratingQuestions[key]=value.value;
+        // alert(value.value);
+        i++;
+        if(i==objectSize){
+          // alert(JSON.stringify($scope.newQuote));
+          // alert($scope.newQuote.classDesc1.value);
+          // alert($scope.newQuote.sicCode.value);
+          $http.post('/api/requestQuote',$scope.ratingQuestions).then(function onSuccess(data){
+            // alert(JSON.stringify(data));
+            // $scope.quoteResponse=data.data;
+            $scope.quoteResponse.totalPremium=data.data.totalPremium;
+            $scope.quoteResponse.premium=data.data.Premium;
+            $scope.quoteResponse.other=data.data.Other;
+            // alert($scope.newQuote.sicCode);
+            // angular.forEach(data.data,function(value,key){
+            // for(var key in $scope.quoteResult){
+              // alert($scope.quoteResult[key]);
+              // alert(data.data.sicCode);
+            // $scope.newQuote.sicCode.value=data.data.sicCode;
+            // angular.forEach(data.data,function(value,key){  
+            //   $scope.newQuote[key].value=value;
+            // });
+            // }
+            // alert($scope.newQuote.sicCode); 
+          }).catch(function onError(data){
+            alert('An error has occurred. Your quote may not have been submitted. Please try again.'); 
+            $scope.formdata[3].questions[0].customhtml ='<div  class="md-block"> <strong>Error</strong> Your quote request has not worked. Please try again.</div>';
+          });    
+        }
+      });      
+    };
+
+    $scope.finalizeQuote = function() {
+      $scope.submissionTabDisabled=false;
+      var phone = $scope.newQuote.phoneNumber.value.replace(/\D/g,'').replace(/^1+/, '');     
+      $scope.newQuote.phoneNumber.value = '('+phone.substr(0, 3)+') '+phone.substr(3,3)+'-'+phone.substr(6,4);
+      //alert(JSON.stringify($scope.newQuote));
+      var ratingQuestions={};
+      var objectSize = Object.keys($scope.newQuote).length;
+      //alert(objectSize);
+      var i=0;
+      angular.forEach($scope.newQuote,function(value,key){
+        ratingQuestions[key]=value.value;
+        i++;
+        if(i==objectSize){
+          //alert(JSON.stringify(ratingQuestions));
+          $http.post('/api/finalizeQuote',ratingQuestions).then(function onSuccess(data){
+          }).catch(function onError(data){
+            alert('An error has occurred. Your quote may not have been submitted. Please try again.'); 
+            $scope.formdata[3].questions[0].customhtml ='<div  class="md-block"> <strong>Error</strong> Your quote may not have been submitted. If you did not receive a confirmation email please restart your quote.</div>';
+          });    
+        }
+      });      
+    };
+
+}]);
+
+
+app.factory('selectService', ['$resource' , function($resource){
+  return $resource('/api/select/:htmlId/');
+}]);
+
+app.factory('formdataService', ['$resource' , function($resource){
+  return $resource('/api/formdata');
+}]);
+
+app.directive("rscQuestionBlock", function() {
+    return {
+        restrict: 'E',
+        require: 'ngModel',
+        scope: {
+         questionlabel: '@',
+         ngModel: '=',
+         temp: '=',
+         ngDisabled: '=',
+         options: '=',
+         type: '=',
+         hint: '=',
+         tooltip: '=',
+         customstyle: '=',
+         customhtml: '=',
+         todaydate: '='
+        },
+        templateUrl : 'rscQuestionBlock.html',
+        link: function(scope, element, attrs, ctrl){
+          scope.changeField = function(newValue){
+            ctrl.$setViewValue(newValue);            
+          }    
+          ctrl.$viewChangeListeners.push(function(){
+            scope.$eval(attrs.ngChange);
+          });                               
+        }
+    };
+});
+
+function stateToStateCode(state){
+  var statearray=['AL','AK','AZ','AR','CA','CO','CT','DE','DC','FL','GA','HI','ID','IL','IN','IA','KS','KY','LA','ME','MD','MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY'];
+  return statearray[(state-1)];
 }
 
-
-$stmt -> bindParam(':classDesc1',$_GET['classDesc1'], PDO::PARAM_INT);
-$stmt -> bindParam(':classDesc2',$_GET['classDesc2'], PDO::PARAM_INT);
-$stmt -> bindParam(':classDesc3',$_GET['classDesc3'], PDO::PARAM_INT);
-$stmt -> bindParam(':sprinklered',$_GET['sprinklered'], PDO::PARAM_INT);
-$stmt -> bindParam(':constructionType',$_GET['constructionType'], PDO::PARAM_INT);
-$stmt -> bindParam(':territory',$_GET['territory'], PDO::PARAM_INT);
-$stmt -> bindParam(':ppc',$_GET['ppc'], PDO::PARAM_INT);
-$stmt -> bindParam(':buildingCode',$_GET['buildingCode'], PDO::PARAM_INT);
-$stmt -> bindParam(':propertyLiabDeductible',$_GET['propertyLiabDeductible'], PDO::PARAM_INT);
-$stmt -> bindParam(':liabMedExpensesLimit',$_GET['liabMedExpensesLimit'], PDO::PARAM_INT);
-$stmt -> bindParam(':aggLimitProductsOperations',$_GET['aggLimitProductsOperations'], PDO::PARAM_INT);
-$stmt -> bindParam(':aggLimitLiabMedical',$_GET['aggLimitLiabMedical'], PDO::PARAM_INT);
-$stmt -> bindParam(':buildingsLOI',$_GET['buildingsLOI'], PDO::PARAM_INT);
-$stmt -> bindParam(':bppLOI',$_GET['bppLOI'], PDO::PARAM_INT);
-$stmt -> bindParam(':propertyDeductible',$_GET['propertyDeductible'], PDO::PARAM_INT);
-$stmt -> bindParam(':windDeductible',$_GET['windDeductible'], PDO::PARAM_INT);
-$stmt -> bindParam(':occupantLessor',$_GET['occupantLessor'], PDO::PARAM_INT);
-$stmt -> bindParam(':payroll_sales',$_GET['payroll_sales'], PDO::PARAM_INT);
-$stmt -> bindParam(':policyTerm',$_GET['policyTerm'], PDO::PARAM_INT);
-$stmt -> bindParam(':contractorsInstallationLimit',$_GET['contractorsInstallationLimit'], PDO::PARAM_INT);
-$stmt -> bindParam(':contractorsBlanketSublimit',$_GET['contractorsBlanketSublimit'], PDO::PARAM_INT);
-$stmt -> bindParam(':contractorsToolsLimit',$_GET['contractorsToolsLimit'], PDO::PARAM_INT);
-$stmt -> bindParam(':contractorsNonownedTools',$_GET['contractorsNonownedTools'], PDO::PARAM_INT);
-$stmt -> bindParam(':numLocations',$_GET['numLocations'], PDO::PARAM_INT);
-$stmt -> bindParam(':employeeDishonestyLimit',$_GET['employeeDishonestyLimit'], PDO::PARAM_INT);
-$stmt -> bindParam(':employeeDishonestyNumberEmployees',$_GET['employeeDishonestyNumberEmployees'], PDO::PARAM_INT);
-$stmt -> bindParam(':motelLimitPerGuest',$_GET['motelLimitPerGuest'], PDO::PARAM_INT);
-$stmt -> bindParam(':motelSafeDepositLimitPerGuest',$_GET['motelSafeDepositLimitPerGuest'], PDO::PARAM_INT);
-$stmt -> bindParam(':autoLiabilityLimit',$_GET['autoLiabilityLimit'], PDO::PARAM_INT);
-$stmt -> bindParam(':autoLiabiityDeductible',$_GET['autoLiabiityDeductible'], PDO::PARAM_INT);
-$stmt -> bindParam(':contractorsToolsType',$_GET['contractorsToolsType'], PDO::PARAM_INT);
-$stmt -> bindParam(':contractorsEmployeesTools',$_GET['contractorsEmployeesTools'], PDO::PARAM_INT);
-$stmt -> bindParam(':limitContractorYards',$_GET['limitContractorYards'], PDO::PARAM_INT);
-$stmt -> bindParam(':numberPools',$_GET['numberPools'], PDO::PARAM_INT);
-$stmt -> bindParam(':selfStorageLimit',$_GET['selfStorageLimit'], PDO::PARAM_INT);
-$stmt -> bindParam(':apartmentBuildings',$_GET['apartmentBuildings'], PDO::PARAM_INT);
-$stmt -> bindParam(':fineArtsCoverage',$_GET['fineArtsCoverage'], PDO::PARAM_INT);
-$stmt -> bindParam(':residentialCleaningServices',$_GET['residentialCleaningServices'], PDO::PARAM_INT);
-$stmt -> bindParam(':photography',$_GET['photography'], PDO::PARAM_INT);
-$stmt -> bindParam(':scheduledPhotographicEquipment',$_GET['scheduledPhotographicEquipment'], PDO::PARAM_INT);
-$stmt -> bindParam(':worldwidePhotographicEquipment',$_GET['worldwidePhotographicEquipment'], PDO::PARAM_INT);
-$stmt -> bindParam(':buildingsAnnualLimitIncrease',$_GET['buildingsAnnualLimitIncrease'], PDO::PARAM_INT);
-$stmt -> bindParam(':businessIncomeDependentPropertiesType',$_GET['businessIncomeDependentPropertiesType'], PDO::PARAM_INT);
-$stmt -> bindParam(':businessIncomePayrollNumDays',$_GET['businessIncomePayrollNumDays'], PDO::PARAM_INT);
-$stmt -> bindParam(':businessIncomeExtendedNumDays',$_GET['businessIncomeExtendedNumDays'], PDO::PARAM_INT);
-$stmt -> bindParam(':fireDepartmentLimit',$_GET['fireDepartmentLimit'], PDO::PARAM_INT);
-$stmt -> bindParam(':equipmentBreakdownDeductible',$_GET['equipmentBreakdownDeductible'], PDO::PARAM_INT);
-$stmt -> bindParam(':equipmentBreakdownTimeDeductible',$_GET['equipmentBreakdownTimeDeductible'], PDO::PARAM_INT);
-$stmt -> bindParam(':accountsReceivableLimit',$_GET['accountsReceivableLimit'], PDO::PARAM_INT);
-$stmt -> bindParam(':buildingsACV',$_GET['buildingsACV'], PDO::PARAM_INT);
-$stmt -> bindParam(':businessIncomeDependentPropertiesLimit',$_GET['businessIncomeDependentPropertiesLimit'], PDO::PARAM_INT);
-$stmt -> bindParam(':electronicDataLimit',$_GET['electronicDataLimit'], PDO::PARAM_INT);
-$stmt -> bindParam(':forgeryAlteration',$_GET['forgeryAlteration'], PDO::PARAM_INT);
-$stmt -> bindParam(':interruptionComputerOperationsLimit',$_GET['interruptionComputerOperationsLimit'], PDO::PARAM_INT);
-$stmt -> bindParam(':equipmentBreakdown',$_GET['equipmentBreakdown'], PDO::PARAM_INT);
-$stmt -> bindParam(':moneySecuritiesOnPremiseLimit',$_GET['moneySecuritiesOnPremiseLimit'], PDO::PARAM_INT);
-$stmt -> bindParam(':moneySecuritiesOffPremiseLimit',$_GET['moneySecuritiesOffPremiseLimit'], PDO::PARAM_INT);
-$stmt -> bindParam(':outdoorSignsLimit',$_GET['outdoorSignsLimit'], PDO::PARAM_INT);
-$stmt -> bindParam(':valuablePapersRecordsLimit',$_GET['valuablePapersRecordsLimit'], PDO::PARAM_INT);
-$stmt -> bindParam(':outdoorPropertyLimit',$_GET['outdoorPropertyLimit'], PDO::PARAM_INT);
-$stmt -> bindParam(':damagePremisesRented',$_GET['damagePremisesRented'], PDO::PARAM_INT);
-$stmt -> bindParam(':damagePremisesRentedLimit',$_GET['damagePremisesRentedLimit'], PDO::PARAM_INT);
-
-
-
-$stmt -> bindParam(':optionalPerPersonMedicalLimit',$_GET['optionalPerPersonMedicalLimit'], PDO::PARAM_INT);
-$stmt -> bindParam(':businessIncomeExpenseLimit',$_GET['businessIncomeExpenseLimit'], PDO::PARAM_INT);
-$stmt -> bindParam(':businessIncomeExtraExpenseNumberOfMonths',$_GET['businessIncomeExtraExpenseNumberOfMonths'], PDO::PARAM_INT);
-$stmt -> bindParam(':computerFraudLimit',$_GET['computerFraudLimit'], PDO::PARAM_INT);
-$stmt -> bindParam(':condoUnitownersOptionalLimit',$_GET['condoUnitownersOptionalLimit'], PDO::PARAM_INT);
-$stmt -> bindParam(':condoUnitownersAssocSublimit',$_GET['condoUnitownersAssocSublimit'], PDO::PARAM_INT);
-$stmt -> bindParam(':fungiNumberOfDays',$_GET['fungiNumberOfDays'], PDO::PARAM_INT);
-$stmt -> bindParam(':spoilageCoverage',$_GET['spoilageCoverage'], PDO::PARAM_INT);
-$stmt -> bindParam(':refrigerationAgreement',$_GET['refrigerationAgreement'], PDO::PARAM_INT);
-$stmt -> bindParam(':limitationsRoofSurfacing',$_GET['limitationsRoofSurfacing'], PDO::PARAM_INT);
-$stmt -> bindParam(':businessIncomeChanges',$_GET['businessIncomeChanges'], PDO::PARAM_INT);
-$stmt -> bindParam(':numEmployees',$_GET['numEmployees'], PDO::PARAM_INT);
-$stmt -> bindParam(':condoUnitownersOptionalLimit',$_GET['condoUnitownersOptionalLimit'], PDO::PARAM_INT);
-$stmt -> bindParam(':condoUnitownersAssocSublimit',$_GET['condoUnitownersAssocSublimit'], PDO::PARAM_INT);
-$stmt -> bindParam(':condoUnitownersRealPropLimit',$_GET['condoUnitownersRealPropLimit'], PDO::PARAM_INT);
-$stmt -> bindParam(':earthquakeCoinsuranceRate',$_GET['earthquakeCoinsuranceRate'], PDO::PARAM_INT);
-$stmt -> bindParam(':buildingsFunctionalValuation',$_GET['buildingsFunctionalValuation'], PDO::PARAM_INT);
-$stmt -> bindParam(':bppFunctionalValuation',$_GET['bppFunctionalValuation'], PDO::PARAM_INT);
-$stmt -> bindParam(':foodContamination',$_GET['foodContamination'], PDO::PARAM_INT);
-$stmt -> bindParam(':foodContamHighLimit',$_GET['foodContamHighLimit'], PDO::PARAM_INT);
-$stmt -> bindParam(':foodContamAdvertising',$_GET['foodContamAdvertising'], PDO::PARAM_INT);
-$stmt -> bindParam(':fungiOption',$_GET['fungiOption'], PDO::PARAM_INT);
-$stmt -> bindParam(':fungiSublimit',$_GET['fungiSublimit'], PDO::PARAM_INT);
-$stmt -> bindParam(':namedPerils',$_GET['namedPerils'], PDO::PARAM_INT);
-$stmt -> bindParam(':namedPerilsBurglary',$_GET['namedPerilsBurglary'], PDO::PARAM_INT);
-$stmt -> bindParam(':ordinanceCoverage',$_GET['ordinanceCoverage'], PDO::PARAM_INT);
-$stmt -> bindParam(':ordinanceCoverage2Limit',$_GET['ordinanceCoverage2Limit'], PDO::PARAM_INT);
-$stmt -> bindParam(':ordinanceCoverage3Limit',$_GET['ordinanceCoverage3Limit'], PDO::PARAM_INT);
-$stmt -> bindParam(':ordinanceCoverage2And3CombLimit',$_GET['ordinanceCoverage2And3CombLimit'], PDO::PARAM_INT);
-$stmt -> bindParam(':ordinanceBiExpense',$_GET['ordinanceBiExpense'], PDO::PARAM_INT);
-$stmt -> bindParam(':spoilageLimit',$_GET['spoilageLimit'], PDO::PARAM_INT);
-$stmt -> bindParam(':sprinklerCoinsurance',$_GET['sprinklerCoinsurance'], PDO::PARAM_INT);
-$stmt -> bindParam(':sprinklerLimit',$_GET['sprinklerLimit'], PDO::PARAM_INT);
-$stmt -> bindParam(':utilitiesNumPublic',$_GET['utilitiesNumPublic'], PDO::PARAM_INT);
-$stmt -> bindParam(':utilitiesNumNonpublic',$_GET['utilitiesNumNonpublic'], PDO::PARAM_INT);
-$stmt -> bindParam(':utilitiesBuildingsSublimit',$_GET['utilitiesBuildingsSublimit'], PDO::PARAM_INT);
-$stmt -> bindParam(':utilitiesBppSublimit',$_GET['utilitiesBppSublimit'], PDO::PARAM_INT);
-$stmt -> bindParam(':utilitiesIncludeEarthquake',$_GET['utilitiesIncludeEarthquake'], PDO::PARAM_INT);
-$stmt -> bindParam(':utilitiesIncludeOverhead',$_GET['utilitiesIncludeOverhead'], PDO::PARAM_INT);
-$stmt -> bindParam(':utilityTimeEarthquake',$_GET['utilityTimeEarthquake'], PDO::PARAM_INT);
-$stmt -> bindParam(':utilityTimeCommunication',$_GET['utilityTimeCommunication'], PDO::PARAM_INT);
-$stmt -> bindParam(':utilityTimeOverheadPower',$_GET['utilityTimeOverheadPower'], PDO::PARAM_INT);
-$stmt -> bindParam(':utilityTimeOverheadCommunication',$_GET['utilityTimeOverheadCommunication'], PDO::PARAM_INT);
-$stmt -> bindParam(':utilityTimeElementLimit',$_GET['utilityTimeElementLimit'], PDO::PARAM_INT);
-$stmt -> bindParam(':vacancyPermit',$_GET['vacancyPermit'], PDO::PARAM_INT);
-$stmt -> bindParam(':vacancyLimit',$_GET['vacancyLimit'], PDO::PARAM_INT);
-$stmt -> bindParam(':waterBackup',$_GET['waterBackup'], PDO::PARAM_INT);
-$stmt -> bindParam(':brandsLabels',$_GET['brandsLabels'], PDO::PARAM_INT);
-$stmt -> bindParam(':windRoofAcv',$_GET['windRoofAcv'], PDO::PARAM_INT);
-$stmt -> bindParam(':identityFraud',$_GET['identityFraud'], PDO::PARAM_INT);
-$stmt -> bindParam(':identityFraudHigherLimit',$_GET['identityFraudHigherLimit'], PDO::PARAM_INT);
-$stmt -> bindParam(':theftClientsProperty',$_GET['theftClientsProperty'], PDO::PARAM_INT);
-$stmt -> bindParam(':debrisRemoval',$_GET['debrisRemoval'], PDO::PARAM_INT);
-$stmt -> bindParam(':debrisRemovalLimit',$_GET['debrisRemovalLimit'], PDO::PARAM_INT);
-$stmt -> bindParam(':floodCoverage',$_GET['floodCoverage'], PDO::PARAM_INT);
-$stmt -> bindParam(':specifiedBppTempAwayLimit',$_GET['specifiedBppTempAwayLimit'], PDO::PARAM_INT);
-$stmt -> bindParam(':higherTheftLimit',$_GET['higherTheftLimit'], PDO::PARAM_INT);
-$stmt -> bindParam(':increaseRebuildingExpensesLimit',$_GET['increaseRebuildingExpensesLimit'], PDO::PARAM_INT);
-$stmt -> bindParam(':windstormHailExclusion',$_GET['windstormHailExclusion'], PDO::PARAM_INT);
-
-$stmt -> bindParam(':offPremiseVehicleMobile',$_GET['offPremiseVehicleMobile'], PDO::PARAM_INT);
-$stmt -> bindParam(':offPremisesMobileCollision',$_GET['offPremisesMobileCollision'], PDO::PARAM_INT);
-$stmt -> bindParam(':offPremiseInterruptionVehiclesMaximumPotentialExposure',$_GET['offPremiseInterruptionVehiclesMaximumPotentialExposure'], PDO::PARAM_INT);
-$stmt -> bindParam(':offPremiseInterruptionVehiclesLimit1',$_GET['offPremiseInterruptionVehiclesLimit1'], PDO::PARAM_INT);
-$stmt -> bindParam(':offPremiseInterruptionVehiclesLimit2',$_GET['offPremiseInterruptionVehiclesLimit2'], PDO::PARAM_INT);
-$stmt -> bindParam(':offPremiseInterruptionVehiclesLimit3',$_GET['offPremiseInterruptionVehiclesLimit3'], PDO::PARAM_INT);
-$stmt -> bindParam(':offPremiseInterruptionVehiclesIncomeNoWaitPeriod',$_GET['offPremiseInterruptionVehiclesIncomeNoWaitPeriod'], PDO::PARAM_INT);
-$stmt -> bindParam(':offPremiseInterruptionVehiclesExtendedIncomeNumDay',$_GET['offPremiseInterruptionVehiclesExtendedIncomeNumDay'], PDO::PARAM_INT);
-
-$stmt -> bindParam(':eplLimit',$_GET['eplLimit'], PDO::PARAM_INT);
-$stmt -> bindParam(':eplDeductible',$_GET['eplDeductible'], PDO::PARAM_INT);
-$stmt -> bindParam(':hiredAutoCoverage',$_GET['hiredAutoCoverage'], PDO::PARAM_INT);
-$stmt -> bindParam(':hiredAutoLimit',$_GET['hiredAutoLimit'], PDO::PARAM_INT);
-$stmt -> bindParam(':infoSecurityTier',$_GET['infoSecurityTier'], PDO::PARAM_INT);
-$stmt -> bindParam(':infoSecurityLimit',$_GET['infoSecurityLimit'], PDO::PARAM_INT);
-$stmt -> bindParam(':infoSecurityDeductible',$_GET['infoSecurityDeductible'], PDO::PARAM_INT);
-$stmt -> bindParam(':infoSecurityBreachContract',$_GET['infoSecurityBreachContract'], PDO::PARAM_INT);
-
-$stmt -> bindParam(':epl',$_GET['epl'], PDO::PARAM_INT);
-$stmt -> bindParam(':medicalExpensesExclusion',$_GET['medicalExpensesExclusion'], PDO::PARAM_INT);
-$stmt -> bindParam(':additionaInsuredManagerApartmentNumber',$_GET['additionaInsuredManagerApartmentNumber'], PDO::PARAM_INT);
-$stmt -> bindParam(':additionaInsuredManagerOtherNumber',$_GET['additionaInsuredManagerOtherNumber'], PDO::PARAM_INT);
-$stmt -> bindParam(':additionaInsuredEquipmentApartmentNumber',$_GET['additionaInsuredEquipmentApartmentNumber'], PDO::PARAM_INT);
-$stmt -> bindParam(':additionaInsuredEquipmentOtherNumber',$_GET['additionaInsuredEquipmentOtherNumber'], PDO::PARAM_INT);
-$stmt -> bindParam(':pharmacistsProfLiab',$_GET['pharmacistsProfLiab'], PDO::PARAM_INT);
-$stmt -> bindParam(':numberVeterinarians',$_GET['numberVeterinarians'], PDO::PARAM_INT);
-$stmt -> bindParam(':infoSecurityTier',$_GET['infoSecurityTier'], PDO::PARAM_INT);
-$stmt -> bindParam(':eightHourWaitingPeriod',$_GET['eightHourWaitingPeriod'], PDO::PARAM_INT);
-$stmt -> bindParam(':infoSecurityOnlineTransactions',$_GET['infoSecurityOnlineTransactions'], PDO::PARAM_INT);
-$stmt -> bindParam(':infoSecurityRemoteTransactions',$_GET['infoSecurityRemoteTransactions'], PDO::PARAM_INT);
-$stmt -> bindParam(':infoSecurityNoWebsite',$_GET['infoSecurityNoWebsite'], PDO::PARAM_INT);
-$stmt -> bindParam(':infoSecurityActiveSocial',$_GET['infoSecurityActiveSocial'], PDO::PARAM_INT);
-$stmt -> bindParam(':infoSecurityCollectsVisitor',$_GET['infoSecurityCollectsVisitor'], PDO::PARAM_INT);
-$stmt -> bindParam(':infoSecurityRetainsMinors',$_GET['infoSecurityRetainsMinors'], PDO::PARAM_INT);
-$stmt -> bindParam(':infoSecurityMedicalRecords',$_GET['infoSecurityMedicalRecords'], PDO::PARAM_INT);
-$stmt -> bindParam(':infoSecurityCreditChecks',$_GET['infoSecurityCreditChecks'], PDO::PARAM_INT);
-$stmt -> bindParam(':infoSecurityEncryption',$_GET[''], PDO::PARAM_INT);
-$stmt -> bindParam(':infoSecurityHighHazard',$_GET['infoSecurityHighHazard'], PDO::PARAM_INT);
-$stmt -> bindParam(':paymentCardIndustry',$_GET['paymentCardIndustry'], PDO::PARAM_INT);
-$stmt -> bindParam(':dishonestActsEmployees',$_GET['dishonestActsEmployees'], PDO::PARAM_INT);
-
-
-$stmt -> execute();	
-$result=$stmt->fetchAll(PDO::FETCH_ASSOC);
-header('Content-Type: application/json');
-// print_r($result);
-echo json_encode($result, JSON_PRETTY_PRINT);
 
 
 
 // Notes:
 // - Combine the two abuse and molestation endorsements into one dropdown, with none as an option and make one of them compulsory for photography
 // Theft of clients property not eligible for selection on self storage faciltiies or residential cleaning services
-?>
-
-classDesc1
-classDesc2
-classDesc3
-territory
-ppc
-buildingCode
-constructionType
-sprinklered
-occupantLessor
-buildingsLOI
-bppLOI
-payroll_sales
-numberPools
-limitContractorYards
-policyTerm
-propertyDeductible
-windDeductible
-propertyLiabDeductible
-liabMedExpensesLimit
-aggLimitProductsOperations
-aggLimitLiabMedical
-numLocations
-numEmployees
-contractorsInstallationLimit
-contractorsToolsType
-contractorsBlanketSublimit
-contractorsToolsLimit
-contractorsNonownedTools
-contractorsEmployeesTools
-motelLimitPerGuest
-motelSafeDepositLimitPerGuest
-selfStorageLimit
-apartmentBuildings
-autoLiabilityLimit
-autoLiabiityDeductible
-fineArtsCoverage
-residentialCleaningServices
-photography
-scheduledPhotographicEquipment
-worldwidePhotographicEquipment
-accountsReceivableLimit
-buildingsACV
-buildingsAnnualLimitIncrease
-businessIncomeDependentPropertiesType
-businessIncomeDependentPropertiesLimit
-businessIncomePayrollNumDays
-businessIncomeExtendedNumDays
-electronicDataLimit
-employeeDishonestyLimit
-employeeDishonestyNumberEmployees
-fireDepartmentLimit
-forgeryAlteration
-interruptionComputerOperationsLimit
-equipmentBreakdown
-equipmentBreakdownDeductible
-equipmentBreakdownTimeDeductible
-moneySecuritiesOnPremiseLimit
-moneySecuritiesOffPremiseLimit
-outdoorSignsLimit
-valuablePapersRecordsLimit
-outdoorPropertyLimit
-damagePremisesRented
-damagePremisesRentedLimit
-optionalPerPersonMedicalLimit
-businessIncomeChanges
-businessIncomeExpenseLimit
-businessIncomeExtraExpenseNumberOfMonths
-computerFraudLimit
-condoUnitownersOptionalLimit
-condoUnitownersAssocSublimit
-condoUnitownersRealPropLimit
-earthquakeCoinsuranceRate
-buildingsFunctionalValuation
-bppFunctionalValuation
-eCommerce
-fireDepartmentServiceContract
-foodContamination
-foodContamHighLimit
-foodContamAdvertising
-fungiSublimit
-fungiOption
-fungiNumberOfDays
-namedPerils
-namedPerilsBurglary
-ordinanceCoverage
-ordinanceCoverage2Limit
-ordinanceCoverage3Limit
-ordinanceCoverage2And3CombLimit
-ordinanceBiExpense
-spoilageCoverage
-spoilageLimit
-refrigerationAgreement
-sprinklerCoinsurance
-sprinklerLimit
-utilitiesNumPublic
-utilitiesNumNonpublic
-utilitiesBuildingsSublimit
-utilitiesBppSublimit
-utilitiesIncludeEarthquake
-utilitiesIncludeOverhead
-htmlId
-utilityTimeEarthquake
-utilityTimeCommunication
-utilityTimeOverheadPower
-utilityTimeOverheadCommunication
-utilityTimeElementLimit
-vacancyPermit
-vacancyLimit
-waterBackup
-brandsLabels
-windRoofAcv
-identityFraud
-identityFraudHigherLimit
-theftClientsProperty
-discretionaryPayroll
-debrisRemoval
-debrisRemovalLimit
-floodCoverage
-specifiedBppTempAwayLimit
-higherTheftLimit
-limitationsRoofSurfacing
-increaseRebuildingExpensesLimit
-windstormHailExclusion
-offPremiseVehicleMobile
-offPremisesMobileCollision
-offPremiseInterruptionVehiclesMaximumPotentialExpo...
-offPremiseInterruptionVehiclesLimit1
-offPremiseInterruptionVehiclesLimit2
-offPremiseInterruptionVehiclesLimit3
-offPremiseInterruptionVehiclesExtendedIncomeNumDay
-offPremiseInterruptionVehiclesIncomeNoWaitPeriod
-epl
-eplLimit
-eplDeductible
-hiredAutoCoverage
-hiredAutoLimit
-medicalExpensesExclusion
