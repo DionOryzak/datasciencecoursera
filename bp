@@ -1,3 +1,63 @@
+27 and 28 share the same htmlId
+
+UPDATE ratingquestions SET questionLabel='BPP stored in a contractors permanent yard', hint='Limit - Maintained by the insured for storage of material or storage of maintenance equipment' WHERE rowID=17;
+UPDATE ratingquestions SET questionLabel='Contractors Coverage 2 - Blanket Tool Sublimit', hint='Any one tool or piece of equipment' WHERE rowID=27;
+UPDATE ratingquestions SET questionLabel='Contractors Coverage 2 - Blanket Tool Coverage Incr Limit', hint='Leave at $0 limit to use standard $3k limit' WHERE rowID=28;
+UPDATE ratingquestions SET questionLabel='Contractors Coverage 2 - Blanket Tool Limit (Specified)', hint='Specifically described tools or pieces of equipment' WHERE rowID=29;
+UPDATE ratingquestions SET questionLabel='Contractors Coverage 3 - Non-owned Tools And Equipment Limit', hint='' WHERE rowID=30;
+UPDATE ratingquestions SET questionLabel='Coverage 4 - Employees Tools Limit', hint='' WHERE rowID=31;
+UPDATE ratingquestions SET questionLabel='Motel - Liability For Guests Property', hint='Limit - Per Guest/Per Occurrence' WHERE rowID=32;
+UPDATE ratingquestions SET questionLabel='Motel - Liability For Guests Property In Safe Deposit Boxes', hint='' WHERE rowID=33;
+UPDATE ratingquestions SET questionLabel='Self-storage Facilities - Customers Goods Liability Incr Limit', hint='Leave at $0 limit to use standard $50,000 limit' WHERE rowID=34;
+UPDATE ratingquestions SET questionLabel='Loss Or Damage To Tenants Autos (Legal Liability) Limit', hint='' WHERE rowID=36;
+UPDATE ratingquestions SET questionLabel='Loss Or Damage To Tenants Autos (Legal Liability) Deductible', hint='OTC Each Auto / OTC Any One Event / Collision' WHERE rowID=37;
+UPDATE ratingquestions SET questionLabel='Photography - Worldwide Coverage', hint='Amendment Of Coverage Territory For Photographic Equipment' WHERE rowID=42;
+UPDATE ratingquestions SET questionLabel='Accounts Receivable Incr Limit', hint='Leave at $0 limit to use standard $10,000 limit' WHERE rowID=43;
+UPDATE ratingquestions SET questionLabel='Business Income From Secondary Dependent Properties', hint='Secondary dependent properties too?' WHERE rowID=46;
+UPDATE ratingquestions SET questionLabel='Business Income From Secondary Dependent Properties', hint='Secondary dependent properties too?' WHERE rowID=47;
+UPDATE ratingquestions SET questionLabel='Business Income - Ordinary Payroll Coverage', hint='Number of days coverage period' WHERE rowID=48;
+UPDATE ratingquestions SET questionLabel='Business Income (Extended) - Extended Period Of Indemnity', hint='Number of days coverage period' WHERE rowID=49;
+UPDATE ratingquestions SET questionLabel='Electronic Data Incr Limit', hint='Leave at $0 limit to use standard $10k limit' WHERE rowID=50;
+UPDATE ratingquestions SET questionLabel='Employee Dishonesty Limit', hint='' WHERE rowID=51;
+UPDATE ratingquestions SET questionLabel='Employee Dishonesty Number of Employees', hint='' WHERE rowID=52;
+UPDATE ratingquestions SET questionLabel='Fire Department Service Charge Limit', hint='' WHERE rowID=53;
+UPDATE ratingquestions SET questionLabel='Interruption Of Computer Operations Incr Limit', hint='Leave at $0 limit to use standard $10k limit' WHERE rowID=55;
+UPDATE ratingquestions SET questionLabel='Equipment Breakdown Protection Coverage', hint='' WHERE rowID=56;
+UPDATE ratingquestions SET questionLabel='Equipment Breakdown Protection Deductible', hint='' WHERE rowID=57;
+UPDATE ratingquestions SET questionLabel='Equipment Breakdown Protection Time Deductible (Hours)', hint='' WHERE rowID=58;
+UPDATE ratingquestions SET questionLabel='Money And Securities On-Premises Limit', hint='' WHERE rowID=59;
+UPDATE ratingquestions SET questionLabel='Money And Securities Off-Premises Limit', hint='' WHERE rowID=60;
+UPDATE ratingquestions SET questionLabel='Outdoor Signs Limit', hint='' WHERE rowID=61;
+UPDATE ratingquestions SET questionLabel='Valuable Papers And Records Limit', hint='' WHERE rowID=62;
+UPDATE ratingquestions SET questionLabel='Outdoor Property Incr Limit', hint='Leave at $0 limit to use standard $2.5k limit' WHERE rowID=63;
+UPDATE ratingquestions SET questionLabel='Damage To Premises Rented To You Coverage', hint='' WHERE rowID=64;
+UPDATE ratingquestions SET questionLabel='Damage To Premises Rented To You Limit', hint='' WHERE rowID=65;
+UPDATE ratingquestions SET questionLabel='Optional Per Person Medical Expenses Limit', hint='' WHERE rowID=66;
+UPDATE ratingquestions SET questionLabel='Business Income And Extra Expense Limit', hint='' WHERE rowID=68;
+UPDATE ratingquestions SET questionLabel='Business Income And Extra Expense Revised Period Of Indemnity', hint='' WHERE rowID=69;
+UPDATE ratingquestions SET questionLabel='Computer Fraud And Funds Transfer Fraud Limit', hint='' WHERE rowID=70;
+UPDATE ratingquestions SET questionLabel='Condominium Commercial Unit-owners Loss Assessment Limit', hint='' WHERE rowID=71;
+UPDATE ratingquestions SET questionLabel='Condominium - Sublimit Condo Assoc Deductible', hint='Commercial Unit-owners Loss Assessment' WHERE rowID=72;
+UPDATE ratingquestions SET questionLabel='Condominium Commercial Unit-owners Misc Real Property Limit', hint='' WHERE rowID=73;
+UPDATE ratingquestions SET questionLabel='80% coinsurance Earthquake rate ', hint='Determined in CLM Division Five - Fire and Allied Lines' WHERE rowID=74;
+UPDATE ratingquestions SET questionLabel='Food Contamination Coverage', hint='' WHERE rowID=79;
+UPDATE ratingquestions SET questionLabel='Food Contamination incr Limit', hint='Leave at $0 limit to use standard $10k limit' WHERE rowID=80;
+UPDATE ratingquestions SET questionLabel='Food Contamination Additional Advertising Expenses Incr Limit', hint='Leave at $0 limit to use standard $3k limit' WHERE rowID=81;
+UPDATE ratingquestions SET questionLabel='Mold - Fungi, Wet Rot Or Dry Rot  - Incr Sublimit', hint='Leave at $0 limit to use standard $15k limit' WHERE rowID=82;
+UPDATE ratingquestions SET questionLabel='Mold - Annual aggregate limit per policy or per location', hint='Fungi, Wet Rot Or Dry Rot' WHERE rowID=83;
+UPDATE ratingquestions SET questionLabel='Mold - Number of days', hint='Fungi, Wet Rot Or Dry Rot' WHERE rowID=84;
+UPDATE ratingquestions SET questionLabel='Named Perils - Building And Business Personal Property', hint='' WHERE rowID=85;
+UPDATE ratingquestions SET questionLabel='Named Perils - Burglary And Robbery Optional Coverage', hint='' WHERE rowID=86;
+UPDATE ratingquestions SET questionLabel='Ordinance Or Law Coverage', hint='' WHERE rowID=87;
+UPDATE ratingquestions SET questionLabel='Ordinance Or Law Coverage 2 Limit', hint='' WHERE rowID=88;
+UPDATE ratingquestions SET questionLabel='Ordinance Or Law Coverage 3 Limit', hint='' WHERE rowID=89;
+UPDATE ratingquestions SET questionLabel='Ordinance Or Law Coverage 2 and 3 Combined Limit', hint='' WHERE rowID=90;
+UPDATE ratingquestions SET questionLabel='Ordinance Or Law - Business Income and Extra Expense', hint='' WHERE rowID=91;
+UPDATE ratingquestions SET questionLabel='Spoilage Coverage', hint='' WHERE rowID=92;
+UPDATE ratingquestions SET questionLabel='Spoilage Limit', hint='' WHERE rowID=93;
+UPDATE ratingquestions SET questionLabel='Spoilage - Refrigeration Maintenance Agreeement', hint='' WHERE rowID=94;
+UPDATE ratingquestions SET questionLabel='80% coinsurance Sprinkler Leakage - Earthquake Extension rate', hint='Determined in CLM Division Five - Fire and Allied Lines' WHERE rowID=95;
+
 
 var app = angular.module('bopquote', ['ngMaterial', 'ngResource','google.places','ngSanitize','duScroll'])
 
