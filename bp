@@ -1,433 +1,107 @@
-27 and 28 share the same htmlId
+UPDATE ratingquestions SET questionLabel='Sprinkler Leakage - Earthquake Extension Limit', hint='' WHERE rowID=96;
+UPDATE ratingquestions SET questionLabel='Utility Services - Number of Public Utilities', hint='Utility Services - Direct Damage' WHERE rowID=97;
+UPDATE ratingquestions SET questionLabel='Utility Services - Number of Non-public utilities', hint='Utility Services - Direct Damage' WHERE rowID=98;
+UPDATE ratingquestions SET questionLabel='Utility Services - Buildings Sub-limit', hint='Utility Services - Direct Damage' WHERE rowID=99;
+UPDATE ratingquestions SET questionLabel='Utility Services - Business Personal Property Sub-limit', hint='Utility Services - Direct Damage' WHERE rowID=100;
+UPDATE ratingquestions SET questionLabel='Utility Services - Include Earthquake', hint='Utility Services - Direct Damage' WHERE rowID=101;
+UPDATE ratingquestions SET questionLabel='Utility Services - Include Overhead Power Transmission And Overhead Communication Lines Loss', hint='Utility Services - Direct Damage' WHERE rowID=102;
+UPDATE ratingquestions SET questionLabel='Utility Services - Include Earthquake', hint='Utility Services - Direct Damage' WHERE rowID=103;
+UPDATE ratingquestions SET questionLabel='Utility Services - Communication Supply', hint='Utility Services - Direct Damage' WHERE rowID=104;
+UPDATE ratingquestions SET questionLabel='Utility Services - Overhead Power Transmission', hint='Utility Services - Direct Damage' WHERE rowID=105;
+UPDATE ratingquestions SET questionLabel='Utility Services - Overhead Communication Lines', hint='Utility Services - Direct Damage' WHERE rowID=106;
+UPDATE ratingquestions SET questionLabel='Utility Services - Limit', hint='Utility Services - Direct Damage' WHERE rowID=107;
+UPDATE ratingquestions SET questionLabel='Vacancy Permit/Changes Coverage', hint='' WHERE rowID=108;
+UPDATE ratingquestions SET questionLabel='Vacancy Permit/Changes Limit', hint='' WHERE rowID=109;
+UPDATE ratingquestions SET questionLabel='Windstorm Or Hail Losses To Roof Surfacing', hint='Actual Cash Value Loss Settlement' WHERE rowID=112;
+UPDATE ratingquestions SET questionLabel='Identity Fraud Expense', hint='' WHERE rowID=113;
+UPDATE ratingquestions SET questionLabel='Identity Fraud Incr Limit', hint='Leave at $0 limit to use standard $25k limit' WHERE rowID=114;
+UPDATE ratingquestions SET questionLabel='Theft Of Clients Property', hint='' WHERE rowID=115;
+UPDATE ratingquestions SET questionLabel='Debris Removal Coverage', hint='' WHERE rowID=117;
+UPDATE ratingquestions SET questionLabel='Debris Removal Incr Limit', hint='Leave at $0 limit to use standard $25k limit' WHERE rowID=118;
+UPDATE ratingquestions SET questionLabel='Specified BPP Temporarily Away From Premises Limit', hint='' WHERE rowID=120;
+UPDATE ratingquestions SET questionLabel='Theft Incr Limit', hint='Leave at $0 limit to use standard $2.5k limit' WHERE rowID=121;
+UPDATE ratingquestions SET questionLabel='Increase In Rebuilding Expenses Following Disaster', hint='Additional Expense Coverage On Annual Aggregate Basis' WHERE rowID=123;
+UPDATE ratingquestions SET questionLabel='Coverage - Off-prem Interrup Of Biz Veh and Equipmt', hint='Off-premises Interruption Of Business Vehicles And Mobile Equipment' WHERE rowID=125;
+UPDATE ratingquestions SET questionLabel='Collision - Off-prem Interrup Of Biz Veh and Equipmt', hint='Off-premises Interruption Of Business Vehicles And Mobile Equipment' WHERE rowID=126;
+UPDATE ratingquestions SET questionLabel='Max Potential Exposure - Off-prem Interrup Of Biz Veh and Equipmt', hint='Off-premises Interruption Of Business Vehicles And Mobile Equipment' WHERE rowID=127;
+UPDATE ratingquestions SET questionLabel='Chosen Item Limt 1 - Off-prem Interrup Of Biz Veh and Equipmt', hint='Off-premises Interruption Of Business Vehicles And Mobile Equipment' WHERE rowID=128;
+UPDATE ratingquestions SET questionLabel='Chosen Item Limt 2 - Off-prem Interrup Of Biz Veh and Equipmt', hint='Off-premises Interruption Of Business Vehicles And Mobile Equipment' WHERE rowID=129;
+UPDATE ratingquestions SET questionLabel='Chosen Item Limt 3 - Off-prem Interrup Of Biz Veh and Equipmt', hint='Off-premises Interruption Of Business Vehicles And Mobile Equipment' WHERE rowID=130;
+UPDATE ratingquestions SET questionLabel='Ext Business Income Coverage (No. Days) - Interrup Of Biz Veh', hint='Off-premises Interruption Of Business Vehicles And Mobile Equipment' WHERE rowID=131;
+UPDATE ratingquestions SET questionLabel='Business Income Coverage No Waiting Period - Interrup Of Biz Veh', hint='Off-premises Interruption Of Business Vehicles And Mobile Equipment' WHERE rowID=132;
+UPDATE ratingquestions SET questionLabel='Employment-related Practices Liability Coverage', hint='' WHERE rowID=133;
+UPDATE ratingquestions SET questionLabel='Employment-related Practices Liability Limit', hint='' WHERE rowID=134;
+UPDATE ratingquestions SET questionLabel='Employment-related Practices Liability Deductible', hint='' WHERE rowID=135;
+UPDATE ratingquestions SET questionLabel='Hired Auto And Non-owned Auto Liability Coverage', hint='' WHERE rowID=136;
+UPDATE ratingquestions SET questionLabel='Hired Auto And Non-owned Auto Liability Limit', hint='' WHERE rowID=137;
+UPDATE ratingquestions SET questionLabel='Pharmacists Professional Liability Coverage', hint='' WHERE rowID=139;
+UPDATE ratingquestions SET questionLabel='Veterinarian Prof Indemn - Number of Veterinarians', hint='' WHERE rowID=140;
+UPDATE ratingquestions SET questionLabel='Additl Insured - Mgrs Or Lessors Of Premises - Apts and Offices', hint='Summed across each apartment or office' WHERE rowID=141;
+UPDATE ratingquestions SET questionLabel='Additl Insured - Lessor Of Leased Equipment - Apts and Offices', hint='Summed across each apartment or office' WHERE rowID=143;
+UPDATE ratingquestions SET questionLabel='Info Sec Protection - Contracted for security breach services', hint='Information Security Protection' WHERE rowID=148;
+UPDATE ratingquestions SET questionLabel='Info Sec Protection - Eight hour waiting period', hint='Information Security Protection' WHERE rowID=149;
+UPDATE ratingquestions SET questionLabel='Info Sec Protection - Insured conducts online transactions', hint='Information Security Protection' WHERE rowID=150;
+UPDATE ratingquestions SET questionLabel='Info Sec Protect - Remote access to comp system by 3rd parties', hint='Information Security Protection' WHERE rowID=151;
+UPDATE ratingquestions SET questionLabel='Info Sec Protection - Insured does not have a website', hint='Information Security Protection' WHERE rowID=152;
+UPDATE ratingquestions SET questionLabel='Info Sec Protection - Insured has active social media profiles', hint='Information Security Protection' WHERE rowID=153;
+UPDATE ratingquestions SET questionLabel='Info Sec Prot - Collects data from custmrs or web visitrs, reqd by law to be protected', hint='Information Security Protection' WHERE rowID=154;
+UPDATE ratingquestions SET questionLabel='Info Sec Protection - Insured collects and retains info on minors', hint='Information Security Protection' WHERE rowID=155;
+UPDATE ratingquestions SET questionLabel='Info Sec Protection - Insured uses medical records in daily business', hint='Information Security Protection' WHERE rowID=156;
+UPDATE ratingquestions SET questionLabel='Info Sec Protection - Uses background/credit checks and retains info', hint='Information Security Protection' WHERE rowID=157;
+UPDATE ratingquestions SET questionLabel='Info Sec Protection - Insured employs encryption in customer comms', hint='Information Security Protection' WHERE rowID=158;
+UPDATE ratingquestions SET questionLabel='Info Sec Protection - High Hazard Classifications', hint='Information Security Protection' WHERE rowID=159;
+UPDATE ratingquestions SET questionLabel='Info Sec Protection - PCI Coverage For Defense/Fines', hint='Information Security Protection' WHERE rowID=160;
+UPDATE ratingquestions SET questionLabel='Info Sec Protection - Dishonest, Malicious, Fraudulent Acts By Employees', hint='Information Security Protection' WHERE rowID=161;
+UPDATE ratingquestions SET questionLabel='Is an additional person designated to receive notice of policy status?', hint='Polic y status includes lapse, termination, expiration, nonrenewal or cancellation for nonpayment of premium' WHERE rowID=407;
+UPDATE ratingquestions SET questionLabel='Access Or Disclosure Of Confidential Or Personal Info Exclusions', hint='BP 15 05, BP 15 06, BP 05 95' WHERE rowID=420;
+UPDATE ratingquestions SET questionLabel='Electronic Data Liability', hint='BP 05 95, BP 05 96, BP 05 97' WHERE rowID=421;
+UPDATE ratingquestions SET questionLabel='Comprehensive Business Liability Exclusion', hint='(All Hazards In Connection With Designated Premises Operations Or Products) ' WHERE rowID=423;
+UPDATE ratingquestions SET questionLabel='Coverage For Injury To Leased Workers', hint='BP 04 40' WHERE rowID=424;
+UPDATE ratingquestions SET questionLabel='Exclusion - Personal And Advertising Injury', hint='BP 04 37' WHERE rowID=426;
+UPDATE ratingquestions SET questionLabel='Exclusion - Personal And Advertising Injury - Lawyers', hint='BP 14 15' WHERE rowID=427;
+UPDATE ratingquestions SET questionLabel='Exclusion - Silica And Silica-related Dust', hint='BP 05 17' WHERE rowID=428;
+UPDATE ratingquestions SET questionLabel='Exclusion - Volunteer Workers Endorsement', hint='BP 04 71' WHERE rowID=429;
+UPDATE ratingquestions SET questionLabel='Limitation Of Coverage To Designated Premises, Project Or Operation', hint='BP 04 12' WHERE rowID=430;
+UPDATE ratingquestions SET questionLabel='Newly Acquired Organizations - Businessowners Liability Coverage', hint='BP 04 54' WHERE rowID=433;
+UPDATE ratingquestions SET questionLabel='Waiver Of Transfer Of Rights Of Recovery Against Others To Us', hint='BP 04 97' WHERE rowID=435;
+UPDATE ratingquestions SET questionLabel='Year 2000 Computer-related And Other Electronic Problems', hint='BP 10 05, BP 10 06, BP 04 64, BP 10 07, BP 10 08' WHERE rowID=436;
+UPDATE ratingquestions SET questionLabel='Exclusion - Exterior Insulation And Finish Systems', hint='BP 14 08' WHERE rowID=437;
+UPDATE ratingquestions SET questionLabel='Snow Plow Products - Completed Operations Hazard Coverage', hint='BP 14 16' WHERE rowID=438;
+UPDATE ratingquestions SET questionLabel='Exclusion - Designated Work', hint='BP 14 21' WHERE rowID=439;
+UPDATE ratingquestions SET questionLabel='Exclusion - Products-completed Operations Hazard ', hint='BP 14 22' WHERE rowID=440;
+UPDATE ratingquestions SET questionLabel='Exclusion - Designated Products', hint='BP 14 23' WHERE rowID=441;
+UPDATE ratingquestions SET questionLabel='Designated Location(s) General Aggregate Limit', hint='BP 14 17' WHERE rowID=442;
+UPDATE ratingquestions SET questionLabel='Designated Construction Project(s) General Aggregate Limit', hint='BP 14 18' WHERE rowID=443;
+UPDATE ratingquestions SET questionLabel='Exclusion - Damage To Work Performed By Subcontractors On Your Behalf', hint='BP 14 19' WHERE rowID=444;
+UPDATE ratingquestions SET questionLabel='Exclusion - Damage By Subcontractors On Your Behalf - Designated Sites/Operations ', hint='BP 14 20' WHERE rowID=445;
+UPDATE ratingquestions SET questionLabel='Communicable Disease Exclusion', hint='BP 14 86' WHERE rowID=446;
+UPDATE ratingquestions SET questionLabel='Amendment Of Personal And Advertising Injury Definition', hint='BP 14 91' WHERE rowID=447;
+UPDATE ratingquestions SET questionLabel='Addtl Insured - Controlling Interest', hint='' WHERE rowID=448;
+UPDATE ratingquestions SET questionLabel='Addtl Insured - State Or Govt Agency- Permits Relating To Premises', hint='' WHERE rowID=449;
+UPDATE ratingquestions SET questionLabel='Addtl Insured - Townhouse Associations', hint='' WHERE rowID=450;
+UPDATE ratingquestions SET questionLabel='Addtl Insured - Mortgagee, Assignee, Or Receiver', hint='' WHERE rowID=451;
+UPDATE ratingquestions SET questionLabel='Addtl Insured - Owner Or Other Interests From Whom Land Has Been Leased', hint='' WHERE rowID=452;
+UPDATE ratingquestions SET questionLabel='Addtl Insured - Co-owner Of Insured Premises', hint='' WHERE rowID=453;
+UPDATE ratingquestions SET questionLabel='Addtl Insured - Engineers, Architects, Or Surveyors', hint='' WHERE rowID=454;
+UPDATE ratingquestions SET questionLabel='Addtl Insured - Vendors', hint='' WHERE rowID=455;
+UPDATE ratingquestions SET questionLabel='Addtl Insured - Designated Person Or Organization', hint='' WHERE rowID=456;
+UPDATE ratingquestions SET questionLabel='Addtl Insured - Engineers/Architects/Surveyors Not Engaged By Insured', hint='' WHERE rowID=457;
+UPDATE ratingquestions SET questionLabel='Addtl Insured - Owners, Lessees Or Contractors', hint='' WHERE rowID=458;
+UPDATE ratingquestions SET questionLabel='Addtl Insured - Owners, Lessees Or Contractors - With Addtl Insured Reqt In Construction Contract', hint='' WHERE rowID=459;
+UPDATE ratingquestions SET questionLabel='Addtl Insured - State Or Govt Agency- Permits', hint='' WHERE rowID=460;
+UPDATE ratingquestions SET questionLabel='Addtl Insured - Owners, Lessees Or Contractors - Completed Operations', hint='' WHERE rowID=462;
+UPDATE ratingquestions SET questionLabel='Addtl Insured - Grantor Of Franchise', hint='' WHERE rowID=463;
+UPDATE ratingquestions SET questionLabel='Addtl Insured - Owners, Lessees Or Contractors - With Addtl Insured Reqt For Other Parties In Constn Contract', hint='' WHERE rowID=464;
+UPDATE ratingquestions SET questionLabel='Barber Shops And Hair Salons Professional Liability', hint='BP 08 01' WHERE rowID=466;
+UPDATE ratingquestions SET questionLabel='Beauty Salons', hint='BP 08 09' WHERE rowID=467;
+UPDATE ratingquestions SET questionLabel='Funeral Directors', hint='BP 08 02' WHERE rowID=468;
+UPDATE ratingquestions SET questionLabel='Optical And Hearing Aid Establishments', hint='BP 08 03' WHERE rowID=469;
+UPDATE ratingquestions SET questionLabel='Printer's Errors And Omissions', hint='BP 08 04' WHERE rowID=470;
+UPDATE ratingquestions SET questionLabel='Seed Merchants', hint='BP 14 12, BP 14 13, BP 14 14' WHERE rowID=471;
+UPDATE ratingquestions SET questionLabel='Condominiums, Co-ops, Associations - Directors And Officers Liability', hint='BP 17 24' WHERE rowID=472;
+UPDATE ratingquestions SET questionLabel='Unmanned Aircraft', hint='BP 15 11, BP 15 12' WHERE rowID=473;
+UPDATE ratingquestions SET questionLabel='Amendment - Aggregate Limits Of Insurance (Per Project)', hint='' WHERE rowID=474;
 
-UPDATE ratingquestions SET questionLabel='BPP stored in a contractors permanent yard', hint='Limit - Maintained by the insured for storage of material or storage of maintenance equipment' WHERE rowID=17;
-UPDATE ratingquestions SET questionLabel='Contractors Coverage 2 - Blanket Tool Sublimit', hint='Any one tool or piece of equipment' WHERE rowID=27;
-UPDATE ratingquestions SET questionLabel='Contractors Coverage 2 - Blanket Tool Coverage Incr Limit', hint='Leave at $0 limit to use standard $3k limit' WHERE rowID=28;
-UPDATE ratingquestions SET questionLabel='Contractors Coverage 2 - Blanket Tool Limit (Specified)', hint='Specifically described tools or pieces of equipment' WHERE rowID=29;
-UPDATE ratingquestions SET questionLabel='Contractors Coverage 3 - Non-owned Tools And Equipment Limit', hint='' WHERE rowID=30;
-UPDATE ratingquestions SET questionLabel='Coverage 4 - Employees Tools Limit', hint='' WHERE rowID=31;
-UPDATE ratingquestions SET questionLabel='Motel - Liability For Guests Property', hint='Limit - Per Guest/Per Occurrence' WHERE rowID=32;
-UPDATE ratingquestions SET questionLabel='Motel - Liability For Guests Property In Safe Deposit Boxes', hint='' WHERE rowID=33;
-UPDATE ratingquestions SET questionLabel='Self-storage Facilities - Customers Goods Liability Incr Limit', hint='Leave at $0 limit to use standard $50,000 limit' WHERE rowID=34;
-UPDATE ratingquestions SET questionLabel='Loss Or Damage To Tenants Autos (Legal Liability) Limit', hint='' WHERE rowID=36;
-UPDATE ratingquestions SET questionLabel='Loss Or Damage To Tenants Autos (Legal Liability) Deductible', hint='OTC Each Auto / OTC Any One Event / Collision' WHERE rowID=37;
-UPDATE ratingquestions SET questionLabel='Photography - Worldwide Coverage', hint='Amendment Of Coverage Territory For Photographic Equipment' WHERE rowID=42;
-UPDATE ratingquestions SET questionLabel='Accounts Receivable Incr Limit', hint='Leave at $0 limit to use standard $10,000 limit' WHERE rowID=43;
-UPDATE ratingquestions SET questionLabel='Business Income From Secondary Dependent Properties', hint='Secondary dependent properties too?' WHERE rowID=46;
-UPDATE ratingquestions SET questionLabel='Business Income From Secondary Dependent Properties', hint='Secondary dependent properties too?' WHERE rowID=47;
-UPDATE ratingquestions SET questionLabel='Business Income - Ordinary Payroll Coverage', hint='Number of days coverage period' WHERE rowID=48;
-UPDATE ratingquestions SET questionLabel='Business Income (Extended) - Extended Period Of Indemnity', hint='Number of days coverage period' WHERE rowID=49;
-UPDATE ratingquestions SET questionLabel='Electronic Data Incr Limit', hint='Leave at $0 limit to use standard $10k limit' WHERE rowID=50;
-UPDATE ratingquestions SET questionLabel='Employee Dishonesty Limit', hint='' WHERE rowID=51;
-UPDATE ratingquestions SET questionLabel='Employee Dishonesty Number of Employees', hint='' WHERE rowID=52;
-UPDATE ratingquestions SET questionLabel='Fire Department Service Charge Limit', hint='' WHERE rowID=53;
-UPDATE ratingquestions SET questionLabel='Interruption Of Computer Operations Incr Limit', hint='Leave at $0 limit to use standard $10k limit' WHERE rowID=55;
-UPDATE ratingquestions SET questionLabel='Equipment Breakdown Protection Coverage', hint='' WHERE rowID=56;
-UPDATE ratingquestions SET questionLabel='Equipment Breakdown Protection Deductible', hint='' WHERE rowID=57;
-UPDATE ratingquestions SET questionLabel='Equipment Breakdown Protection Time Deductible (Hours)', hint='' WHERE rowID=58;
-UPDATE ratingquestions SET questionLabel='Money And Securities On-Premises Limit', hint='' WHERE rowID=59;
-UPDATE ratingquestions SET questionLabel='Money And Securities Off-Premises Limit', hint='' WHERE rowID=60;
-UPDATE ratingquestions SET questionLabel='Outdoor Signs Limit', hint='' WHERE rowID=61;
-UPDATE ratingquestions SET questionLabel='Valuable Papers And Records Limit', hint='' WHERE rowID=62;
-UPDATE ratingquestions SET questionLabel='Outdoor Property Incr Limit', hint='Leave at $0 limit to use standard $2.5k limit' WHERE rowID=63;
-UPDATE ratingquestions SET questionLabel='Damage To Premises Rented To You Coverage', hint='' WHERE rowID=64;
-UPDATE ratingquestions SET questionLabel='Damage To Premises Rented To You Limit', hint='' WHERE rowID=65;
-UPDATE ratingquestions SET questionLabel='Optional Per Person Medical Expenses Limit', hint='' WHERE rowID=66;
-UPDATE ratingquestions SET questionLabel='Business Income And Extra Expense Limit', hint='' WHERE rowID=68;
-UPDATE ratingquestions SET questionLabel='Business Income And Extra Expense Revised Period Of Indemnity', hint='' WHERE rowID=69;
-UPDATE ratingquestions SET questionLabel='Computer Fraud And Funds Transfer Fraud Limit', hint='' WHERE rowID=70;
-UPDATE ratingquestions SET questionLabel='Condominium Commercial Unit-owners Loss Assessment Limit', hint='' WHERE rowID=71;
-UPDATE ratingquestions SET questionLabel='Condominium - Sublimit Condo Assoc Deductible', hint='Commercial Unit-owners Loss Assessment' WHERE rowID=72;
-UPDATE ratingquestions SET questionLabel='Condominium Commercial Unit-owners Misc Real Property Limit', hint='' WHERE rowID=73;
-UPDATE ratingquestions SET questionLabel='80% coinsurance Earthquake rate ', hint='Determined in CLM Division Five - Fire and Allied Lines' WHERE rowID=74;
-UPDATE ratingquestions SET questionLabel='Food Contamination Coverage', hint='' WHERE rowID=79;
-UPDATE ratingquestions SET questionLabel='Food Contamination incr Limit', hint='Leave at $0 limit to use standard $10k limit' WHERE rowID=80;
-UPDATE ratingquestions SET questionLabel='Food Contamination Additional Advertising Expenses Incr Limit', hint='Leave at $0 limit to use standard $3k limit' WHERE rowID=81;
-UPDATE ratingquestions SET questionLabel='Mold - Fungi, Wet Rot Or Dry Rot  - Incr Sublimit', hint='Leave at $0 limit to use standard $15k limit' WHERE rowID=82;
-UPDATE ratingquestions SET questionLabel='Mold - Annual aggregate limit per policy or per location', hint='Fungi, Wet Rot Or Dry Rot' WHERE rowID=83;
-UPDATE ratingquestions SET questionLabel='Mold - Number of days', hint='Fungi, Wet Rot Or Dry Rot' WHERE rowID=84;
-UPDATE ratingquestions SET questionLabel='Named Perils - Building And Business Personal Property', hint='' WHERE rowID=85;
-UPDATE ratingquestions SET questionLabel='Named Perils - Burglary And Robbery Optional Coverage', hint='' WHERE rowID=86;
-UPDATE ratingquestions SET questionLabel='Ordinance Or Law Coverage', hint='' WHERE rowID=87;
-UPDATE ratingquestions SET questionLabel='Ordinance Or Law Coverage 2 Limit', hint='' WHERE rowID=88;
-UPDATE ratingquestions SET questionLabel='Ordinance Or Law Coverage 3 Limit', hint='' WHERE rowID=89;
-UPDATE ratingquestions SET questionLabel='Ordinance Or Law Coverage 2 and 3 Combined Limit', hint='' WHERE rowID=90;
-UPDATE ratingquestions SET questionLabel='Ordinance Or Law - Business Income and Extra Expense', hint='' WHERE rowID=91;
-UPDATE ratingquestions SET questionLabel='Spoilage Coverage', hint='' WHERE rowID=92;
-UPDATE ratingquestions SET questionLabel='Spoilage Limit', hint='' WHERE rowID=93;
-UPDATE ratingquestions SET questionLabel='Spoilage - Refrigeration Maintenance Agreeement', hint='' WHERE rowID=94;
-UPDATE ratingquestions SET questionLabel='80% coinsurance Sprinkler Leakage - Earthquake Extension rate', hint='Determined in CLM Division Five - Fire and Allied Lines' WHERE rowID=95;
-
-
-var app = angular.module('bopquote', ['ngMaterial', 'ngResource','google.places','ngSanitize','duScroll'])
-
-app.controller('quoteController', ['$scope','$http','$location','selectService','formdataService','$document','$timeout',function($scope,$http,$location,selectService,formdataService,$document,$timeout) {
-
-  $scope.newQuote={};
-  $scope.temp={};
-  $scope.hint= {}; 
-  // $scope.quoteResult={};
-  $scope.ngHide={};
-  $scope.showLoadingImage=true;
-  $scope.ratingQuestions={};
-  $scope.quoteResponse={};
-  
-
-  $scope.todayDate = new Date();
-  var utcDate= new Date(new Date().toUTCString());
-  var offset = new Date().getTimezoneOffset();  
-  utcDate.setMinutes(utcDate.getMinutes()-offset);
-  var offsetDate = new Date(utcDate);
-  var dateregex=new RegExp("[0-9]{4}-[0-9]{2}-[0-9]{2}");
-  
-  
-  $scope.formdata=formdataService.query();
-  $scope.formdata.$promise.then(function(result){
-    for(var i=0;i<$scope.formdata.length;i++){
-      for(var j=0; j<$scope.formdata[i].questions.length;j++){
-        var htmlId = $scope.formdata[i].questions[j].htmlId;
-        $scope.hint[htmlId]=$scope.formdata[i].questions[j].hint;
-        var questionValue = $scope.formdata[i].questions[j].value;
-        if(questionValue=='today'){
-          $scope.newQuote[htmlId]={value: offsetDate};
-        }else if(dateregex.test(questionValue)){
-          $scope.newQuote[htmlId]={value: new Date(questionValue.substr(0,4),(questionValue.substr(5,2)-1),questionValue.substr(8,2))};
-        }else if($scope.formdata[i].questions[j].htmlId.trim().length >0){
-          $scope.newQuote[htmlId]={value: questionValue};  
-        }
-      }
-    }
-
-    $scope.selectedIndex = 0;
-    $scope.disabled=[];
-    $scope.disabled[0]=false;
-    for(var k=1; k<$scope.formdata.length;k++){    
-        $scope.disabled[k]=true;
-    }
-    $scope.quoteTabDisabled=true;
-    $scope.submissionTabDisabled=true;
-    $scope.max= $scope.formdata.length+1;
-
-
-    angular.element(document).ready(function(){      
-        $scope.showLoadingImage=false;
-        // $scope.requestQuote();
-    });
-  });
-
-
-//Wizard
-   
-    $scope.showNextButton=true;
-
-    $scope.buttonNext='Next';
-
-//Question elements
-    $scope.selectunique=[
-        'territory',
-        'ppc',
-        'buildingCode',
-        'constructionType',
-        'occupantLessor',
-        'policyTerm',
-        'propertyDeductible',
-        'windDeductible',
-        'propertyLiabDeductible',
-        'liabMedExpensesLimit',
-        'aggLimitProductsOperations',
-        'aggLimitLiabMedical',
-        'contractorsInstallationLimit',
-        'contractorsToolsType',
-        'contractorsBlanketSublimit',
-        'motelLimitPerGuest',
-        'motelSafeDepositLimitPerGuest',
-        'autoLiabilityLimit',
-        'autoLiabiityDeductible',
-        'buildingsAnnualLimitIncrease',
-        'businessIncomeDependentPropertiesType',
-        'businessIncomePayrollNumDays',
-        'businessIncomeExtendedNumDays',
-        'employeeDishonestyLimit',
-        'fireDepartmentLimit',
-        'equipmentBreakdownDeductible',
-        'equipmentBreakdownTimeDeductible',
-        'damagePremisesRented',
-        'optionalPerPersonMedicalLimit',
-        'businessIncomeExpenseLimit',
-        'businessIncomeExtraExpenseNumberOfMonths',
-        'computerFraudLimit',
-        'condoUnitownersOptionalLimit',
-        'condoUnitownersAssocSublimit',
-        'fungiOption',
-        'fungiNumberOfDays',
-        'ordinanceCoverage',
-        'spoilageCoverage',
-        'refrigerationAgreement',
-        'vacancyPermit',
-        'limitationsRoofSurfacing',
-        'offPremiseVehicleMobile',
-        'offPremiseInterruptionVehiclesExtendedIncomeNumDay',
-        'epl',
-        'eplLimit',
-        'eplDeductible',
-        'hiredAutoCoverage',
-        'hiredAutoLimit',
-        'pharmacistsProfLiab',
-        'infoSecurityTier',
-        'infoSecurityLimit',
-        'infoSecurityDeductible',
-        'infoSecurityBreachContract'
-        ];  
-    $scope.options =[];    
-    $scope.selectunique.forEach(function(select){
-      $scope.options[select]=selectService.query({htmlId:select});  
-    });    
-
-    $scope.options.classDesc1=selectService.query({htmlId:"classDesc1"});
-    $scope.options.classDesc1.$promise.then(function(result){
-      $scope.options.classDesc1=result;
-      $scope.options.classDesc1.unshift({"value":"0","display":"Please select an industry class"});
-      $scope.newQuote.classDesc1.value="0"; 
-    });   
-
-    $scope.questiondisabled ={};
-    $scope.questiondisabled.classDesc2=true;
-    $scope.questiondisabled.classDesc3=true; 
-    $scope.ngHide.classDesc2=true;
-    $scope.ngHide.classDesc3=true;
-
-
-//Functions
-  
-    $scope.change=function(htmlId,newValue){
-      
-      $scope.newQuote[htmlId]={value:newValue};
-
-      $scope.hint[htmlId]='';
-      switch(htmlId){  
-
-        case 'classDesc1':
-          // alert('inside change. classDesc1='+$scope.newQuote.classDesc1.value);
-          $scope.options.classDesc2=selectService.query({htmlId:'classDesc2',classDesc1:$scope.newQuote.classDesc1.value});        
-          $scope.ngHide.classDesc3=true;
-          $scope.questiondisabled.classDesc3=true;
-          $scope.newQuote.classDesc3.value='';
-          // alert('about to get classDes2 values');
-          $scope.options.classDesc2.$promise.then(function(result){
-            if(result.length<=1){
-              // alert('sole value='+result[0].value);
-              $scope.ngHide.classDesc2=true;
-              $scope.questiondisabled.classDesc2=true;
-              $scope.newQuote.classDesc2.value=result[0].value;
-            }else{
-              $scope.ngHide.classDesc2=false;
-              $scope.questiondisabled.classDesc2=false;
-              $scope.options.classDesc2=result;
-              $scope.options.classDesc2.unshift({"value":"0","display":"Please select an industry sub-class"});
-              $scope.newQuote.classDesc2.value="0";   
-              $scope.hint.classDesc2='Please select sub-class';  
-            }             
-          });
-        case 'classDesc2':
-          // alert('inside change. classDesc2='+$scope.newQuote.classDesc2.value);
-          $scope.options.classDesc3=selectService.query({htmlId:'classDesc3',classDesc1:$scope.newQuote.classDesc1.value,classDesc2:$scope.newQuote.classDesc2.value});        
-          $scope.options.classDesc3.$promise.then(function(result){
-            if(result.length<=1){
-              // alert('sole value='+result[0].value);
-              $scope.ngHide.classDesc3=true;
-              $scope.questiondisabled.classDesc3=true;
-              $scope.newQuote.classDesc3.value=result[0].value;
-            }else{
-              $scope.ngHide.classDesc3=false;
-              $scope.questiondisabled.classDesc3=false;
-              $scope.options.classDesc3=result;
-              $scope.options.classDesc3.unshift({"value":"0","display":"Please select an industry sub-sub-class"}); 
-              $scope.newQuote.classDesc3.value="0";
-              $scope.hint.classDesc3='Please select sub-class';  
-            }            
-          });   
-        default:
-          break;     
-      }   
-    }  
-
-    $scope.scrollTop = function(){
-      $document.scrollTo(quoteController, 30, 1000);
-    };
-
-    $scope.clickTab = function() {
-      if($scope.selectedIndex == $scope.max){
-        //$scope.showNextButton=false;
-      }else if($scope.selectedIndex < $scope.max && $scope.buttonNext !== 'Next'){
-        $scope.buttonNext='Request Quote';
-        $scope.showNextButton=true;
-      }
-    };
-/*
-    $scope.cloneTab = function (index) {            
-      //Use JSON parse and stringify to copy by value rather than by reference
-      $scope.filters[newTabTitle]= JSON.parse(JSON.stringify($scope.filters[currentTabTitle]));
-      $scope.tablevalues[newTabTitle]= JSON.parse(JSON.stringify($scope.tablevalues[currentTabTitle]));      
-      $scope.policyTerm[newTabTitle]=$scope.policyTerm[currentTabTitle];
-      $scope.effectiveDate[newTabTitle]= $scope.effectiveDate[currentTabTitle];
-      $scope.showtable[newTabTitle]=true;
-      tabs.push({ section: "Location", questions: $scope.newQuote.questions, filters: $scope.filters[newTabTitle], showtable: $scope.showtable[newTabTitle], policyTerm: $scope.policyTerm[newTabTitle], effectiveDate: $scope.effectiveDate[newTabTitle], disabled: false});      
-    };
-*/
-    $scope.nextTab = function() {
-      var validform=true;
-      var index =$scope.selectedIndex + 1;    
-      switch(index){
-        case 1:
-         
-          break;
-
-        case 2:
-         
-          break;
-
-        case 3:
-         
-          break;
-
-        default:
-          break;     
-      }
-      if(validform==true){
-        // alert('inside validform. index='+index);
-        $scope.disabled[index]=false; 
-        $timeout(function(){         
-          $scope.selectedIndex = index;
-        },0);
-        // alert('index='+index);
-        // alert('index='+index+' out of $scope.max='+$scope.max);
-        if($scope.selectedIndex == ($scope.max-3)){
-          $scope.buttonNext='Request Quote';
-          // alert('changing to request quote button');
-         
-        }else if($scope.selectedIndex == ($scope.max-2)){
-          $scope.buttonNext='Finalize Quote';
-          // alert('triggering requestQuote');
-          $scope.requestQuote();
-        }else if($scope.selectedIndex == $scope.max-1){
-          // $scope.showNextButton=false;
-          // alert('triggering finalizeQuote');
-          $scope.finalizeQuote();
-        }
-      }
-      $scope.scrollTop();
-    };
-
-   
-     //$scope.$apply();      
-
-    $scope.requestQuote = function() {      
-      //alert(JSON.stringify($scope.newQuote));
-      var objectSize = Object.keys($scope.newQuote).length;
-      // alert(objectSize);
-      $scope.quoteTabDisabled=false;
-      
-      var i=0;
-      angular.forEach($scope.newQuote,function(value,key){
-        $scope.ratingQuestions[key]=value.value;
-        // alert(value.value);
-        i++;
-        if(i==objectSize){
-          // alert(JSON.stringify($scope.newQuote));
-          // alert($scope.newQuote.classDesc1.value);
-          // alert($scope.newQuote.sicCode.value);
-          $http.post('/api/requestQuote',$scope.ratingQuestions).then(function onSuccess(data){
-            // alert(JSON.stringify(data));
-            // $scope.quoteResponse=data.data;
-            $scope.quoteResponse.totalPremium=data.data.totalPremium;
-            $scope.quoteResponse.premium=data.data.Premium;
-            $scope.quoteResponse.other=data.data.Other;
-            // alert($scope.newQuote.sicCode);
-            // angular.forEach(data.data,function(value,key){
-            // for(var key in $scope.quoteResult){
-              // alert($scope.quoteResult[key]);
-              // alert(data.data.sicCode);
-            // $scope.newQuote.sicCode.value=data.data.sicCode;
-            // angular.forEach(data.data,function(value,key){  
-            //   $scope.newQuote[key].value=value;
-            // });
-            // }
-            // alert($scope.newQuote.sicCode); 
-          }).catch(function onError(data){
-            alert('An error has occurred. Your quote may not have been submitted. Please try again.'); 
-            $scope.formdata[3].questions[0].customhtml ='<div  class="md-block"> <strong>Error</strong> Your quote request has not worked. Please try again.</div>';
-          });    
-        }
-      });      
-    };
-
-    $scope.finalizeQuote = function() {
-      $scope.submissionTabDisabled=false;
-      var phone = $scope.newQuote.phoneNumber.value.replace(/\D/g,'').replace(/^1+/, '');     
-      $scope.newQuote.phoneNumber.value = '('+phone.substr(0, 3)+') '+phone.substr(3,3)+'-'+phone.substr(6,4);
-      //alert(JSON.stringify($scope.newQuote));
-      var ratingQuestions={};
-      var objectSize = Object.keys($scope.newQuote).length;
-      //alert(objectSize);
-      var i=0;
-      angular.forEach($scope.newQuote,function(value,key){
-        ratingQuestions[key]=value.value;
-        i++;
-        if(i==objectSize){
-          //alert(JSON.stringify(ratingQuestions));
-          $http.post('/api/finalizeQuote',ratingQuestions).then(function onSuccess(data){
-          }).catch(function onError(data){
-            alert('An error has occurred. Your quote may not have been submitted. Please try again.'); 
-            $scope.formdata[3].questions[0].customhtml ='<div  class="md-block"> <strong>Error</strong> Your quote may not have been submitted. If you did not receive a confirmation email please restart your quote.</div>';
-          });    
-        }
-      });      
-    };
-
-}]);
-
-
-app.factory('selectService', ['$resource' , function($resource){
-  return $resource('/api/select/:htmlId/');
-}]);
-
-app.factory('formdataService', ['$resource' , function($resource){
-  return $resource('/api/formdata');
-}]);
-
-app.directive("rscQuestionBlock", function() {
-    return {
-        restrict: 'E',
-        require: 'ngModel',
-        scope: {
-         questionlabel: '@',
-         ngModel: '=',
-         temp: '=',
-         ngDisabled: '=',
-         options: '=',
-         type: '=',
-         hint: '=',
-         tooltip: '=',
-         customstyle: '=',
-         customhtml: '=',
-         todaydate: '='
-        },
-        templateUrl : 'rscQuestionBlock.html',
-        link: function(scope, element, attrs, ctrl){
-          scope.changeField = function(newValue){
-            ctrl.$setViewValue(newValue);            
-          }    
-          ctrl.$viewChangeListeners.push(function(){
-            scope.$eval(attrs.ngChange);
-          });                               
-        }
-    };
-});
-
-function stateToStateCode(state){
-  var statearray=['AL','AK','AZ','AR','CA','CO','CT','DE','DC','FL','GA','HI','ID','IL','IN','IA','KS','KY','LA','ME','MD','MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY'];
-  return statearray[(state-1)];
-}
 
 
 
@@ -435,3 +109,5 @@ function stateToStateCode(state){
 // Notes:
 // - Combine the two abuse and molestation endorsements into one dropdown, with none as an option and make one of them compulsory for photography
 // Theft of clients property not eligible for selection on self storage faciltiies or residential cleaning services
+// Combine exclusionDamageWorkSubcontractors and exclusionDamageWorkSubcontractorsDesignatedSites into one dropdown
+
