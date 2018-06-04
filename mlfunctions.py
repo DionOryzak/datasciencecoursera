@@ -78,7 +78,7 @@ def actualvsfitted(heading,prediction,y_test):
 def plotpearsonresiduals(heading,prediction,resid_pearson):
 	import matplotlib.pyplot as plt
 	fig, ax = plt.subplots()
-	ax.scatter(prediction, resid_pearson,s=10)
+	ax.scatter(prediction, resid_pearson)
 	ax.hlines(0, 0,max(prediction))
 	# ax.set_xlim(0, 1)
 	ax.set_title(heading)
@@ -107,7 +107,7 @@ def qqplot(resid_deviance):
 
 # actualvsfittedbyfactor(temp['weight'],temp['actualValue'],temp['predictedValue'],temp[groupByVariable],groupByVariable,folder)
 # actualvsfittedbyfactor(exposure,actual,fitted,categories,feature,folder)
-def actualvsfittedbyfactor(data_train,data_test,groupByVariableName,folder):
+def actualvsfittedbyfactor(data_train,groupByVariableName,folder):
 	import matplotlib.pyplot as plt
 	import matplotlib.gridspec as gridspec
 	import numpy as np
@@ -124,14 +124,15 @@ def actualvsfittedbyfactor(data_train,data_test,groupByVariableName,folder):
 	categories=temp[groupByVariableName]
 	numcategories=range(len(categories))
 
-	fig=plt.figure(figsize=(15, 6))
+	fig=plt.figure(figsize=(15, 15))
+	# fig=plt.figure(figsize=(15, 6))
 	# plt.figure(figsize=(6, 6))
 	# plt.subplot(1, 2, 1)	
 	gs = gridspec.GridSpec(1, 3, width_ratios=[3,1,3])
 	# gs = gridspec.GridSpec(1, 2,width_ratios=[2,1])	
 
-	# ax = fig.add_subplot(121)	
-	ax = plt.subplot(gs[0])
+	ax = fig.add_subplot(111)	
+	# ax = plt.subplot(gs[0])
 	ax2 = ax.twinx()
 	ax.bar(numcategories, exposure, label='Exposure',color='0.7',alpha = 0.5)
 	ax2.plot(numcategories,actual,'r-', marker='o',label='Actual', linewidth=1.5)
@@ -151,40 +152,6 @@ def actualvsfittedbyfactor(data_train,data_test,groupByVariableName,folder):
 	plt.suptitle(groupByVariableName, y=1, fontsize=17)
 	plt.title('Actual vs Fitted: Train')
 
-
-
-
-
-	temp=data_test.groupby([groupByVariableName], as_index=False)['weight'].sum()
-	predictedValues=data_test.groupby([groupByVariableName], as_index=False)['predictedValue'].sum()
-	actualValues=data_test.groupby([groupByVariableName], as_index=False)['actualValue'].sum() 
-	fitted=predictedValues['predictedValue']/temp['weight']
-	actual=actualValues['actualValue']/temp['weight']
-	exposure=temp['weight']
-	categories=temp[groupByVariableName]
-	numcategories=range(len(categories))
-
-	# plt.subplot(1, 2, 2)
-	# ax = fig.add_subplot(122)
-	ax = plt.subplot(gs[2])
-	ax2 = ax.twinx()
-	ax.bar(numcategories, exposure, label='Exposure',color='0.7',alpha = 0.5)
-	ax2.plot(numcategories,actual,'r-', marker='o',label='Actual', linewidth=1.5)
-	ax2.plot(numcategories,fitted, color='#FF9133', marker='o',label='Predicted' ,linewidth=1.5)
-	ax2.set_ylabel('Actual,Fitted')
-	ax.set_ylabel('Exposure')
-	ax.set_xlabel(groupByVariableName)
-	ax.set_xticks(numcategories)
-	# print(len(categories))
-	rotation=np.minimum(np.maximum((len(categories)-4)*10,0),90)	
-	# print(rotation)
-	ax.set_xticklabels(categories, rotation=rotation)
-	ax2.grid()
-	lines, labels = ax2.get_legend_handles_labels()
-	lines2, labels2 = ax.get_legend_handles_labels()
-	ax.legend(lines + lines2, labels + labels2, loc=2)
-	plt.suptitle(groupByVariableName, y=1, fontsize=17)
-	plt.title('Actual vs Fitted: Test')
 	plt.savefig(folder+groupByVariableName+'.png')
 	plt.close()
 
@@ -270,7 +237,7 @@ def logisticregression(X_train, X_test, y_train, y_test):
 	visualizeorderedredisuals(heading="Linear Regression Ordered Residuals",prediction=prediction_lr_test,y_test=y_test)
 	return prediction_lr_train, prediction_lr_test	
 
-def GLM(data_train,data_test,CONTFEATURES,CATFEATURES,LABEL,WEIGHT,formula,filepath,picklefile,disttype):
+def GLM(data_train,CONTFEATURES,CATFEATURES,LABEL,EXPOSURE,formula,filepath,picklefile,family):
 
 	# pickle: 0=none; 1=save; 2=load
 
@@ -281,12 +248,13 @@ def GLM(data_train,data_test,CONTFEATURES,CATFEATURES,LABEL,WEIGHT,formula,filep
 
 	# print(data_train)
 	if picklefile<2 :
-		if disttype== 'poisson':
-			glm = smf.glm(formula=formula, data=data_train, freq_weights=data_train[WEIGHT], family=sm.families.Poisson(sm.families.links.log)).fit(maxiter=500)
-		elif disttype== 'gamma':	
-			glm = smf.glm(formula=formula, data=data_train, freq_weights=data_train[WEIGHT], family=sm.families.Gamma(sm.families.links.log)).fit(maxiter=500)
-		elif disttype== 'tweedie':
+		if family=='tweedie':
 			glm = smf.glm(formula=formula, data=data_train, freq_weights=data_train[WEIGHT], family=sm.families.Tweedie(sm.families.links.log,1.67)).fit(maxiter=500)
+		elif family=='poisson':	
+			glm = smf.glm(formula=formula, data=data_train, exposure=data_train[EXPOSURE], family=sm.families.Poisson(sm.families.links.log)).fit(maxiter=500)
+		elif family=='gamma':	
+			glm = smf.glm(formula=formula, data=data_train, exposure=data_train[EXPOSURE], family=sm.families.Gamma(sm.families.links.log)).fit(maxiter=500)	
+
 		if picklefile==1 :
 				pickle.dump(glm,open(filepath+'glm_model.sav','wb'))
 
@@ -299,7 +267,7 @@ def GLM(data_train,data_test,CONTFEATURES,CATFEATURES,LABEL,WEIGHT,formula,filep
 	text_file.close()   
 
 	prediction_glm_train = glm.predict(data_train)
-	prediction_glm_test = glm.predict(data_test)
+	# prediction_glm_test = glm.predict(data_test)
 
 	# print('Parameters: ', glm.params)
 	# print('T-values: ', glm.tvalues)
@@ -307,12 +275,12 @@ def GLM(data_train,data_test,CONTFEATURES,CATFEATURES,LABEL,WEIGHT,formula,filep
 	# Links: Identity, log, logit, inverse 
 	# #############################################################################
 
-	actualvsfitted('Actual vs Fitted: GLM',prediction_glm_test,data_test[LABEL])
-	plotpearsonresiduals('Pearson Residuals: GLM',prediction_glm_train,glm.resid_pearson)
-	histogramstandardizeddevianceresiduals('Histogram of standardized deviance residuals',prediction_glm_train,glm.resid_deviance)
-	qqplot(glm.resid_deviance)
-	visualizerandomredisuals(heading="GLM Random Residuals",prediction=prediction_glm_test,y_test=data_test[LABEL])
-	visualizeorderedredisuals(heading="GLM Ordered Residuals",prediction=prediction_glm_test,y_test=data_test[LABEL])
+	# actualvsfitted('Actual vs Fitted: GLM',prediction_glm_test,data_test[LABEL])
+	# plotpearsonresiduals('Pearson Residuals: GLM',prediction_glm_train,glm.resid_pearson)
+	# histogramstandardizeddevianceresiduals('Histogram of standardized deviance residuals',prediction_glm_train,glm.resid_deviance)
+	# qqplot(glm.resid_deviance)
+	# visualizerandomredisuals(heading="GLM Random Residuals",prediction=prediction_glm_test,y_test=data_test[LABEL])
+	# visualizeorderedredisuals(heading="GLM Ordered Residuals",prediction=prediction_glm_test,y_test=data_test[LABEL])
 	# #############################################################################
 	
 
@@ -332,7 +300,7 @@ def GLM(data_train,data_test,CONTFEATURES,CATFEATURES,LABEL,WEIGHT,formula,filep
 	# 	groupByVariableName=groupByVariable+'Band'		
 	# 	actualvsfittedbyfactor(data_train,data_test,groupByVariableName,folder)	
 	# #############################################################################	
-	return prediction_glm_train, prediction_glm_test
+	return prediction_glm_train
 
 def randomforest(X_train, X_test, y_train, y_test):
 	from sklearn import ensemble
@@ -356,7 +324,7 @@ def gbm(X_train, X_test, y_train, y_test,CONTFEATURES,DUMMYFEATURES,folder):
 	from sklearn import ensemble
 	from sklearn import metrics
 	import os
-
+	
 	if ( os.path.exists(folder)) :	
 		n_estimators=100
 	else:
@@ -370,7 +338,7 @@ def gbm(X_train, X_test, y_train, y_test,CONTFEATURES,DUMMYFEATURES,folder):
 	confidence_train = gbm.score(X_train, y_train)
 	confidence_test = gbm.score(X_test, y_test)
 	print("GBM mean squared error on train set: ",metrics.mean_squared_error(prediction_gbm_train, y_train))
-	if ( os.path.exists(folder)) :
+	if ( os.path.exists(folder)) :	
 		print("GBM R2 score on train set: ", metrics.r2_score(prediction_gbm_train, y_train))
 		print('Confidence on train set: ',confidence_train)
 		print("GBM mean squared error on test set: ",metrics.mean_squared_error(prediction_gbm_test, y_test))
