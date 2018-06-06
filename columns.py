@@ -37,9 +37,6 @@ def returnCOLUMNS():
 
 def returnCATFEATURES():
 	CATFEATURES=[
-	'ProgramType',
-	'MedefenseLimit_Cat',
-	'CyberLimit_Cat'
 	]
 	return CATFEATURES
 

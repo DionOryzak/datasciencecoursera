@@ -119,12 +119,13 @@ def actualvsfittedbyfactor(data_train,groupByVariableName,folder):
 	predictedValues=data_train.groupby([groupByVariableName], as_index=False)['predictedValue'].sum()
 	actualValues=data_train.groupby([groupByVariableName], as_index=False)['actualValue'].sum() 
 	fitted=predictedValues['predictedValue']/temp['weight']	
+	# fitted=predictedValues['predictedValue']/temp['weight']	
 	actual=actualValues['actualValue']/temp['weight']	
 	exposure=temp['weight']
 	categories=temp[groupByVariableName]
 	numcategories=range(len(categories))
 
-	fig=plt.figure(figsize=(15, 15))
+	fig=plt.figure(figsize=(10, 10))
 	# fig=plt.figure(figsize=(15, 6))
 	# plt.figure(figsize=(6, 6))
 	# plt.subplot(1, 2, 1)	
@@ -249,7 +250,7 @@ def GLM(data_train,CONTFEATURES,CATFEATURES,LABEL,EXPOSURE,formula,filepath,pick
 	# print(data_train)
 	if picklefile<2 :
 		if family=='tweedie':
-			glm = smf.glm(formula=formula, data=data_train, freq_weights=data_train[WEIGHT], family=sm.families.Tweedie(sm.families.links.log,1.67)).fit(maxiter=500)
+			glm = smf.glm(formula=formula, data=data_train, exposure=data_train[EXPOSURE], family=sm.families.Tweedie(sm.families.links.log,1.67)).fit(maxiter=500)
 		elif family=='poisson':	
 			glm = smf.glm(formula=formula, data=data_train, exposure=data_train[EXPOSURE], family=sm.families.Poisson(sm.families.links.log)).fit(maxiter=500)
 		elif family=='gamma':	
